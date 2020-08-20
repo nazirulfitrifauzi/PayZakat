@@ -1,77 +1,85 @@
-@extends('layouts.app')
+@extends('layouts.app.guest')
 
 @section('content')
-    <div class="container mx-auto">
-        <div class="flex flex-wrap justify-center">
-            <div class="w-full max-w-sm">
-                <div class="flex flex-col break-words bg-white border-2 rounded shadow-md">
+<div class="min-h-screen bg-white flex">
+    <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div class="mx-auto w-full max-w-sm lg:w-96">
+            <div>
+                <img class="h-24 w-auto" src="{{ asset('img/logo/csc_blue.png') }}" alt="Workflow">
+                    <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900">
+                        Log masuk akaun
+                    </h2>
+                <p class="mt-2 text-sm leading-5 text-gray-600 max-w">
+                    atau
+                    <a href="{{ route('register') }}" class="font-medium text-teal-600 hover:text-teal-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                        daftar akaun baru
+                    </a>
+                </p>
+            </div>
 
-                    <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                        {{ __('Login') }}
-                    </div>
-
-                    <form class="w-full p-6" method="POST" action="{{ route('login') }}">
+            <div class="mt-8">
+                <div class="mt-6">
+                    <form action="{{ route('login') }}" method="POST" class="space-y-6">
                         @csrf
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('E-Mail Address') }}:
+                        <div>
+                            <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
+                                Alamat Emel
                             </label>
+                            <div class="mt-1 rounded-md shadow-sm">
+                                <input id="email" name="email" type="email" required value="{{ old('email') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email') border-red-500 @enderror">
 
-                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                                @error('email')
+                                    <p class="text-red-500 text-xs italic mt-4">
+                                        {{ $message }}
+                                    </p>
+                                @enderror
+                            </div>
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Password') }}:
+                        <div>
+                            <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
+                                Kata Laluan
                             </label>
-
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required>
-
-                            @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $message }}
-                                </p>
-                            @enderror
+                            <div class="mt-1 rounded-md shadow-sm">
+                                <input id="password" name="password" type="password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password') border-red-500 @enderror">
+                                @error('password')
+                                    <p class="text-red-500 text-xs italic mt-4">
+                                        {{ $message }}
+                                    </p>
+                                @enderror
+                            </div>
                         </div>
 
-                        <div class="flex mb-6">
-                            <label class="inline-flex items-center text-sm text-gray-700" for="remember">
-                                <input type="checkbox" name="remember" id="remember" class="form-checkbox" {{ old('remember') ? 'checked' : '' }}>
-                                <span class="ml-2">{{ __('Remember Me') }}</span>
-                            </label>
-                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input id="remember" name="remember" type="checkbox" class="form-checkbox h-4 w-4 text-teal-600 transition duration-150 ease-in-out">
+                                <label for="remember" class="ml-2 block text-sm leading-5 text-gray-900">
+                                    Ingat saya
+                                </label>
+                            </div>
 
-                        <div class="flex flex-wrap items-center">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                {{ __('Login') }}
-                            </button>
-
-                            @if (Route::has('password.request'))
-                                <a class="text-sm text-blue-500 hover:text-blue-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                            <div class="text-sm leading-5">
+                                <a href="{{ route('password.request') }}" class="font-medium text-teal-600 hover:text-teal-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                                    Lupa Kata Laluan?
                                 </a>
-                            @endif
+                            </div>
+                        </div>
 
-                            @if (Route::has('register'))
-                                <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
-                                    {{ __("Don't have an account?") }}
-                                    <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('register') }}">
-                                        {{ __('Register') }}
-                                    </a>
-                                </p>
-                            @endif
+                        <div>
+                            <span class="block w-full rounded-md shadow-sm">
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal active:bg-teal-700 transition duration-150 ease-in-out">
+                                    Log Masuk
+                                </button>
+                            </span>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
+    <div class="hidden lg:block relative w-0 flex-1">
+        <img class="absolute inset-0 h-full w-full object-cover" src="{{ asset('img/login_banner.jpg') }}" alt="">
+    </div>
+</div>
 @endsection

@@ -1,0 +1,50 @@
+<div class="bg-white shadow">
+    <div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
+        <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-cool-gray-200">
+            <div class="flex-1 min-w-0">
+                <!-- Profile -->
+                <div class="flex items-center">
+                    <img class="hidden h-15 w-15 rounded-full sm:block" src="{{ asset('img/avatar/avatar.jpg') }}" alt="">
+                    <div>
+                        <div class="flex items-center">
+                            <img class="h-15 w-15 rounded-full sm:hidden" src="{{ asset('img/avatar/avatar.jpg') }}" alt="">
+                            <h1 class="ml-3 text-2xl font-bold leading-7 text-cool-gray-900 sm:leading-9 sm:truncate">
+                                Selamat Pagi, Faisol Yusof
+                            </h1>
+                        </div>
+                        <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
+                            <dt class="sr-only">IC No</dt>
+                            <dd class="flex items-center text-sm leading-5 text-cool-gray-500 font-medium capitalize sm:mr-6">
+                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-cool-gray-400" viewBox="0 0 20 20" fill="currentColor" class="finger-print w-6 h-6">
+                                    <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd"></path>
+                                    <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd"></path>
+                                    <path fill-rule="evenodd" d="M10 10a1 1 0 011 1c0 2.236-.46 4.368-1.29 6.304a1 1 0 01-1.838-.789A13.952 13.952 0 009 11a1 1 0 011-1z" clip-rule="evenodd"></path>
+                                </svg>
+                                910418-06-5155
+                            </dd>
+                            <dt class="sr-only">VA ID</dt>
+                            <dd class="mt-3 flex items-center text-sm leading-5 text-cool-gray-500 font-medium sm:mr-6 sm:mt-0 capitalize">
+                                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                VA ID: 1645-3254455-7
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
+                <span class="shadow-sm rounded-md">
+                    <button type="button" class="inline-flex items-center px-4 py-2 border border-cool-gray-300 text-sm leading-5 font-medium rounded-md text-cool-gray-700 bg-white hover:text-cool-gray-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 active:text-cool-gray-800 active:bg-cool-gray-50 transition duration-150 ease-in-out">
+                    Deposit
+                    </button>
+                </span>
+                <span class="shadow-sm rounded-md">
+                    <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-700 active:bg-teal-700 transition duration-150 ease-in-out">
+                    Bayar Zakat
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
