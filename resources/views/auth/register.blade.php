@@ -1,24 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.app.guest')
 
 @section('content')
-    <div class="container mx-auto">
-        <div class="flex flex-wrap justify-center">
-            <div class="w-full max-w-sm">
-                <div class="flex flex-col break-words bg-white border-2 rounded shadow-md">
+    <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+        <div class="sm:mx-auto sm:w-full sm:max-w-md">
+            <img class="mx-auto h-24 w-auto" src="{{ asset('img/logo/csc_blue.png') }}" alt="Workflow">
+            <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
+                Daftar akaun baru
+            </h2>
+            <p class="mt-2 text-center text-sm leading-5 text-gray-600 max-w">
+                atau
+                <a href="{{ route('login') }}" class="font-medium text-teal-600 hover:text-teal-500 focus:outline-none focus:underline transition ease-in-out duration-150">
+                    log masuk akaun
+                </a>
+            </p>
+        </div>
 
-                    <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
-                        {{ __('Register') }}
-                    </div>
+        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+                <form action="{{ route('register') }}" method="POST">
+                    @csrf
 
-                    <form class="w-full p-6" method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="flex flex-wrap mb-6">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Name') }}:
-                            </label>
-
-                            <input id="name" type="text" class="form-input w-full @error('name')  border-red-500 @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <div>
+                        <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
+                            Nama Penuh
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <input id="name" name="name" type="text" required value="{{ old('name') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name')  border-red-500 @enderror">
 
                             @error('name')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -26,13 +33,14 @@
                                 </p>
                             @enderror
                         </div>
+                    </div>
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('E-Mail Address') }}:
-                            </label>
-
-                            <input id="email" type="email" class="form-input w-full @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    <div class="mt-6">
+                        <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
+                            Alamat Emel
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <input id="email" name="email" type="email" required value="{{ old('email') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('email')  border-red-500 @enderror">
 
                             @error('email')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -40,13 +48,14 @@
                                 </p>
                             @enderror
                         </div>
+                    </div>
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Password') }}:
-                            </label>
-
-                            <input id="password" type="password" class="form-input w-full @error('password') border-red-500 @enderror" name="password" required autocomplete="new-password">
+                    <div class="mt-6">
+                        <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
+                            Kata Laluan
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <input id="password" name="password" type="password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('password')  border-red-500 @enderror">
 
                             @error('password')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -54,30 +63,25 @@
                                 </p>
                             @enderror
                         </div>
+                    </div>
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">
-                                {{ __('Confirm Password') }}:
-                            </label>
-
-                            <input id="password-confirm" type="password" class="form-input w-full" name="password_confirmation" required autocomplete="new-password">
+                    <div class="mt-6">
+                        <label for="password-confirm" class="block text-sm font-medium leading-5 text-gray-700">
+                            Sahkan Kata Laluan
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <input id="password-confirm" name="password_confirmation" type="password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                         </div>
+                    </div>
 
-                        <div class="flex flex-wrap">
-                            <button type="submit" class="inline-block align-middle text-center select-none border font-bold whitespace-no-wrap py-2 px-4 rounded text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700">
-                                {{ __('Register') }}
+                    <div class="mt-6">
+                        <span class="block w-full rounded-md shadow-sm">
+                            <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:border-teal-700 focus:shadow-outline-teal active:bg-teal-700 transition duration-150 ease-in-out">
+                                Daftar Akaun
                             </button>
-
-                            <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
-                                {{ __('Already have an account?') }}
-                                <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
-                                    {{ __('Login') }}
-                                </a>
-                            </p>
-                        </div>
-                    </form>
-
-                </div>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
