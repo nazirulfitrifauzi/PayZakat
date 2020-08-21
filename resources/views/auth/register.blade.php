@@ -51,6 +51,17 @@
                     </div>
 
                     <div class="mt-6">
+                        <div class="flex">
+                            <input type="radio" name="role" id="role-public" value="1" checked>
+                            <label for="role-public" class="text-sm font-medium leading-5 text-gray-700 ml-3">Pembayar Zakat</label>
+                        </div>
+                        <div class="flex">
+                            <input type="radio" name="role" id="role-agent" value="2">
+                            <label for="role-public" class="text-sm font-medium leading-5 text-gray-700 ml-3">Amil atau Ejen Pembayar Zakat</label>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
                         <label for="password" class="block text-sm font-medium leading-5 text-gray-700">
                             Kata Laluan
                         </label>

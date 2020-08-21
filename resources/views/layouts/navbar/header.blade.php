@@ -9,7 +9,7 @@
                         <div class="flex items-center">
                             <img class="h-15 w-15 rounded-full sm:hidden" src="{{ asset('img/avatar/avatar.jpg') }}" alt="">
                             <h1 class="ml-3 text-2xl font-bold leading-7 text-cool-gray-900 sm:leading-9 sm:truncate">
-                                Selamat Pagi, {{ auth()->user()->role == 1 ? 'User' : 'Ejen' }}
+                                Selamat Pagi, {{ Auth()->user()->name }}
                             </h1>
                         </div>
                         <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
