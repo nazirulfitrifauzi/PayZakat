@@ -54,7 +54,87 @@
                                                 class="text-gray-700 text-sm mt-2"
                                                 x-show="isOpen"
                                             >
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro amet repellat recusandae, dolorem, vitae minima eveniet, molestias quia praesentium.
+                                                <div class="flex flex-col">
+                                                    <div class="-my-2 overflow-x-auto sm:-mx-6">
+                                                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                                                <table class="min-w-full divide-y divide-gray-200">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                Butiran
+                                                                            </th>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                RM
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                Hasil Penggajian & Upah Tahunan
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                                        RM
+                                                                                    </span>
+                                                                                    <input id="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-gray-50">
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                Hasil Bebas & Profesional Tahunan
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                                        RM
+                                                                                    </span>
+                                                                                    <input id="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                Hasil al-Mustaghallat
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                                        RM
+                                                                                    </span>
+                                                                                    <input id="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-gray-50">
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                Hasil Pemberian atau Sumbangan
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                                        RM
+                                                                                    </span>
+                                                                                    <input id="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <div class="" >
+                                                                <div class="w-full font-bold pt-3 flex justify-end items-end text-lg ">
+                                                                    <h2>Jumlah A : <span class="text-red-700 ">RM 0.00</span></h2>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div x-data="{ isOpen: false }">
@@ -71,7 +151,113 @@
                                                 class="text-gray-700 text-sm mt-2"
                                                 x-show="isOpen"
                                             >
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro amet repellat recusandae, dolorem, vitae minima eveniet, molestias quia praesentium.
+                                                <div class="flex flex-col">
+                                                    <div class="-my-2 overflow-x-auto sm:-mx-6">
+                                                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                                                <table class="min-w-full divide-y divide-gray-200">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                Butiran
+                                                                            </th>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                RM
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                Ketua Keluarga
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                                        RM
+                                                                                    </span>
+                                                                                    <input id="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-gray-50">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Dewasa Bekerja (18 tahun ke atas)
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Dewasa Tidak Bekerja (18 tahun ke atas)
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-gray-50">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Tanggungan Belajar IPT
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Tanggungan Berumur 7-17 tahun
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-gray-50">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Tanggungan 6 Tahun Ke Bawah
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <div class="" >
+                                                                <div class="w-full font-bold pt-3 flex justify-end items-end text-lg ">
+                                                                    <h2>Jumlah B1 : <span class="text-red-700 ">RM 0.00</span></h2>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div x-data="{ isOpen: false }">
@@ -88,7 +274,74 @@
                                                 class="text-gray-700 text-sm mt-2"
                                                 x-show="isOpen"
                                             >
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro amet repellat recusandae, dolorem, vitae minima eveniet, molestias quia praesentium.
+                                                <div class="flex flex-col">
+                                                    <div class="-my-2 overflow-x-auto sm:-mx-6">
+                                                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                                                <table class="min-w-full divide-y divide-gray-200">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                Butiran
+                                                                            </th>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                RM
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Tanggungan Anak OKU
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-gray-50">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Tanggungan Pesakit Kronik
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Kos Penjagaan Anak
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <select class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+                                                                                    <option>Tiada</option>
+                                                                                    @for($i = 1; $i <= 10; $i++)
+                                                                                        <option>{{ $i }} Orang</option>
+                                                                                    @endfor
+                                                                                </select>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <div class="" >
+                                                                <div class="w-full font-bold pt-3 flex justify-end items-end text-lg ">
+                                                                    <h2>Jumlah B2 : <span class="text-red-700 ">RM 0.00</span></h2>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div x-data="{ isOpen: false }">
@@ -105,7 +358,48 @@
                                                 class="text-gray-700 text-sm mt-2"
                                                 x-show="isOpen"
                                             >
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro amet repellat recusandae, dolorem, vitae minima eveniet, molestias quia praesentium.
+                                                <div class="flex flex-col">
+                                                    <div class="-my-2 overflow-x-auto sm:-mx-6">
+                                                        <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                                                <table class="min-w-full divide-y divide-gray-200">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                Butiran
+                                                                            </th>
+                                                                            <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                                RM
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr class="bg-white">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
+                                                                                Caruman KWSP bahagian pekerja dibawah umur 55 tahun (jumlah gaji kasar x 11%)
+                                                                            </td>
+                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                                <div class="mt-1 flex rounded-md shadow-sm">
+                                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                                        RM
+                                                                                    </span>
+                                                                                    <input id="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <div class="" >
+                                                                <div class="w-full font-bold pt-3 flex justify-end items-end text-lg ">
+                                                                    <h2>Jumlah C : <span class="text-red-700 ">RM 0.00</span></h2>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div >
@@ -113,8 +407,10 @@
                                                 <div>D. Jumlah Bahagian (A) - (B + C )</div>
                                             </div>
 
-                                            <div class="text-gray-700 text-sm mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro amet repellat recusandae, dolorem, vitae minima eveniet, molestias quia praesentium.
+                                            <div class="" >
+                                                <div class="w-full font-bold pt-3 flex justify-start items-end text-lg ">
+                                                    <h2 class="text-red-700 ">RM 0.00</h2>
+                                                </div>
                                             </div>
                                         </div>
                                         <div >
@@ -122,8 +418,11 @@
                                                 <div>E. Tolak Simpanan Tahunan Semasa Tabung Haji (jika ada)</div>
                                             </div>
 
-                                            <div class="text-gray-700 text-sm mt-2">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro amet repellat recusandae, dolorem, vitae minima eveniet, molestias quia praesentium.
+                                            <div class="mt-1 flex rounded-md shadow-sm">
+                                                <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                    RM
+                                                </span>
+                                                <input id="a1" class="form-input w-full px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
                                             </div>
                                         </div>
                                         <div class="" >
@@ -135,6 +434,22 @@
                                                 RM 0.00
                                             </div>
                                         </div>
+
+                                        <div class="rounded-md bg-blue-50 p-4 mt-4">
+                                            <div class="flex">
+                                                <div class="flex-shrink-0">
+                                                    <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </div>
+                                                <div class="ml-3 flex-1 md:flex md:justify-between">
+                                                    <p class="text-sm leading-5 text-blue-700">
+                                                        Anda tidak layak dikenakan zakat kerana tidak mencapai nisab <span class="font-bold">RM18,510.72</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <!-- end calculator -->
                                 </div>
