@@ -14,12 +14,38 @@
                             </svg>
                             Halaman Utama
                         </a>
-                        <a href="{{ route('peribadi') }}" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "peribadi") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
-                            <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="user w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                            </svg>
-                            Maklumat Peribadi
-                        </a>
+
+                        <div @if(\Request::is('pengguna/*')) x-data="{ isOpen: true }" @else x-data="{ isOpen: false }" @endif>
+                            <div class="cursor-pointer group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500"
+                                @click="isOpen = !isOpen"
+                            >
+                                <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="user w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                </svg>
+                                Maklumat Pengguna
+                                <svg x-show="!isOpen" viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6 ml-auto mr-3"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                <svg x-show="isOpen" viewBox="0 0 20 20" fill="currentColor" class="chevron-down w-6 h-6 ml-auto mr-3"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </div>
+
+                            <div x-show="isOpen" x-cloak>
+                                <a href="{{ route('pengguna.peribadi') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/peribadi')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                    Peribadi
+                                </a>
+                                <a href="{{ route('pengguna.alamat') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/alamat')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                    Alamat
+                                </a>
+                                <a href="{{ route('pengguna.keluarga') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/keluarga')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                    Keluarga
+                                </a>
+                                <a href="{{ route('pengguna.kebajikan') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/kebajikan')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                    Kebajikan
+                                </a>
+                                <a href="{{ route('pengguna.yuran') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/yuran')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                    Yuran
+                                </a>
+                            </div>
+                        </div>
+
                         @if (Auth()->user()->role == "0")
                             <a href="#" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "akaun") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
                                 <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -28,7 +54,7 @@
                                 Akaun Maya
                             </a>
                         @endif
-                        
+
                         @if (Auth()->user()->role == "2")
                             <a href="{{ route('pembayar') }}" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "pembayar") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
                                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150">
