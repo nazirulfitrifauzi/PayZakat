@@ -24,3 +24,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pembayar', 'PembayarController@index')->name('pembayar');
 Route::get('/peribadi', 'PeribadiController@index')->name('peribadi');
+Route::get('/profil', 'ProfilController@index')->name('profil');
