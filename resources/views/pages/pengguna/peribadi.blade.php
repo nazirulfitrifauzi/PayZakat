@@ -42,7 +42,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="sm:col-span-2">
+                                <div class="sm:col-span-3">
                                     <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                                         No Ahli
                                     </label>
@@ -50,7 +50,7 @@
                                         <input id="first_name" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5">
                                     </div>
                                 </div>
-                                <div class="sm:col-span-2">
+                                <div class="sm:col-span-3">
                                     <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                                         No IC
                                     </label>

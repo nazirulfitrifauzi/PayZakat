@@ -43,7 +43,11 @@
                 @yield('content')
 
                 <!-- Calculator -->
-                @include('pages.calculator')
+                @include('pages.calculator.pendapatan')
+                @include('pages.calculator.perniagaan')
+                @include('pages.calculator.harta')
+                @include('pages.calculator.kwsp')
+                @include('pages.calculator.asb')
             </div>
         </div>
     </div>
