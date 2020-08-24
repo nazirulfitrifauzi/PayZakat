@@ -29,9 +29,4 @@ class PenggunaController extends Controller
     {
         return view('pages.pengguna.kebajikan');
     }
-
-    public function yuran()
-    {
-        return view('pages.pengguna.yuran');
-    }
 }

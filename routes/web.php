@@ -15,4 +15,3 @@ Route::get('/pengguna/peribadi', 'PenggunaController@peribadi')->name('pengguna.
 Route::get('/pengguna/alamat', 'PenggunaController@alamat')->name('pengguna.alamat');
 Route::get('/pengguna/keluarga', 'PenggunaController@keluarga')->name('pengguna.keluarga');
 Route::get('/pengguna/kebajikan', 'PenggunaController@kebajikan')->name('pengguna.kebajikan');
-Route::get('/pengguna/yuran', 'PenggunaController@yuran')->name('pengguna.yuran');

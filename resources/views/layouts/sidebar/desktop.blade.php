@@ -40,20 +40,15 @@
                                 <a href="{{ route('pengguna.kebajikan') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/kebajikan')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
                                     Kebajikan
                                 </a>
-                                <a href="{{ route('pengguna.yuran') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/yuran')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
-                                    Yuran
-                                </a>
                             </div>
                         </div>
 
-                        @if (Auth()->user()->role == "0")
-                            <a href="#" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "akaun") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
-                                <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
-                                </svg>
-                                Akaun Maya
-                            </a>
-                        @endif
+                        <a href="#" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "akaun") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
+                            <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                            </svg>
+                            Akaun Maya
+                        </a>
 
                         @if (Auth()->user()->role == "2")
                             <a href="{{ route('pembayar') }}" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "pembayar") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
@@ -63,14 +58,56 @@
                                 Pembayar Zakat
                             </a>
                         @endif
-                        <div class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500  transition ease-in-out duration-150 cursor-pointer"
-                            x-data="{id: 1}"
-                            @click="$dispatch('open-calculator',{id})"
-                        >
-                            <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                            </svg>
-                            Zakat Kalkulator
+
+                        <div x-data="{ isOpen: false }">
+                            <div class="cursor-pointer group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500"
+                                @click="isOpen = !isOpen"
+                            >
+                                <svg class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                </svg>
+                                Kalkulator Zakat
+                                <svg x-show="!isOpen" viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6 ml-auto mr-3"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                <svg x-show="isOpen" viewBox="0 0 20 20" fill="currentColor" class="chevron-down w-6 h-6 ml-auto mr-3"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </div>
+
+                            <div x-show="isOpen" x-cloak>
+                                <div
+                                    class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 cursor-pointer"
+                                    x-data="{id: 1}"
+                                    @click="$dispatch('open-calculator',{id})"
+                                >
+                                    Pendapatan
+                                </div>
+                                <div
+                                    class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 cursor-pointer"
+                                    x-data="{id: 2}"
+                                    @click="$dispatch('open-calculator',{id})"
+                                >
+                                    Perniagaan
+                                </div>
+                                <div
+                                    class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 cursor-pointer"
+                                    x-data="{id: 3}"
+                                    @click="$dispatch('open-calculator',{id})"
+                                >
+                                    Harta
+                                </div>
+                                <div
+                                    class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 cursor-pointer"
+                                    x-data="{id: 4}"
+                                    @click="$dispatch('open-calculator',{id})"
+                                >
+                                    KWSP
+                                </div>
+                                <div
+                                    class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 cursor-pointer"
+                                    x-data="{id: 5}"
+                                    @click="$dispatch('open-calculator',{id})"
+                                >
+                                    ASB
+                                </div>
+                            </div>
                         </div>
                     </nav>
                 </div>
