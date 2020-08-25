@@ -18,7 +18,7 @@
                         </h3>
                   </div>
                   <form>
-                        <div class="mt-5">
+                        <div class="mt-5 grid md:grid-cols-3 gap-8">
                               <div>
                                     <label for="old_password" class="block text-sm font-semibold leading-5 text-gray-700">
                                           Kata Laluan Lama
