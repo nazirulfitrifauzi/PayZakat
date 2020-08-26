@@ -71,7 +71,7 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr class="bg-white">
-                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
                                                                                 Jumlah Tunai di Tangan dan di Bank
                                                                             </td>
                                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
@@ -84,7 +84,7 @@
                                                                             </td>
                                                                         </tr>
                                                                         <tr class="bg-gray-50">
-                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
                                                                                 Penghutang / Hutang Belum Terima Dari Pelanggan
                                                                             </td>
                                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
@@ -97,7 +97,7 @@
                                                                             </td>
                                                                         </tr>
                                                                         <tr class="bg-white">
-                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
                                                                                 Stok Barang Jualan
                                                                             </td>
                                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
@@ -155,7 +155,7 @@
                                                                     </thead>
                                                                     <tbody>
                                                                         <tr class="bg-white">
-                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
                                                                                 Pemiutang / Hutang belum bayar kepada pembekal
                                                                             </td>
                                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
@@ -168,7 +168,7 @@
                                                                             </td>
                                                                         </tr>
                                                                         <tr class="bg-gray-50">
-                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
                                                                                 Tunggakan operasi / akrual
                                                                             </td>
                                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
@@ -181,7 +181,7 @@
                                                                             </td>
                                                                         </tr>
                                                                         <tr class="bg-white">
-                                                                            <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                                                                            <td class="px-6 py-4 text-sm leading-5 text-gray-500">
                                                                                 Cukai perniagaan semasa belum dibayar
                                                                             </td>
                                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
