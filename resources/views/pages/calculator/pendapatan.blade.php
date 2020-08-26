@@ -19,7 +19,7 @@
                 x-transition:leave-start="translate-x-0"
                 x-transition:leave-end="translate-x-full"
             >
-                <livewire:calculator.pendapatan />
+                @livewire('calculator.pendapatan')
             </div>
         </section>
     </div>

@@ -65,7 +65,7 @@
             <span class="inline-flex rounded-md shadow-sm">
                 <button
                     href="#"
-                    class="py-2 px-4 border border-gray-100 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-500 ease-in-out flex items-center font-semibold bg-white hover:shadow-lg"
+                    class="py-2 px-4 border border-gray-100 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-500 ease-in-out flex items-center bg-white hover:shadow-lg"
                     @click="isOpen1 = !isOpen1">
                     <svg x-show="!isOpen1" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="user-add w-4 h-4 mr-2"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
                     <span x-show="!isOpen1">
