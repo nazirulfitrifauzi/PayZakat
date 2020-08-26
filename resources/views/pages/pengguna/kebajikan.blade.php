@@ -16,7 +16,7 @@
         <span class="inline-flex rounded-md shadow-sm">
             <button
                 href="#"
-                class="py-2 px-4 border border-gray-100 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-500 ease-in-out flex items-center font-semibold bg-white hover:shadow-lg"
+                class="py-2 px-4 border border-gray-100 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-500 ease-in-out flex items-center bg-white hover:shadow-lg"
                 @click="isOpen1 = !isOpen1">
                 <svg x-show="!isOpen1" viewBox="0 0 20 20" fill="currentColor" class="document-add w-4 h-4 mr-2"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd"></path></svg>
                 <span x-show="!isOpen1">

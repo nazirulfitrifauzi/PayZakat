@@ -12,22 +12,38 @@ class Pendapatan extends Component
     public $c;
     public $e;
 
+
+    public function updated($field)
+    {
+        $this->validateOnly($field, [
+            'a1' => 'numeric',
+            'a2' => 'numeric',
+            'a3' => 'numeric',
+            'b12' => 'numeric',
+            'b13' => 'numeric',
+            'b14' => 'numeric',
+            'b15' => 'numeric',
+            'b16' => 'numeric',
+            'b21' => 'numeric',
+            'b22' => 'numeric',
+            'b23' => 'numeric',
+            'c' => 'numeric',
+            'e' => 'numeric',
+        ]);
+    }
+
+    private function inputCheck($value) {
+        return (!is_numeric($value)) ? 0 : $value;
+    }
+
     public function render()
     {
-        $newA1 = ($this->a1 == '') ? 0 : $this->a1;
-        $newA2 = ($this->a2 == '') ? 0 : $this->a2;
-        $newA3 = ($this->a3 == '') ? 0 : $this->a3;
-        $newA4 = ($this->a4 == '') ? 0 : $this->a4;
-
-        $newC = ($this->c == '') ? 0 : $this->c;
-        $newE = ($this->e == '') ? 0 : $this->e;
-
         return view('livewire.calculator.pendapatan',[
-            'totalA' => $newA1 + $newA2 + $newA3 + $newA4,
+            'totalA' => $this->inputCheck($this->a1) + $this->inputCheck($this->a2) + $this->inputCheck($this->a3) + $this->inputCheck($this->a4),
             'totalB1' => $this->b11 + ($this->b12 * 4848) + ($this->b13 * 2172) + ($this->b14 * 7104) + ($this->b15 * 4008) + ($this->b16 * 1740),
             'totalB2' => ($this->b21 * 2688) + ($this->b22 * 2664) + ($this->b23 * 3480),
-            'totalC' => $newC,
-            'totalE' => $newE,
+            'totalC' => $this->inputCheck($this->c),
+            'totalE' => $this->inputCheck($this->e),
         ]);
     }
 }
