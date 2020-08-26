@@ -165,7 +165,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b12" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -178,7 +178,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b13" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -191,7 +191,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b14" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -204,7 +204,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b15" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -217,7 +217,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b16" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -275,7 +275,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b21" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -288,7 +288,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b22" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -301,7 +301,7 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <select wire:model.debounce.200ms="b23" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                                                                    <option>Tiada</option>
+                                                                    <option value="0">Tiada</option>
                                                                     @for($i = 1; $i <= 10; $i++)
                                                                         <option value="{{ $i }}">{{ $i }} Orang</option>
                                                                     @endfor
@@ -401,7 +401,7 @@
                                 <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
                                     RM
                                 </span>
-                                <input id="a1" class="form-input w-full px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                <input wire:model.debounce.200ms="e" class="form-input w-full px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
                             </div>
                         </div>
                         <div class="" >
@@ -410,10 +410,16 @@
                             </div>
 
                             <div class="text-red-700 text-xl font-bold text-right">
-                                RM 0.00
+                                RM
+                                @if($totalA - ($totalB1 + $totalB2 + $totalC) - $totalE < 18510.72)
+                                    0.00
+                                @else
+                                    {{ number_format(($totalA - ($totalB1 + $totalB2 + $totalC) - $totalE) * (2.5/100),2) }}
+                                @endif
                             </div>
                         </div>
 
+                        @if($totalA - ($totalB1 + $totalB2 + $totalC) - $totalE < 18510.72)
                         <div class="rounded-md bg-blue-50 p-4 mt-4">
                             <div class="flex">
                                 <div class="flex-shrink-0">
@@ -428,6 +434,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
 
                     </div>
                     <!-- end calculator -->
