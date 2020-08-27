@@ -20,13 +20,8 @@ class PenggunaController extends Controller
         return view('pages.pengguna.alamat');
     }
 
-    public function keluarga()
-    {
-        return view('pages.pengguna.keluarga');
-    }
-
     public function kebajikan()
     {
-        return view('pages.pengguna.kebajikan');
+        //return view('pages.pengguna.kebajikan');
     }
 }

@@ -13,4 +13,8 @@ class PembayarController extends Controller
     public function index() {
         return view('pages.pembayar');
     }
+
+    public function tambahPembayar() {
+        return view('pages.pembayar.tambah');
+    }
 }
