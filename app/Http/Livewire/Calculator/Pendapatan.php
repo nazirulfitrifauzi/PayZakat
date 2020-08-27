@@ -12,13 +12,13 @@ class Pendapatan extends Component
     public $c;
     public $e;
 
-
     public function updated($field)
     {
         $this->validateOnly($field, [
             'a1' => 'numeric',
             'a2' => 'numeric',
             'a3' => 'numeric',
+            'a4' => 'numeric',
             'b12' => 'numeric',
             'b13' => 'numeric',
             'b14' => 'numeric',
