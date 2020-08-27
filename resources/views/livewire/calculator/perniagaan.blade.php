@@ -54,19 +54,21 @@
                                                                 Jumlah Tunai di Tangan dan di Bank
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                                                <div class="mt-1 flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                <div class="mt-1 relative flex rounded-md shadow-sm">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="a1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="a1" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    @error('a1')
+                                                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                                                            <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                                 @error('a1')
-                                                                    <p class="text-red-500 italic text-xs py-1 flex items-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                        </svg>
-                                                                        {{ $message }}
-                                                                    </p>
+                                                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                                                 @enderror
                                                             </td>
                                                         </tr>
@@ -75,19 +77,21 @@
                                                                 Penghutang / Hutang Belum Terima Dari Pelanggan
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                                                <div class="mt-1 flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                <div class="mt-1 relative flex rounded-md shadow-sm">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="a2" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="a2" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    @error('a2')
+                                                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                                                            <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                                 @error('a2')
-                                                                    <p class="text-red-500 italic text-xs py-1 flex items-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                        </svg>
-                                                                        {{ $message }}
-                                                                    </p>
+                                                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                                                 @enderror
                                                             </td>
                                                         </tr>
@@ -96,19 +100,21 @@
                                                                 Stok Barang Jualan
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                                                <div class="mt-1 flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                <div class="mt-1 relative flex rounded-md shadow-sm">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="a3" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="a3" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    @error('a3')
+                                                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                                                            <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                                 @error('a3')
-                                                                    <p class="text-red-500 italic text-xs py-1 flex items-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                        </svg>
-                                                                        {{ $message }}
-                                                                    </p>
+                                                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                                                 @enderror
                                                             </td>
                                                         </tr>
@@ -162,19 +168,21 @@
                                                                 Pemiutang / Hutang belum bayar kepada pembekal
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                                                <div class="mt-1 flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                <div class="mt-1 relative flex rounded-md shadow-sm">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="b1" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="b1" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    @error('b1')
+                                                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                                                            <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
                                                                 @error('b1')
-                                                                    <p class="text-red-500 italic text-xs py-1 flex items-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                        </svg>
-                                                                        {{ $message }}
-                                                                    </p>
+                                                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                                                 @enderror
                                                             </td>
                                                         </tr>
@@ -183,19 +191,21 @@
                                                                 Tunggakan operasi / akrual
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                                                <div class="mt-1 flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                <div class="mt-1 relative flex rounded-md shadow-sm">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="b2" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="b2" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    @error('b2')
+                                                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                                                            <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
-                                                                @error('b1')
-                                                                    <p class="text-red-500 italic text-xs py-1 flex items-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                        </svg>
-                                                                        {{ $message }}
-                                                                    </p>
+                                                                @error('b2')
+                                                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                                                 @enderror
                                                             </td>
                                                         </tr>
@@ -204,19 +214,21 @@
                                                                 Cukai perniagaan semasa belum dibayar
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                                                                <div class="mt-1 flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
+                                                                <div class="mt-1 relative flex rounded-md shadow-sm">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="b3" class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="b3" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    @error('b3')
+                                                                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                                                            <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                                                            </svg>
+                                                                        </div>
+                                                                    @enderror
                                                                 </div>
-                                                                @error('b1')
-                                                                    <p class="text-red-500 italic text-xs py-1 flex items-center">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mr-2">
-                                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                        </svg>
-                                                                        {{ $message }}
-                                                                    </p>
+                                                                @error('b3')
+                                                                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                                                                 @enderror
                                                             </td>
                                                         </tr>
