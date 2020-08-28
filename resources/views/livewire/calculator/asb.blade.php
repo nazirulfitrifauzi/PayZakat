@@ -70,10 +70,10 @@
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
                                                                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a1') border-red-300 bg-red-50 text-red-900  @enderror">
+                                                                    <span class="inline-flex items-center px-2 rounded-l-md border border-r-0  sm:text-sm border-gray-300 bg-gray-50 text-gray-500 @error('a2') border-red-300 bg-red-50 text-red-900  @enderror">
                                                                         RM
                                                                     </span>
-                                                                    <input wire:model.debounce.200ms="a2" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a1') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
+                                                                    <input wire:model.debounce.200ms="a2" class="form-input w-3/4 px-2 py-2 rounded-none pr-10 rounded-r-md sm:text-sm sm:leading-5 @error('a2') border-red-300 text-red-900 placeholder-red-300 focus:border-red-300 focus:shadow-outline-red @enderror" placeholder="0.00">
                                                                     @error('a2')
                                                                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                                                                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
@@ -96,7 +96,7 @@
                                                                     <span class="inline-flex items-center px-2 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 sm:text-sm">
                                                                         RM
                                                                     </span>
-                                                                    <input class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" value="{{ number_format($dividen,2) }} disabled">
+                                                                    <input class="form-input w-3/4 px-2 py-2 rounded-none rounded-r-md sm:text-sm sm:leading-5" value="{{ number_format($dividen,2) }}" disabled>
                                                                 </div>
                                                             </td>
                                                         </tr>

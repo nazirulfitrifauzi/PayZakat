@@ -28,10 +28,10 @@
                             </div>
 
                             <div x-show="isOpen" x-cloak>
-                                <a href="{{ route('pengguna.peribadi') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/peribadi')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                <a href="{{ route('pengguna.peribadi') }}" class="mt-1 ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/peribadi')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
                                     Peribadi
                                 </a>
-                                <a href="{{ route('pengguna.alamat') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/alamat')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
+                                <a href="{{ route('pengguna.alamat') }}" class="mt-1 ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/alamat')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
                                     Alamat
                                 </a>
                                 {{-- <a href="{{ route('pengguna.kebajikan') }}" class="ml-10 group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 {{ (\Request::is('pengguna/kebajikan')) ? 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' : 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }}">
