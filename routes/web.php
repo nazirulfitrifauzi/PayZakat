@@ -9,6 +9,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/pembayar', 'PembayarController@index')->name('pembayar');
 Route::get('/pembayar/tambah', 'PembayarController@tambahPembayar')->name('pembayar.tambah');
+Route::get('/pembayar/kemaskini', 'PembayarController@tambahPembayar')->name('pembayar.kemaskini');
 Route::get('/profil', 'ProfilController@index')->name('profil');
 
 // ======= PERIBADI =========
