@@ -7,6 +7,7 @@ Route::get('/', 'RedirectController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/akaun', 'AccountController@index')->name('account');
 Route::get('/pembayar', 'PembayarController@index')->name('pembayar');
 Route::get('/pembayar/tambah', 'PembayarController@tambahPembayar')->name('pembayar.tambah');
 Route::get('/pembayar/kemaskini', 'PembayarController@tambahPembayar')->name('pembayar.kemaskini');
