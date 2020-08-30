@@ -50,11 +50,15 @@
                     Deposit
                     </button>
                 </span>
-                <span class="shadow-sm rounded-md">
-                    <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-700 active:bg-teal-700 transition duration-150 ease-in-out">
-                    Bayar Zakat
-                    </button>
-                </span>
+                <div x-data="{ open: false }">
+                    <span class="shadow-sm rounded-md">
+                        <button @click="open = true" type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-teal-600 hover:bg-teal-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-700 active:bg-teal-700 transition duration-150 ease-in-out">
+                        Bayar Zakat
+                        </button>
+
+                        @include('pages.modal')
+                    </span>
+                </div>
             </div>
         </div>
     </div>
