@@ -24,6 +24,10 @@ class CreateAccountZakatStatementsTable extends Migration
             $table->string('document_date')->nullable();
             $table->decimal('txn_amount',16,2);
             $table->decimal('total',16,2);
+
+            $table->bigInteger('created_by');
+            $table->bigInteger('updated_by')->nullable();
+            $table->bigInteger('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
