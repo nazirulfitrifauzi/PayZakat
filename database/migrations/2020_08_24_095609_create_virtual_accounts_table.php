@@ -15,7 +15,7 @@ class CreateVirtualAccountsTable extends Migration
     {
         Schema::create('virtual_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('account_no');
+            $table->string('virtual_account_no');
             // $table->integer('role_id')->nullable();
             // $table->integer('ref_id')->nullable();
             $table->integer('agent_id');
@@ -23,8 +23,12 @@ class CreateVirtualAccountsTable extends Migration
             $table->decimal('last_withdraw_amount',16,2)->nullable();
             $table->datetime('last_withdraw_date')->nullable();
             $table->decimal('last_deposit_amount',16,2)->nullable();
-            $table->datetime('last_deposit_amount')->nullable();
+            $table->datetime('last_deposit_date')->nullable();
             $table->integer('status')->default('0');
+
+            $table->bigInteger('created_by');
+            $table->bigInteger('updated_by')->nullable();
+            $table->bigInteger('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

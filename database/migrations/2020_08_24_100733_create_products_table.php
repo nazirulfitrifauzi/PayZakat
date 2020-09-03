@@ -17,10 +17,12 @@ class CreateProductsTable extends Migration
             $table->id();
 
             $table->string('product_code');
-            $table->string('product_desc');
+            $table->string('product_name');
+            $table->string('product_desc')->nullable();
             $table->string('product_category_id');
             $table->datetime('effective_date');
             $table->datetime('expiry_date')->nullable();
+            $table->string('status')->default('0'); //not active
 
             // FINANCE PRODUCT DETAIL
             $table->integer('default_concept_id')->nullable();
@@ -60,6 +62,10 @@ class CreateProductsTable extends Migration
             $table->decimal('penalty_charges',16,2)->nullable();
             $table->decimal('processing_fees_rate',16,4)->nullable();
             // END FINANCE PRODUCT DETAIL
+            
+            $table->bigInteger('created_by');
+            $table->bigInteger('updated_by')->nullable();
+            $table->bigInteger('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

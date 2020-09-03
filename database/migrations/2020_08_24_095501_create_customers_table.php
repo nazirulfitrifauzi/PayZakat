@@ -48,6 +48,9 @@ class CreateCustomersTable extends Migration
             
             $table->integer('fav_ppz_id');
 
+            $table->bigInteger('created_by');
+            $table->bigInteger('updated_by')->nullable();
+            $table->bigInteger('deleted_by')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
