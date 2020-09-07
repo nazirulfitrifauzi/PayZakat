@@ -18,15 +18,15 @@ class CreateCustomersTable extends Migration
             
             $table->string('name');
             
-            $table->string('agent_id')->nullable();
+            $table->bigInteger('agent_id')->nullable();
             
-            $table->integer('payment_category_id');
+            $table->bigInteger('payment_category_id')->nullable();
             $table->string('ic_no');
             $table->string('old_ic')->nullable();
-            $table->string('birth_date');
-            $table->integer('gender_id');
+            $table->string('birth_date')->nullable();
+            $table->bigInteger('gender_id')->nullable();
             
-            $table->integer('state_origin_id')->nullable();
+            $table->bigInteger('state_origin_id')->nullable();
             $table->integer('mastautin_flag')->nullable();
             $table->integer('mastautin_year')->nullable();
 
@@ -35,19 +35,19 @@ class CreateCustomersTable extends Migration
             $table->string('address3')->nullable();
             $table->string('postcode')->nullable();
             $table->string('town')->nullable();
-            $table->integer('state_id')->nullable();
+            $table->bigInteger('state_id')->nullable();
 
             $table->string('phone_no');
             $table->string('office_no')->nullable();
 
-            $table->string('position');
-            $table->string('employee_no');
-            $table->string('employer_name');
+            $table->string('position')->nullable();
+            $table->string('employee_no')->nullable();
+            $table->string('employer_name')->nullable();
 
-            $table->string('email');
+            $table->string('email')->nullable();
             
-            $table->integer('fav_ppz_id');
-
+            $table->bigInteger('fav_ppz_id')->nullable();
+            
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();
