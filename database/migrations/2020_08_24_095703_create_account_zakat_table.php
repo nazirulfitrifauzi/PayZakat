@@ -18,7 +18,7 @@ class CreateAccountZakatTable extends Migration
             $table->bigInteger('product_id');
             $table->bigInteger('virtual_account_id')->nullable();
             $table->string('account_zakat_no');
-            $table->integer('customer_id');
+            $table->bigInteger('customer_id');
             $table->decimal('total',16,2)->nullable();
             $table->decimal('last_payment_amount',16,2)->nullable();
             $table->datetime('last_payment_date')->nullable();

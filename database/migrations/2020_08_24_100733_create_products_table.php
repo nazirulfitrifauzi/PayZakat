@@ -19,13 +19,13 @@ class CreateProductsTable extends Migration
             $table->string('product_code');
             $table->string('product_name');
             $table->string('product_desc')->nullable();
-            $table->string('product_category_id');
+            $table->bigInteger('product_category_id');
             $table->datetime('effective_date');
             $table->datetime('expiry_date')->nullable();
-            $table->string('status')->default('0'); //not active
+            $table->string('active_flag')->default('0'); //not active
 
             // FINANCE PRODUCT DETAIL
-            $table->integer('default_concept_id')->nullable();
+            $table->bigInteger('default_concept_id')->nullable();
             $table->string('facility_type')->nullable();
             $table->string('rest_type')->nullable(); //A
             $table->string('repayment_type')->nullable(); //UP

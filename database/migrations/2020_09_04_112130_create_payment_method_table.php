@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionCodesTable extends Migration
+class CreatePaymentMethodTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTransactionCodesTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaction_codes', function (Blueprint $table) {
+        Schema::create('payment_method', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
             $table->string('description');
-            $table->string('description_malay');
+            $table->integer('active_flag')->default('0');// not active
 
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
@@ -34,6 +33,6 @@ class CreateTransactionCodesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaction_codes');
+        Schema::dropIfExists('payment_method');
     }
 }

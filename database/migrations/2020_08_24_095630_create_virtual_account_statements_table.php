@@ -16,8 +16,12 @@ class CreateVirtualAccountStatementsTable extends Migration
         Schema::create('virtual_account_statements', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('virtual_account_id');
+            
             $table->datetime('txn_date');
-            $table->bigInteger('txn_code_id');
+            $table->string('transaction_code_id');
+            $table->bigInteger('payment_method_id');
+            $table->bigInteger('transaction_status_id');
+
             $table->bigInteger('bank_id');
             $table->string('document_no')->nullable();
             $table->string('document_date')->nullable();

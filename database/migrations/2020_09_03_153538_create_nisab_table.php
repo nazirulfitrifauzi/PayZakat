@@ -16,7 +16,7 @@ class CreateNisabTable extends Migration
         Schema::create('nisab', function (Blueprint $table) {
             $table->id();
             $table->integer('year');
-            $table->integer('state_id');
+            $table->bigInteger('state_id');
             $table->decimal('value', 14, 4);
 
             $table->bigInteger('created_by');

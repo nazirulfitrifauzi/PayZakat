@@ -18,13 +18,13 @@ class CreateVirtualAccountsTable extends Migration
             $table->string('virtual_account_no');
             // $table->integer('role_id')->nullable();
             // $table->integer('ref_id')->nullable();
-            $table->integer('agent_id');
+            $table->bigInteger('agent_id');
             $table->decimal('balance',16,2)->nullable();
             $table->decimal('last_withdraw_amount',16,2)->nullable();
             $table->datetime('last_withdraw_date')->nullable();
             $table->decimal('last_deposit_amount',16,2)->nullable();
             $table->datetime('last_deposit_date')->nullable();
-            $table->integer('status')->default('0');
+            $table->integer('active_flag')->default('0');// not active
 
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
