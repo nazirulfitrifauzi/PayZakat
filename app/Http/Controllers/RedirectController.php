@@ -12,7 +12,7 @@ class RedirectController extends Controller
         if (Auth::user()) {
             return redirect()->route('home');
         } else {
-            return view('auth.login');
+            return view('welcome');
         }
     }
 }

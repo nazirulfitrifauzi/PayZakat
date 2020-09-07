@@ -5,11 +5,13 @@
     <div class="flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
         <div class="mx-auto w-full max-w-sm lg:w-96">
             <div>
-                <img class="h-24 w-auto" src="{{ asset('img/logo/csc_blue.png') }}" alt="Workflow">
-                    <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900">
-                        Log masuk akaun
-                    </h2>
-                <p class="mt-2 text-sm leading-5 text-gray-600 max-w">
+                <div class="flex justify-center">
+                    <img class="h-24 w-auto" src="{{ asset('img/logo/logo.png') }}" alt="Workflow">
+                </div>
+                <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900 text-center">
+                    Log masuk akaun
+                </h2>
+                <p class="mt-2 text-sm leading-5 text-gray-600 max-w text-center">
                     atau
                     <a href="{{ route('register') }}" class="font-medium text-teal-600 hover:text-teal-500 focus:outline-none focus:underline transition ease-in-out duration-150">
                         daftar akaun baru
