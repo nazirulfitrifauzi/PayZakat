@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="{{ asset('img/logo/logo.png') }}" type="image/gif" sizes="16x16">
+    <link rel="icon" href="{{ asset('img/logo/logo2.png') }}" type="image/gif" sizes="16x16">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -36,7 +36,7 @@
                         <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                             <div class="flex items-center justify-between w-full md:w-auto">
                                 <a href="#" aria-label="Home">
-                                <img class="h-8 w-auto sm:h-10" src="{{ asset('img/logo/logo.png') }}" alt="Logo">
+                                <img class="h-8 w-auto sm:h-10" src="{{ asset('img/logo/logo2.png') }}" alt="Logo">
                                 </a>
                                 <div class="-mr-2 flex items-center md:hidden">
                                     <button
@@ -76,7 +76,7 @@
                         <div class="rounded-lg bg-white shadow-xs overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
                             <div class="px-5 pt-4 flex items-center justify-between">
                                 <div>
-                                    <img class="h-10 w-auto" src="{{ asset('img/logo/logo.png') }}" alt="">
+                                    <img class="h-10 w-auto" src="{{ asset('img/logo/logo2.png') }}" alt="">
                                 </div>
                                 <div class="-mr-2">
                                     <button @click="open = false" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" aria-label="Close menu">
