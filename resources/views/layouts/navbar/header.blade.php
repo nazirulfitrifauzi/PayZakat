@@ -47,7 +47,7 @@
             <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
                 <span class="shadow-sm rounded-md">
                     <button type="button" class="inline-flex items-center px-4 py-2 border border-cool-gray-300 text-sm leading-5 font-medium rounded-md text-cool-gray-700 bg-white hover:text-cool-gray-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 active:text-cool-gray-800 active:bg-cool-gray-50 transition duration-150 ease-in-out">
-                    Deposit
+                        Tambah Nilai
                     </button>
                 </span>
                 <div x-data="{ open: false }">

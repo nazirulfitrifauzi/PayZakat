@@ -6,14 +6,11 @@ Route::get('/', 'RedirectController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/akaun', 'AccountController@index')->name('account');
-Route::get('/pembayar', 'PembayarController@index')->name('pembayar');
-Route::get('/pembayar/tambah', 'PembayarController@tambahPembayar')->name('pembayar.tambah');
+Route::get('/home', 'PageController@home')->name('home');
+Route::get('/maklumat-pengguna', 'PageController@maklumatPengguna')->name('maklumatPengguna');
+Route::get('/akaun', 'PageController@akaun')->name('akaun');
+Route::get('/pembayar', 'PageController@pembayar')->name('pembayar');
+Route::get('/pembayar/tambah', 'PageController@tambahPembayar')->name('pembayar.tambah');
+
 Route::get('/pembayar/kemaskini', 'PembayarController@tambahPembayar')->name('pembayar.kemaskini');
 Route::get('/profil', 'ProfilController@index')->name('profil');
-
-// ======= PERIBADI =========
-Route::get('/pengguna/peribadi', 'PenggunaController@peribadi')->name('pengguna.peribadi');
-Route::get('/pengguna/alamat', 'PenggunaController@alamat')->name('pengguna.alamat');
-Route::get('/pengguna/kebajikan', 'PenggunaController@kebajikan')->name('pengguna.kebajikan');
