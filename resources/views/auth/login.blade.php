@@ -6,7 +6,7 @@
         <div class="mx-auto w-full max-w-sm lg:w-96">
             <div>
                 <div class="flex justify-center">
-                    <img class="h-24 w-auto" src="{{ asset('img/logo/logo.png') }}" alt="Workflow">
+                    <img class="h-24 w-auto" src="{{ asset('img/logo/logo2.png') }}" alt="Workflow">
                 </div>
                 <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900 text-center">
                     Log masuk akaun
@@ -19,7 +19,26 @@
                 </p>
             </div>
 
-            <div class="mt-8">
+            @if (session('error'))
+            <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 mt-8">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm leading-5 text-yellow-700">
+                            {{ session('error') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            @endif
+
+            <div class="mt-6">
                 <div class="mt-6">
                     <form action="{{ route('login') }}" method="POST" class="space-y-6">
                         @csrf
