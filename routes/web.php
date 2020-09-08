@@ -14,4 +14,5 @@ Route::get('/pembayar/tambah', 'PageController@tambahPembayar')->name('pembayar.
 Route::get('/profil', 'ProfilController@index')->name('profil');
 
 
-Route::get('/pembayar/kemaskini', 'PembayarController@tambahPembayar')->name('pembayar.kemaskini');
+// ======= KALKULATOR =========
+Route::get('/kalkulator', 'KalkulatorController@index')->name('kalkulator');

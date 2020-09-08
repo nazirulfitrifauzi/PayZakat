@@ -1,11 +1,11 @@
-<div class="h-full divide-y divide-gray-200 flex flex-col bg-white shadow-xl">
+<div class="h-full divide-y divide-gray-200 flex flex-col bg-white lg:shadow-xl">
     <div class="flex-1 h-0 overflow-y-auto">
-        <header class="space-y-1 py-6 px-4 bg-teal-700 sm:px-6">
+        <header class="space-y-1 py-6 px-4 bg-white lg:bg-teal-700 sm:px-6">
             <div class="flex items-center justify-between space-x-3">
-                <h2 class="text-lg leading-7 font-medium text-white">
+                <h2 class="text-2xl leading-7 font-bold text-black lg:text-white">
                     Kalkulator Zakat KWSP
                 </h2>
-                <div class="h-7 flex items-center">
+                <div class="hidden h-7 lg:flex lg:items-center">
                     <button aria-label="Close panel" class="text-teal-200 hover:text-white transition ease-in-out duration-150" @click="Open4 = false" >
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
