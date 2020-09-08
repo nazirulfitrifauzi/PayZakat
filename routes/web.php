@@ -11,6 +11,7 @@ Route::get('/maklumat-pengguna', 'PageController@maklumatPengguna')->name('maklu
 Route::get('/akaun', 'PageController@akaun')->name('akaun');
 Route::get('/pembayar', 'PageController@pembayar')->name('pembayar');
 Route::get('/pembayar/tambah', 'PageController@tambahPembayar')->name('pembayar.tambah');
+Route::get('/profil', 'ProfilController@index')->name('profil');
+
 
 Route::get('/pembayar/kemaskini', 'PembayarController@tambahPembayar')->name('pembayar.kemaskini');
-Route::get('/profil', 'ProfilController@index')->name('profil');
