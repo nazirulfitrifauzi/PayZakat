@@ -31,23 +31,23 @@
                 </button>
             </div>
             <div class="flex-shrink-0 flex items-center justify-center px-4">
-                <img class="h-8 w-auto" src="{{ asset('img/logo/csc.png') }}" alt="CSC logo">
+                <img class="h-16 w-auto" src="{{ asset('img/logo/logo2.png') }}" alt="CSC logo">
             </div>
             <div class="mt-5 overflow-y-auto">
                 <nav class="px-2 space-y-1">
-                    <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-teal-700 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150">
+                    <a href="{{ route('home') }}" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "home") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
                         <svg class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                         </svg>
                         Halaman Utama
                     </a>
-                    <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150">
+                    <a href="{{ route('maklumatPengguna') }}" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "maklumat-pengguna") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
                         <svg class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="user w-6 h-6">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                         </svg>
-                        Maklumat Peribadi
+                        Maklumat Pengguna
                     </a>
-                    <a href="#" class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500 transition ease-in-out duration-150">
+                    <a href="{{ route('akaun') }}" class="group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md transition ease-in-out duration-150 @if(Route::current()->uri == "akaun") {{ 'text-white bg-teal-700 focus:outline-none focus:bg-teal-500' }} @else {{ 'text-teal-100 hover:text-white hover:bg-teal-500 focus:outline-none focus:bg-teal-500' }} @endif">
                         <svg class="mr-4 h-6 w-6 text-teal-200 transition ease-in-out duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
                         </svg>
