@@ -6,8 +6,8 @@
                     Nama Penuh
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_name" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_name') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_name')
+                    <input wire:model.lazy="name" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('name') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('name')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -15,15 +15,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_name') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('name') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-3">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     No Kad Pengenalan Baru
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_ic_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_ic_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_ic_no')
+                    <input wire:model.lazy="ic_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('ic_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('ic_no')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -31,15 +31,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_ic_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('ic_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-3">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     No Kad Pengenalan Lama
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_old_ic" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_old_ic') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_old_ic')
+                    <input wire:model.lazy="old_ic" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('old_ic') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('old_ic')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -47,15 +47,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_old_ic') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('old_ic') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-2">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     Negeri Asal
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_state_origin_id" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_state_origin_id') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_state_origin_id')
+                    <input wire:model.lazy="state_origin_id" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('state_origin_id') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('state_origin_id')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -63,14 +63,14 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_state_origin_id') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('state_origin_id') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-2">
                 <label for="last_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     Mastautin
                 </label>
                 <div class="mt-1 rounded-md shadow-sm">
-                    <select wire:model.lazy="n_mastautin_flag" class="form-select block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    <select wire:model.lazy="mastautin_flag" class="form-select block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
                         <option value="1">Ya</option>
                         <option value="0">Tidak</option>
                     </select>
@@ -81,8 +81,8 @@
                     Tempoh Mastautin (Tahun)
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_mastautin_year" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_mastautin_year') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_mastautin_year')
+                    <input wire:model.lazy="mastautin_year" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('mastautin_year') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('mastautin_year')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -90,15 +90,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_mastautin_year') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('mastautin_year') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-3">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     Telefon Bimbit
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_phone_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_phone_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_phone_no')
+                    <input wire:model.lazy="phone_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('phone_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('phone_no')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -106,15 +106,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_phone_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('phone_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-3">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     Telefon Pejabat
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_office_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_office_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_office_no')
+                    <input wire:model.lazy="office_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('office_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('office_no')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -122,15 +122,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_office_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('office_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-6">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     Nama Majikan
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_employer_name" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_employer_name') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_employer_name')
+                    <input wire:model.lazy="employer_name" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('employer_name') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('employer_name')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -138,15 +138,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_employer_name') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('employer_name') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-3">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     Jawatan
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_position" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_position') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_position')
+                    <input wire:model.lazy="position" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('position') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('position')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -154,15 +154,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_position') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('position') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-3">
                 <label for="first_name" class="block text-sm font-semibold leading-5 text-gray-700">
                     No Gaji / No Pekerja
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_employee_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_employee_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_employee_no')
+                    <input wire:model.lazy="employee_no" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('employee_no') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('employee_no')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -170,7 +170,7 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_employee_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('employee_no') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
         </div>
     </div>
@@ -182,8 +182,8 @@
                     Alamat
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_address1" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_address1') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_address1')
+                    <input wire:model.lazy="address1" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('address1') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('address1')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -191,11 +191,11 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_address1') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('address1') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
 
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_address2" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_address2') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_address2')
+                    <input wire:model.lazy="address2" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('address2') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('address2')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -203,11 +203,11 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_address2') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('address2') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
 
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_address3" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_address3') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_address3')
+                    <input wire:model.lazy="address3" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('address3') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('address3')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -215,15 +215,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_address3') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('address3') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-2">
                 <label for="city" class="block text-sm font-semibold leading-5 text-gray-700">
                     Bandar
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_town" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_town') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_town')
+                    <input wire:model.lazy="town" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('town') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('town')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -231,15 +231,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_town') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('town') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-2">
                 <label for="state" class="block text-sm font-semibold leading-5 text-gray-700">
                     Poskod
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_postcode" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_postcode') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_postcode')
+                    <input wire:model.lazy="postcode" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('postcode') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('postcode')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -247,15 +247,15 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_postcode') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('postcode') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
             <div class="sm:col-span-2">
                 <label for="zip" class="block text-sm font-semibold leading-5 text-gray-700">
                     Negeri
                 </label>
                 <div class="mt-1 relative flex rounded-md shadow-sm">
-                    <input wire:model.lazy="n_state_id" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('n_state_id') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
-                    @error('n_state_id')
+                    <input wire:model.lazy="state_id" class="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('state_id') border-red-300 bg-red-50 text-red-900  @enderror" wire:loading.attr='readonly' wire:loading.class="bg-gray-300" wire:target="submit">
+                    @error('state_id')
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
@@ -263,7 +263,7 @@
                         </div>
                     @enderror
                 </div>
-                @error('n_state_id') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
+                @error('state_id') <p class="text-sm text-red-600">{{ $message }}</p> @enderror
             </div>
         </div>
     </div>
