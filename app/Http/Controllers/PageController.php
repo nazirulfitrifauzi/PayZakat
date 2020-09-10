@@ -13,7 +13,8 @@ class PageController extends Controller
 
     public function maklumatPengguna()
     {
-        return view('pages.maklumatPengguna');
+        $info = auth()->user()->agentInfo;
+        return view('pages.maklumatPengguna', compact('info'));
     }
 
     public function akaun()

@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('Csc@1234'),
             'role' => 1,
-            'active' => 0,
+            'active' => 1,
         ]);
     }
 }

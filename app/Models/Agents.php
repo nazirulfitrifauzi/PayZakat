@@ -13,6 +13,11 @@ class Agents extends Model
     protected $table = 'agents';
     protected $guarded = [];
 
+    public function userInfo()
+    {
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
+
     public function virtual_account(){
         return $this->hasOne('App\Models\VirtualAccounts', 'agent_id', 'id');
     }
