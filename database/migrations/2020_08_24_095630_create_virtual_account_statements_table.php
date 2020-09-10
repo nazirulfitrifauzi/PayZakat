@@ -18,7 +18,7 @@ class CreateVirtualAccountStatementsTable extends Migration
             $table->bigInteger('virtual_account_id');
             
             $table->datetime('txn_date');
-            $table->string('transaction_code_id');
+            $table->bigInteger('transaction_code_id');
             $table->bigInteger('payment_method_id');
             $table->bigInteger('transaction_status_id');
 

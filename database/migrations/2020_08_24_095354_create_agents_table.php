@@ -18,8 +18,6 @@ class CreateAgentsTable extends Migration
 
             $table->string('name');
             
-            $table->bigInteger('virtual_account_id');
-            
             $table->bigInteger('payment_category_id')->nullable();
             $table->string('ic_no');
             $table->string('old_ic')->nullable();
