@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Agents;
+use App\Models\State;
 use Livewire\Component;
 
 class MaklumatPengguna extends Component
 {
     public $userid;
     public $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id;
+    public $negeri;
 
     public function mount()
     {
@@ -30,6 +32,7 @@ class MaklumatPengguna extends Component
         $this->town                 = auth()->user()->agentInfo->town ?? '';
         $this->postcode             = auth()->user()->agentInfo->postcode ?? '';
         $this->state_id             = auth()->user()->agentInfo->state_id ?? '';
+        $this->negeri               = State::all();
     }
 
     public function updated($field)
