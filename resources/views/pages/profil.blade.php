@@ -1,12 +1,11 @@
 @extends('layouts.app.auth')
 
 @section('content')
-<main class="flex-1 relative pb-8 z-0 overflow-y-auto">
       <div class="md:flex md:items-center md:justify-between mx-8 mt-8">
             <div class="flex-1 min-w-0">
-                <h2 class="text-xl font-bold leading-7 text-gray-900 sm:text-2xl sm:leading-9 sm:truncate">
-                    Profil
-                </h2>
+                  <h2 class="text-xl font-bold leading-7 text-gray-900 sm:text-2xl sm:leading-9 sm:truncate">
+                        Profil
+                  </h2>
             </div>
       </div>
 
@@ -14,7 +13,7 @@
             <div class="flex flex-col bg-white sm:rounded-lg p-5 shadow">
                   <div>
                         <h3 class="text-lg leading-6 font-semibold text-gray-900">
-                            Kata Laluan Akaun
+                              Kata Laluan Akaun
                         </h3>
                   </div>
                   <form>
@@ -61,5 +60,4 @@
                   </form>
             </div>
       </div>
-</main>
 @endsection

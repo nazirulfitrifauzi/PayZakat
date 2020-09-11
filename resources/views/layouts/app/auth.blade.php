@@ -42,10 +42,17 @@
 
             <div x-init="$el.focus()" class="flex-1 overflow-auto focus:outline-none" tabindex="0">
 
+
+                <!-- TopBar -->
                 @include('layouts.navbar.topbar')
 
-                <!-- Main Content -->
-                @yield('content')
+                <main class="flex-1 relative pb-8 z-0 overflow-y-auto">
+                    <!-- Toaster -->
+                    @include('components.toaster')
+
+                    <!-- Main Content -->
+                    @yield('content')
+                </main>
 
                 <!-- Calculator -->
                 @include('pages.calculator.pendapatan')
