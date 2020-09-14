@@ -118,6 +118,7 @@ class MaklumatPengguna extends Component
             ]);
         }
 
+        session()->flash('type', 'success');
         session()->flash('title', 'Berjaya!');
         session()->flash('message', 'Maklumat telah berjaya disimpan.');
         return redirect()->to('/maklumat-pengguna');
