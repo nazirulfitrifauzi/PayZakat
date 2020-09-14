@@ -35,10 +35,12 @@ class Profil extends Component
             $user->updated_at = now();
             $user->save();
 
+            session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
             session()->flash('message', 'Kata Laluan telah berjaya dikemaskini.');
         }
         else {
+            session()->flash('type', 'warning');
             session()->flash('title', 'Tidak Berjaya!');
             session()->flash('message', 'Kata Laluan Lama tidak betul.');
         }
