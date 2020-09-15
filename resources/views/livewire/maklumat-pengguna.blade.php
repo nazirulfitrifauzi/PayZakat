@@ -13,12 +13,12 @@
             <option value="0">Tidak</option>
         </x-form.dropdown>
         <x-form.input class="sm:col-span-2" label="Tempoh Mastautin (Tahun)" value="mastautin_year"/>
+        <x-form.address-input class="sm:col-span-6" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition="auth()->user()->agentInfo->state_id"/>
         <x-form.input class="sm:col-span-3" label="Telefon Bimbit" value="phone_no"/>
         <x-form.input class="sm:col-span-3" label="Telefon Pejabat" value="office_no"/>
-        <x-form.input class="sm:col-span-6" label="Nama Majikan" value="employer_name"/>
         <x-form.input class="sm:col-span-3" label="Jawatan" value="position"/>
         <x-form.input class="sm:col-span-3" label="No Gaji / No Pekerja" value="employee_no"/>
-        <x-form.address-input class="sm:col-span-6" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition="auth()->user()->agentInfo->state_id"/>
+        <x-form.input class="sm:col-span-6" label="Nama Majikan" value="employer_name"/>
     </x-slot>
     <x-slot name="button">
         <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan"/>
