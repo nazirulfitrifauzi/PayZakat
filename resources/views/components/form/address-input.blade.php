@@ -35,4 +35,9 @@
     </div>
     @if($errors->has($value5)) <p class="text-sm text-red-600">{{ $errors->first($value5) }}</p> @endif
 </div>
-<x-form.negeri-dropdown class="sm:col-span-2" label="Negeri" :value="$negeri"/>
+
+<x-form.negeri-dropdown class="sm:col-span-2" label="Negeri Asal" value="state_id">
+    @foreach ($negeri as $item)
+        <option value="{{ $item->id }}" {{ ($condition == $item->id) ? 'selected': '' }}>{{ $item->description }}</option>
+    @endforeach
+</x-form.negeri-dropdown>

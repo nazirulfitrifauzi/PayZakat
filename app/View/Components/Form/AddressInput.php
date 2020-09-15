@@ -13,9 +13,10 @@ class AddressInput extends Component
     public $value3;
     public $value4;
     public $value5;
+    public $condition;
     public $negeri;
 
-    public function __construct($label, $value1, $value2, $value3, $value4, $value5)
+    public function __construct($label, $value1, $value2, $value3, $value4, $value5, $condition)
     {
         $this->label = $label;
         $this->value1 = $value1;
@@ -23,6 +24,7 @@ class AddressInput extends Component
         $this->value3 = $value3;
         $this->value4 = $value4;
         $this->value5 = $value5;
+        $this->condition = $condition;
         $this->negeri = State::all();
     }
 
