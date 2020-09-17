@@ -6,12 +6,13 @@ use Illuminate\View\Component;
 
 class SubmitCancelButton extends Component
 {
-    public $cancel;
+    public $cancel, $cancelpage;
     public $submit;
 
-    public function __construct($cancel, $submit)
+    public function __construct($cancel, $submit, $cancelpage=null)
     {
         $this->cancel = $cancel;
+        $this->cancelpage = (is_null($cancelpage)) ? route('home') : $cancelpage;
         $this->submit = $submit;
     }
 

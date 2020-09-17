@@ -1,5 +1,5 @@
 @if (session()->has('message'))
-    <div class="fixed inset-x-0 bottom-0 top-12 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end">
+    <div class="fixed inset-x-0 bottom-0 top-12 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end z-10">
         <div
             x-data="{ show: true }"
             x-show="show"
