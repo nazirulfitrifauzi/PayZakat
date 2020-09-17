@@ -13,4 +13,5 @@
             {{ $slot }}
         </select>
     </div>
+    @if($errors->has($value)) <p class="text-sm text-red-600">Sila pilih salah satu pilihan diatas</p> @endif
 </div>

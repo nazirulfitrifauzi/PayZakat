@@ -25,6 +25,6 @@ class User extends Authenticatable
 
     public function agentInfo()
     {
-        return $this->hasOne('App\Models\Agents', 'user_id', 'id');
+        return $this->hasOne('App\Models\Agents', 'user_id', 'id')->withDefault();
     }
 }
