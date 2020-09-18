@@ -20,8 +20,8 @@ class CheckMaklumatPengguna
 
         if($check == false)
         {
-            session()->flash('type', 'error');
-            session()->flash('title', 'Ralat!');
+            session()->flash('type', 'warning');
+            session()->flash('title', 'Perhatian!');
             session()->flash('message', 'Anda perlu melengkapkan maklumat pengguna sebelum menggunakan sistem ini.');
             return redirect('maklumat-pengguna');
         }
