@@ -10,6 +10,7 @@
             wire:loading.class="bg-gray-300"
             wire:target="submit"
         >
+            <option value="" selected disabled>Sila Pilih</option>
             {{ $slot }}
         </select>
     </div>
