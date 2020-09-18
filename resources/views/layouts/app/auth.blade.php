@@ -38,7 +38,7 @@
             <!-- mobile sidebar -->
             @include('layouts.sidebar.mobile')
             <!-- desktop sidebar -->
-            @include('layouts.sidebar.desktop')
+            <x-sidebar.desktop.index/>
 
             <div x-init="$el.focus()" class="flex-1 overflow-auto focus:outline-none" tabindex="0">
 
