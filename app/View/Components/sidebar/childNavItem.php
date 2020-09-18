@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\sidebar\desktop;
+namespace App\View\Components\sidebar;
 
 use Illuminate\View\Component;
 
@@ -17,6 +17,6 @@ class childNavItem extends Component
 
     public function render()
     {
-        return view('components.sidebar.desktop.child-nav-item');
+        return view('components.sidebar.child-nav-item');
     }
 }

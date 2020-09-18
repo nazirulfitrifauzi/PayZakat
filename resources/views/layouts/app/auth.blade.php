@@ -36,7 +36,7 @@
     <div id="app">
         <div class="h-screen flex overflow-hidden bg-cool-gray-200" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
             <!-- mobile sidebar -->
-            @include('layouts.sidebar.mobile')
+            <x-sidebar.mobile.index/>
             <!-- desktop sidebar -->
             <x-sidebar.desktop.index/>
 
