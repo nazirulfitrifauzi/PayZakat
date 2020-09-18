@@ -6,7 +6,7 @@
         <div class="mx-auto w-full max-w-sm lg:w-96">
             <div>
                 <div class="flex justify-center">
-                    <img class="h-24 w-auto" src="{{ asset('img/logo/logo2.png') }}" alt="Workflow">
+                    <x-general.logo class="h-24 w-auto"/>
                 </div>
                 <h2 class="mt-6 text-3xl leading-9 font-extrabold text-gray-900 text-center">
                     Log masuk akaun

@@ -3,7 +3,7 @@
 @section('content')
     <div class="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <img class="mx-auto h-24 w-auto" src="{{ asset('img/logo/logo2.png') }}" alt="Workflow">
+            <x-general.logo class="mx-auto h-24 w-auto"/>
             <h2 class="mt-6 text-center text-3xl leading-9 font-extrabold text-gray-900">
                 Daftar akaun baru
             </h2>
