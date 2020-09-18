@@ -16,7 +16,12 @@ class CheckMaklumatPengguna
      */
     public function handle($request, Closure $next)
     {
-        $check = Agents::where('user_id',auth()->user()->id)->exists();
+        if(auth()->user()->role == 1) // only agent (1) need to be check for existence of maklumat pengguna, admin (0) no need
+        {
+            $check = Agents::where('user_id', auth()->user()->id)->exists();
+        } else {
+            $check = true;
+        }
 
         if($check == false)
         {

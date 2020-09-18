@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\pengguna;
+namespace App\View\Components\sidebar;
 
 use Illuminate\View\Component;
 
-class peribadi extends Component
+class mobile extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class peribadi extends Component
      */
     public function render()
     {
-        return view('components.pengguna.peribadi');
+        return view('components.sidebar.mobile');
     }
 }

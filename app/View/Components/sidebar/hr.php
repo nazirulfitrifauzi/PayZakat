@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\pengguna;
+namespace App\View\Components\sidebar;
 
 use Illuminate\View\Component;
 
-class alamat extends Component
+class hr extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class alamat extends Component
      */
     public function render()
     {
-        return view('components.pengguna.alamat');
+        return view('components.sidebar.hr');
     }
 }

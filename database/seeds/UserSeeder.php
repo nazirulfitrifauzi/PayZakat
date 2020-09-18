@@ -12,6 +12,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        // agent
         DB::table('users')->insert([
             'uuid' => (string) Str::uuid(),
             'name' => 'Agent',
@@ -19,6 +20,16 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('Csc@1234'),
             'role' => 1,
+            'active' => 1,
+        ]);
+
+        DB::table('users')->insert([
+            'uuid' => (string) Str::uuid(),
+            'name' => 'Admin',
+            'email' => 'admin@csc.net.my',
+            'email_verified_at' => now(),
+            'password' => Hash::make('Csc@1234'),
+            'role' => 0,
             'active' => 1,
         ]);
     }
