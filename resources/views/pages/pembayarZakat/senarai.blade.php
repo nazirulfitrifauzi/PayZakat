@@ -8,7 +8,7 @@
                 Senarai Pembayar Zakat
             </h2>
 
-            @livewire('pembayar')
+            @livewire('pembayarzakat.senarai')
         </div>
     </main>
 @endsection

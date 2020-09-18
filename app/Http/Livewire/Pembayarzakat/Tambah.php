@@ -1,45 +1,29 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Pembayarzakat;
 
 use Livewire\Component;
 use App\Models\State;
 use App\Models\Customers;
 use App\Models\PPZ;
+use Illuminate\Support\Str;
 
-class PembayarMaklumat extends Component
-{   
-    public $customer_id;
+class Tambah extends Component
+{
     public $negeri;
     public $ppz;
     public $uuid, $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
 
-    public function mount($customer) 
+    public function mount()
     {
         $this->negeri = State::all();
         $this->ppz = PPZ::all();
-        $this->customer_id = $customer->id;
-        
-        $this->uuid             = $customer->uuid ?? "";
-        $this->name             = $customer->name ?? "";
-        $this->ic_no            = $customer->ic_no ?? "";
-        $this->old_ic           = $customer->old_ic ?? "";
-        $this->state_origin_id  = $customer->state_origin_id ?? "";
-        $this->mastautin_flag   = $customer->mastautin_flag ?? "";
-        $this->mastautin_year   = $customer->mastautin_year ?? "";
-        $this->phone_no         = $customer->phone_no ?? "";
-        $this->email            = $customer->email ?? "";
-        $this->office_no        = $customer->office_no ?? "";
-        $this->employer_name    = $customer->employer_name ?? "";
-        $this->position         = $customer->position ?? "";
-        $this->employee_no      = $customer->employee_no ?? "";
-        $this->address1         = $customer->address1 ?? "";
-        $this->address2         = $customer->address2 ?? "";
-        $this->address3         = $customer->address3 ?? "";
-        $this->town             = $customer->town ?? "";
-        $this->postcode         = $customer->postcode ?? "";
-        $this->state_id         = $customer->state_id ?? "";   
-        $this->fav_ppz_id       = $customer->fav_ppz_id ?? "";  
+
+        $this->uuid = (string)Str::uuid();
+        $this->mastautin_flag = "";
+        $this->state_origin_id = "";
+        $this->state_id = "";
+        $this->fav_ppz_id = "";
     }
 
     public function updated($field)
@@ -70,8 +54,8 @@ class PembayarMaklumat extends Component
     public function submit()
     {
         $this->validate([
-            'name'                => 'required',
-            'ic_no'               => 'required|digits:12',
+            'name'                => 'required|unique:customers',
+            'ic_no'               => 'required|digits:12|unique:customers',
             'old_ic'              => 'nullable|alpha_num',
             'state_origin_id'     => 'required|integer',
             'mastautin_flag'      => 'required|integer',
@@ -91,7 +75,8 @@ class PembayarMaklumat extends Component
             'fav_ppz_id'          => 'required|integer',
         ]);
 
-        Customers::where('id',$this->customer_id)->update([
+        $create_customer = Customers::create([
+            'uuid'                => $this->uuid,
             'name'                => $this->name,
             'ic_no'               => $this->ic_no,
             'old_ic'              => $this->old_ic,
@@ -111,6 +96,9 @@ class PembayarMaklumat extends Component
             'postcode'            => $this->postcode,
             'state_id'            => $this->state_id,
             'fav_ppz_id'          => $this->fav_ppz_id,
+            'agent_id'            => auth()->user()->id,
+            'created_by'          => auth()->user()->id,
+            'created_at'          => now(),
             'updated_by'          => auth()->user()->id,
             'updated_at'          => now(),
         ]);
@@ -118,11 +106,11 @@ class PembayarMaklumat extends Component
         session()->flash('type', 'success');
         session()->flash('title', 'Berjaya!');
         session()->flash('message', 'Maklumat telah berjaya disimpan.');
-        return redirect()->to('/pembayar');
+        return redirect()->route('pembayar.senarai');
     }
     
     public function render()
     {
-        return view('livewire.pembayar-maklumat');
+        return view('livewire.pembayarzakat.tambah');
     }
 }

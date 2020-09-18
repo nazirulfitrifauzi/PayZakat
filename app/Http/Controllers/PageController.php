@@ -22,24 +22,29 @@ class PageController extends Controller
         return view('pages.akaun');
     }
 
-    public function pembayar()
+    public function pembayarsenarai()
     {
-        return view('pages.pembayarZakat.pembayar');
+        return view('pages.pembayarzakat.senarai');
     }
 
-    public function tambahPembayar()
+    public function pembayartambah()
     {
-        return view('pages.pembayarZakat.tambah');
+        return view('pages.pembayarzakat.tambah');
     }
 
-    public function maklumatPembayar($uuid)
+    public function pembayarmaklumat($uuid)
     {
         $selected_customer = Customers::where('uuid',$uuid)
                             ->where('agent_id',auth()->user()->agentInfo->user_id)
                             ->first();
                             
-        return view('pages.pembayarZakat.maklumat', compact(
+        return view('pages.pembayarzakat.maklumat', compact(
             'selected_customer'
         ));
+    }
+
+    public function pembayarpukal()
+    {
+        return view('pages.pembayarzakat.pukal');
     }
 }
