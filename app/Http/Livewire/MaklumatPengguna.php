@@ -4,18 +4,22 @@ namespace App\Http\Livewire;
 
 use App\Models\Agents;
 use App\Models\State;
+use App\User;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class MaklumatPengguna extends Component
 {
     public $userid;
+    public $uuid;
     public $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id;
     public $negeri;
 
     public function mount()
     {
         $this->userid               = auth()->user()->id;
-        $this->name                 = auth()->user()->agentInfo->name ?? '';
+        $this->uuid                 = auth()->user()->uuid ?? (string)Str::uuid();
+        $this->name                 = auth()->user()->name ?? '';
         $this->ic_no                = auth()->user()->agentInfo->ic_no ?? '';
         $this->old_ic               = auth()->user()->agentInfo->old_ic ?? '';
         $this->state_origin_id      = auth()->user()->agentInfo->state_origin_id ?? '';
@@ -80,10 +84,14 @@ class MaklumatPengguna extends Component
             'state_id'            => 'required|integer',
         ]);
 
-        $info = Agents::updateOrCreate([
+        $user = User::where('id',$this->userid)->update([
+            'name' => $this->name
+        ]);
+
+        $agent = Agents::updateOrCreate([
             'user_id'    => $this->userid,
         ], [
-            'name'              => $this->name,
+            'uuid'              => $this->uuid,
             'ic_no'             => $this->ic_no,
             'old_ic'            => $this->old_ic,
             'state_origin_id'   => $this->state_origin_id,
@@ -102,7 +110,7 @@ class MaklumatPengguna extends Component
             'state_id'          => $this->state_id,
         ]);
 
-        if ($info->wasRecentlyCreated) // $info perform create
+        if ($agent->wasRecentlyCreated) // $agent perform create
         {
             Agents::where('user_id', $this->userid)->update([
                 'created_by' => auth()->user()->id,
@@ -110,9 +118,14 @@ class MaklumatPengguna extends Component
             ]);
         }
 
-        if(!$info->wasRecentlyCreated && $info->wasChanged()) // $info perform update
+        if(!$agent->wasRecentlyCreated && $agent->wasChanged()) // $agent perform update
         {
             Agents::where('user_id', $this->userid)->update([
+                'updated_by' => auth()->user()->id,
+                'updated_at' => now(),
+            ]);
+
+            User::where('id', $this->userid)->update([
                 'updated_by' => auth()->user()->id,
                 'updated_at' => now(),
             ]);

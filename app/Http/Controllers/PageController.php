@@ -32,10 +32,12 @@ class PageController extends Controller
         return view('pages.pembayarZakat.tambah');
     }
 
-    public function maklumatPembayar($name)
+    public function maklumatPembayar($uuid)
     {
-        $customer_name = str_replace('-',' ',$name);
-        $selected_customer = Customers::where('name',$customer_name)->first();
+        $selected_customer = Customers::where('uuid',$uuid)
+                            ->where('agent_id',auth()->user()->agentInfo->user_id)
+                            ->first();
+                            
         return view('pages.pembayarZakat.maklumat', compact(
             'selected_customer'
         ));

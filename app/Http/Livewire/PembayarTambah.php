@@ -6,23 +6,25 @@ use Livewire\Component;
 use App\Models\State;
 use App\Models\Customers;
 use App\Models\PPZ;
+use Illuminate\Support\Str;
 
 
 class PembayarTambah extends Component
 {   
     public $negeri;
     public $ppz;
-    public $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
+    public $uuid, $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
 
     public function mount()
     {
         $this->negeri = State::all();
         $this->ppz = PPZ::all();
 
-        $this->mastautin_flag = "none";
-        $this->state_origin_id = "none";
-        $this->state_id = "none";
-        $this->fav_ppz_id = "none";
+        $this->uuid = (string)Str::uuid();
+        $this->mastautin_flag = "";
+        $this->state_origin_id = "";
+        $this->state_id = "";
+        $this->fav_ppz_id = "";
     }
 
     public function updated($field)
@@ -75,6 +77,7 @@ class PembayarTambah extends Component
         ]);
 
         $create_customer = Customers::create([
+            'uuid'                => $this->uuid,
             'name'                => $this->name,
             'ic_no'               => $this->ic_no,
             'old_ic'              => $this->old_ic,

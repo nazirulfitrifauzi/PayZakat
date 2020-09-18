@@ -171,7 +171,7 @@ return [
     */
 
     'attributes' => [
-        // 'custname' => 'Nama Penuh',
+        'name' => 'Nama Penuh',
     ],
 
 ];
