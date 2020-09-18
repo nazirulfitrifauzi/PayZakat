@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -12,6 +13,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+            'uuid' => (string) Str::uuid(),
             'name' => 'Agent',
             'email' => 'agent@csc.net.my',
             'email_verified_at' => now(),

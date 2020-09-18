@@ -15,6 +15,8 @@ class CreateAccountZakatStatementsTable extends Migration
     {
         Schema::create('account_zakat_statements', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            
             $table->bigInteger('virtual_account_id')->nullable();
             $table->bigInteger('account_zakat_id');
             

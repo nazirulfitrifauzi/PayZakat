@@ -15,6 +15,8 @@ class CreateVirtualAccountStatementsTable extends Migration
     {
         Schema::create('virtual_account_statements', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+            
             $table->bigInteger('virtual_account_id');
             
             $table->datetime('txn_date');
