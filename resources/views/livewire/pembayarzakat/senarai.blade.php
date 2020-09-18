@@ -6,7 +6,7 @@
             </svg>
             <h1 class="tracking-wider">Tambah</h1>
         </a>
-        <a href="#" class="relative inline-flex items-center px-4 py-2 shadow hover:shadow-lg text-sm leading-5 font-medium rounded-md text-cool-gray-500 bg-white hover:text-cool-gray-800 focus:outline-none focus:shadow-outline-blue active:bg-cool-gray-100 active:text-cool-gray-700 transition ease-in-out duration-150">
+        <a href="{{ route('pembayar.pukal') }}" class="relative inline-flex items-center px-4 py-2 shadow hover:shadow-lg text-sm leading-5 font-medium rounded-md text-cool-gray-500 bg-white hover:text-cool-gray-800 focus:outline-none focus:shadow-outline-blue active:bg-cool-gray-100 active:text-cool-gray-700 transition ease-in-out duration-150">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
             <h1 class="tracking-wider">Muat Naik Pukal</h1>
         </a>
@@ -16,7 +16,7 @@
         <ul class="mt-2 divide-y divide-cool-gray-200 overflow-hidden shadow sm:hidden" x-max="1">
             @forelse ($customer_list as $customer)
                 <li>
-                    <a href="#" class="block px-4 py-4 bg-white hover:bg-cool-gray-50">
+                    <a href="{{ route('pembayar.maklumat', ['uuid'=>$customer->uuid]) }}" class="block px-4 py-4 bg-white hover:bg-cool-gray-50">
                         <div class="flex items-center space-x-4">
                             <div class="flex-1 flex space-x-2">
                                 <svg viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 h-5 w-5 text-cool-gray-400 transition ease-in-out duration-150">

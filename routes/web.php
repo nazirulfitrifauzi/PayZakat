@@ -15,9 +15,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['checkMaklumat']], function () {
         Route::get('/home', 'PageController@home')->name('home');
         Route::get('/akaun', 'PageController@akaun')->name('akaun');
-        Route::get('/pembayar', 'PageController@pembayar')->name('pembayar');
-        Route::get('/pembayar/tambah', 'PageController@tambahPembayar')->name('pembayar.tambah');
-        Route::get('/pembayar/{uuid}', 'PageController@maklumatPembayar')->name('pembayar.maklumat');
+        Route::get('/pembayar', 'PageController@pembayarsenarai')->name('pembayar.senarai');
+        Route::get('/pembayar/tambah', 'PageController@pembayartambah')->name('pembayar.tambah');
+        Route::get('/pembayar/muat-naik-pukal', 'PageController@pembayarpukal')->name('pembayar.pukal');
+        Route::get('/pembayar/{uuid}', 'PageController@pembayarmaklumat')->name('pembayar.maklumat');
         Route::get('/profil', 'ProfilController@index')->name('profil');
     });
 });
