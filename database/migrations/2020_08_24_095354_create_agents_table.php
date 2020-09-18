@@ -15,8 +15,9 @@ class CreateAgentsTable extends Migration
     {
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
             $table->bigInteger('user_id');
-            $table->string('name');
+
             $table->bigInteger('payment_category_id')->nullable();
             $table->string('ic_no');
             $table->string('old_ic')->nullable();
@@ -36,7 +37,6 @@ class CreateAgentsTable extends Migration
             $table->string('position')->nullable();
             $table->string('employee_no')->nullable();
             $table->string('employer_name')->nullable();
-            $table->string('email')->nullable();
             $table->bigInteger('fav_ppz_id')->nullable();
             $table->bigInteger('created_by')->nullable();
             $table->bigInteger('updated_by')->nullable();

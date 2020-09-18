@@ -15,6 +15,7 @@ class CreateVirtualAccountsTable extends Migration
     {
         Schema::create('virtual_accounts', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
             $table->string('virtual_account_no');
             // $table->integer('role_id')->nullable();
             // $table->integer('ref_id')->nullable();
