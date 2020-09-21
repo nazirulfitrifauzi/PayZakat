@@ -4,12 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customers;
+use App\User;
 
 class PageController extends Controller
 {
     public function home()
     {
-        return view('pages.dashboard');
+        if(auth()->user()->role == 1) {
+            return view('pages.dashboard');
+        } else {
+            return view('pages.admin.dashboard');
+        }
     }
 
     public function maklumatPengguna()

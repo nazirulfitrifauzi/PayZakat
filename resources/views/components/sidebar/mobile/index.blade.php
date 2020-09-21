@@ -36,21 +36,23 @@
                         <x-heroicon-o-home class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                     </x-sidebar.nav-item>
 
-                    <x-sidebar.nav-item route="maklumatPengguna" label="Maklumat Pengguna" uri="maklumat-pengguna">
-                        <x-heroicon-o-user class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
-                    </x-sidebar.nav-item>
+                    @if (auth()->user()->role == 1) <!-- agent -->
+                        <x-sidebar.nav-item route="maklumatPengguna" label="Maklumat Pengguna" uri="maklumat-pengguna">
+                            <x-heroicon-o-user class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                        </x-sidebar.nav-item>
 
-                    <x-sidebar.nav-item route="akaun" label="Akaun" uri="akaun">
-                        <x-heroicon-o-credit-card class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
-                    </x-sidebar.nav-item>
+                        <x-sidebar.nav-item route="akaun" label="Akaun" uri="akaun">
+                            <x-heroicon-o-credit-card class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                        </x-sidebar.nav-item>
 
                     <x-sidebar.nav-item route="pembayar.senarai" label="Pembayar Zakat" uri="pembayar">
                         <x-heroicon-o-user-group class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                     </x-sidebar.nav-item>
 
-                    <x-sidebar.nav-item route="kalkulator" label="Zakat Kalkulator" uri="kalkulator">
-                        <x-heroicon-o-calculator class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
-                    </x-sidebar.nav-item>
+                        <x-sidebar.nav-item route="kalkulator" label="Zakat Kalkulator" uri="kalkulator">
+                            <x-heroicon-o-calculator class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                        </x-sidebar.nav-item>
+                    @endif
 
                     <x-sidebar.hr/>
 

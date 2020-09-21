@@ -21,7 +21,6 @@
                                 IC : 910418-06-5155
                             </dd>
 
-                            @if(auth()->user()->role == 2)
                             <dt class="sr-only">Ejen ID</dt>
                             <dd class="flex items-center text-sm leading-5 text-cool-gray-500 font-medium capitalize sm:mr-6">
                                 <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-cool-gray-400" viewBox="0 0 20 20" fill="currentColor" class="finger-print w-6 h-6">
@@ -31,7 +30,6 @@
                                 </svg>
                                 Ejen ID : A512036
                             </dd>
-                            @endif
 
                             <dt class="sr-only">VA ID</dt>
                             <dd class="mt-3 flex items-center text-sm leading-5 text-cool-gray-500 font-medium sm:mr-6 sm:mt-0 capitalize">
@@ -44,6 +42,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="mt-6 flex space-x-3 md:mt-0 md:ml-4">
                 <span class="shadow-sm rounded-md">
                     <button type="button" class="inline-flex items-center px-4 py-2 border border-cool-gray-300 text-sm leading-5 font-medium rounded-md text-cool-gray-700 bg-white hover:text-cool-gray-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 active:text-cool-gray-800 active:bg-cool-gray-50 transition duration-150 ease-in-out">
