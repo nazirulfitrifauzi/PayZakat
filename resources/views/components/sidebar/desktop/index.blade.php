@@ -19,7 +19,7 @@
                             <x-heroicon-o-credit-card class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                         </x-sidebar.nav-item>
 
-                        <x-sidebar.nav-item route="pembayar" label="Pembayar Zakat" uri="pembayar">
+                        <x-sidebar.nav-item route="pembayar.senarai" label="Pembayar Zakat" uri="pembayar">
                             <x-heroicon-o-user-group class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                         </x-sidebar.nav-item>
 
