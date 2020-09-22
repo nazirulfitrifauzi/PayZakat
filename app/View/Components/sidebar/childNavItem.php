@@ -6,13 +6,15 @@ use Illuminate\View\Component;
 
 class childNavItem extends Component
 {
-    public $alpine;
+    public $route;
     public $label;
+    public $uri;
 
-    public function __construct($alpine, $label)
+    public function __construct($route, $label, $uri)
     {
-        $this->alpine = $alpine;
+        $this->route = $route;
         $this->label = $label;
+        $this->uri = $uri;
     }
 
     public function render()

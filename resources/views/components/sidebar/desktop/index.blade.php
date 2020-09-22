@@ -20,9 +20,9 @@
                                 <x-heroicon-o-credit-card class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                             </x-sidebar.nav-item>
 
-                        <x-sidebar.nav-item route="pembayar.senarai" label="Pembayar Zakat" uri="pembayar">
-                            <x-heroicon-o-user-group class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
-                        </x-sidebar.nav-item>
+                            <x-sidebar.nav-item route="pembayar.senarai" label="Pembayar Zakat" uri="pembayar">
+                                <x-heroicon-o-user-group class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                            </x-sidebar.nav-item>
 
                             <x-sidebar.parent-nav-item label="Kalkulator Zakat">
                                 <x-slot name="svg">
@@ -30,11 +30,26 @@
                                 </x-slot>
 
                                 <div x-show="isOpen" x-cloak>
-                                    <x-sidebar.child-nav-item alpine="x-data={id:1} @click=$dispatch('open-calculator',{id})" label="Pendapatan"/>
-                                    <x-sidebar.child-nav-item alpine="x-data={id:2} @click=$dispatch('open-calculator',{id})" label="Perniagaan"/>
-                                    <x-sidebar.child-nav-item alpine="x-data={id:3} @click=$dispatch('open-calculator',{id})" label="Harta"/>
-                                    <x-sidebar.child-nav-item alpine="x-data={id:4} @click=$dispatch('open-calculator',{id})" label="KWSP"/>
-                                    <x-sidebar.child-nav-item alpine="x-data={id:5} @click=$dispatch('open-calculator',{id})" label="ASB"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:1} @click=$dispatch('open-calculator',{id})" label="Pendapatan"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:2} @click=$dispatch('open-calculator',{id})" label="Perniagaan"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:3} @click=$dispatch('open-calculator',{id})" label="Harta"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:4} @click=$dispatch('open-calculator',{id})" label="KWSP"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:5} @click=$dispatch('open-calculator',{id})" label="ASB"/>
+                                </div>
+                            </x-sidebar.parent-nav-item>
+                        @endif
+
+                        @if (auth()->user()->role == 0) <!-- admin -->
+                            <x-sidebar.parent-nav-item label="Pengguna" uri="admin/*">
+                                <x-slot name="svg">
+                                    <x-heroicon-o-user-group class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                                </x-slot>
+
+                                <div x-show="isOpen" x-cloak>
+                                    <x-sidebar.child-nav-item route="admin.userList" label="Semua" uri="admin/senarai-pengguna"/>
+                                    <x-sidebar.child-nav-item route="admin.pendingAgent" label="Menunggu Pengesahan" uri="admin/senarai-menunggu"/>
+                                    <x-sidebar.child-nav-item route="admin.agentList" label="Ejen Aktif" uri="admin/senarai-ejen"/>
+                                    <x-sidebar.child-nav-item route="admin.rejectedAgent" label="Ejen Ditolak" uri="admin/senarai-ditolak"/>
                                 </div>
                             </x-sidebar.parent-nav-item>
                         @endif

@@ -54,8 +54,23 @@ class PageController extends Controller
     }
 
     // ADMIN
+    public function adminSenaraiPengguna()
+    {
+        return view('pages.admin.senaraiPengguna');
+    }
+
     public function adminSenaraiMenunggu()
     {
         return view('pages.admin.senaraiMenunggu');
+    }
+
+    public function adminSenaraiEjen()
+    {
+        return view('pages.admin.senaraiEjen');
+    }
+
+    public function adminSenaraiDitolak()
+    {
+        return view('pages.admin.senaraiDitolak');
     }
 }
