@@ -20,7 +20,7 @@
         <x-form.input class="sm:col-span-3" label="No Gaji / No Pekerja" value="employee_no"/>
         <x-form.input class="sm:col-span-6" label="Nama Majikan" value="employer_name"/>
     </x-slot>
-    <x-slot name="button">
-        <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan"/>
-    </x-slot>
+
+    <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan"/>
+
 </x-form.basic-form>

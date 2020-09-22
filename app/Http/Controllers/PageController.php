@@ -42,7 +42,7 @@ class PageController extends Controller
         $selected_customer = Customers::where('uuid',$uuid)
                             ->where('agent_id',auth()->user()->agentInfo->user_id)
                             ->first();
-                            
+
         return view('pages.pembayarzakat.maklumat', compact(
             'selected_customer'
         ));
@@ -51,5 +51,11 @@ class PageController extends Controller
     public function pembayarpukal()
     {
         return view('pages.pembayarzakat.pukal');
+    }
+
+    // ADMIN
+    public function adminSenaraiMenunggu()
+    {
+        return view('pages.admin.senaraiMenunggu');
     }
 }

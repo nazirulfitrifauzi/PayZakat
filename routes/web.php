@@ -21,6 +21,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/pembayar/{uuid}', 'PageController@pembayarmaklumat')->name('pembayar.maklumat');
         Route::get('/profil', 'ProfilController@index')->name('profil');
     });
+
+    // ADMIN
+    Route::get('/admin/senarai-menunggu', 'PageController@adminSenaraiMenunggu')->name('admin.pending');
 });
 
 

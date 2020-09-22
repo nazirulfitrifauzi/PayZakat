@@ -26,7 +26,6 @@
             @endforeach
         </x-form.dropdown>
     </x-slot>
-    <x-slot name="button">
-        <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan" cancelpage="{{ url()->previous() }}"/>
-    </x-slot>
+
+    <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan" cancelpage="{{ url()->previous() }}"/>
 </x-form.basic-form>

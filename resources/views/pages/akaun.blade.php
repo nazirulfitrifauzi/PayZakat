@@ -4,9 +4,7 @@
     <!-- Content -->
     <div class="md:flex md:items-center md:justify-between mx-8 mt-8">
         <div class="flex-1 min-w-0">
-            <h2 class="text-xl font-bold leading-7 text-gray-900 sm:text-2xl sm:leading-9 sm:truncate">
-                Maklumat Akaun
-            </h2>
+            <x-general.page-title title="Maklumat Akaun"/>
         </div>
     </div>
 
@@ -14,68 +12,62 @@
         <div class="mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mt-2" x-max="1">
                 <!-- Card -->
-                <div class="bg-white overflow-hidden shadow rounded-lg">
-                    <div class="p-5">
+                <x-general.card class="bg-white p-5">
+                    <div class="flex items-center p-4">
+                        <div class="flex-shrink-0">
+                            <x-heroicon-o-scale class="h-6 w-6 text-cool-gray-400"/>
+                        </div>
+                        <div class="ml-5 w-0 flex-1">
+                            <p class="text-cool-gray-700 text-xl font-semibold">Baki Akaun </p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-2xl">RM 30,659.45</p>
+                        </div>
+                    </div>
+                </x-general.card>
+
+                <x-general.card class="bg-white p-5 mt-8">
+                    <div>
                         <div class="flex items-center p-4">
-                            <div class="flex-shrink-0">
-                                <svg class="h-6 w-6 text-cool-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path>
-                                </svg>
-                            </div>
                             <div class="ml-5 w-0 flex-1">
-                                <p class="text-cool-gray-700 text-xl font-semibold">Baki Akaun </p>
+                                <p class="text-cool-gray-500 font-semibold">Baki Semasa</p>
                             </div>
                             <div>
-                                <p class="font-bold text-2xl">RM 30,659.45</p>
+                                <p>RM 30,659.45</p>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="bg-white overflow-hidden shadow rounded-lg mt-8">
-                    <div class="p-5">
-                        <div>
-                            <div class="flex items-center p-4">
-                                <div class="ml-5 w-0 flex-1">
-                                    <p class="text-cool-gray-500 font-semibold">Baki Semasa</p>
-                                </div>
-                                <div>
-                                    <p>RM 30,659.45</p>
-                                </div>
+                    <div>
+                        <div class="flex items-center p-4">
+                            <div class="ml-5 w-0 flex-1">
+                                <p class="text-cool-gray-500 font-semibold">One Day Float</p>
                             </div>
-                        </div>
-                        <div>
-                            <div class="flex items-center p-4">
-                                <div class="ml-5 w-0 flex-1">
-                                    <p class="text-cool-gray-500 font-semibold">One Day Float</p>
-                                </div>
-                                <div>
-                                    <p>RM 0.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-center p-4">
-                                <div class="ml-5 w-0 flex-1">
-                                    <p class="text-cool-gray-500 font-semibold">Two Day Float</p>
-                                </div>
-                                <div>
-                                    <p>RM 0.00</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex items-center p-4">
-                                <div class="ml-5 w-0 flex-1">
-                                    <p class="text-cool-gray-500 font-semibold">Late Clearing/Outstation Cheque Float</p>
-                                </div>
-                                <div>
-                                    <p>RM 0.00</p>
-                                </div>
+                            <div>
+                                <p>RM 0.00</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div>
+                        <div class="flex items-center p-4">
+                            <div class="ml-5 w-0 flex-1">
+                                <p class="text-cool-gray-500 font-semibold">Two Day Float</p>
+                            </div>
+                            <div>
+                                <p>RM 0.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center p-4">
+                            <div class="ml-5 w-0 flex-1">
+                                <p class="text-cool-gray-500 font-semibold">Late Clearing/Outstation Cheque Float</p>
+                            </div>
+                            <div>
+                                <p>RM 0.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </x-general.card>
             </div>
         </div>
 
