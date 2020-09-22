@@ -23,7 +23,10 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // ADMIN
-    Route::get('/admin/senarai-menunggu', 'PageController@adminSenaraiMenunggu')->name('admin.pending');
+    Route::get('/admin/senarai-pengguna', 'PageController@adminSenaraiPengguna')->name('admin.userList');
+    Route::get('/admin/senarai-menunggu', 'PageController@adminSenaraiMenunggu')->name('admin.pendingAgent');
+    Route::get('/admin/senarai-ejen', 'PageController@adminSenaraiEjen')->name('admin.agentList');
+    Route::get('/admin/senarai-ditolak', 'PageController@adminSenaraiDitolak')->name('admin.rejectedAgent');
 });
 
 

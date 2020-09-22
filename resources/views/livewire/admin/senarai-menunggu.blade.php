@@ -34,10 +34,12 @@
             </tr>
         @empty
             <tr>
-                <x-general.table-body colspan="4" class="text-gray-500 text-center">
+                <x-general.table-body colspan="5" class="text-gray-500 text-center">
                     Tiada Data
                 </x-general.table-body>
             </tr>
         @endforelse
     </x-slot>
+
+    {{ $list->links('pagination::tailwind') }}
 </x-general.table>

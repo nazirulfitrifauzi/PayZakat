@@ -4,10 +4,11 @@ namespace App\Http\Livewire\Admin;
 
 use App\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class SenaraiMenunggu extends Component
 {
-    // public $user_id;
+    use WithPagination;
 
     public function approve($user_id)
     {
@@ -36,7 +37,7 @@ class SenaraiMenunggu extends Component
     public function render()
     {
         return view('livewire.admin.senarai-menunggu',[
-            'list' => User::whereRole(1)->whereActive(0)->paginate(10),
+            'list' => User::whereRole(1)->whereActive(0)->paginate(2),
         ]);
     }
 }
