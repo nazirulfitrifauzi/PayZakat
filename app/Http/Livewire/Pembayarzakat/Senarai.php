@@ -13,7 +13,7 @@ class Senarai extends Component
     public function render()
     {
         return view('livewire.pembayarzakat.senarai', [
-            'customer_list' => Customers::where('agent_id',auth()->user()->agentInfo->user_id)
+            'customer_list' => Customers::where('agent_id',auth()->user()->agentInfo->id)
             ->orderBy('created_at','desc')
             ->paginate(5)
         ]);

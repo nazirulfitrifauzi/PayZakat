@@ -40,9 +40,9 @@ class PageController extends Controller
     public function pembayarmaklumat($uuid)
     {
         $selected_customer = Customers::where('uuid',$uuid)
-                            ->where('agent_id',auth()->user()->agentInfo->user_id)
-                            ->first();
-
+                            ->where('agent_id',auth()->user()->agentInfo->id)
+                            ->firstOrFail();
+                            
         return view('pages.pembayarzakat.maklumat', compact(
             'selected_customer'
         ));

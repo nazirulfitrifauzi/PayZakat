@@ -96,7 +96,7 @@ class Tambah extends Component
             'postcode'            => $this->postcode,
             'state_id'            => $this->state_id,
             'fav_ppz_id'          => $this->fav_ppz_id,
-            'agent_id'            => auth()->user()->id,
+            'agent_id'            => auth()->user()->agentInfo->id,
             'created_by'          => auth()->user()->id,
             'created_at'          => now(),
             'updated_by'          => auth()->user()->id,
