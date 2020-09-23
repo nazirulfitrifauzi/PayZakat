@@ -13,7 +13,8 @@ class Pukal extends Component
 {
     use WithFileUploads;
 
-    public $dokumen=null;
+    public $dokumen = null;
+    public $ic = null;
 
     public function updatedDokumen()
     {
@@ -22,37 +23,33 @@ class Pukal extends Component
         ]);
     }
 
-    public function save() 
+    public function save()
     {
         $customercollection = Excel::toArray(new CustomerImport, $this->dokumen);
-        if(!empty($customercollection)) // Check collection not empty
+        if (!empty($customercollection)) // Check collection not empty
         {
-            foreach($customercollection as $customerlist)
-            {
-                if(count($customerlist) > 1) // Check file content exists, not only field name row else consider as empty
+            foreach ($customercollection as $customerlist) {
+                if (count($customerlist) > 1) // Check file content exists, not only field name row else consider as empty
                 {
-                    foreach($customerlist as $row => $customers) 
-                    {
-                        if($row > 0) // Skip field name
+                    foreach ($customerlist as $row => $customers) {
+                        if ($row > 0) // Skip field name
                         {
-                            foreach($customers as $col => $value)
-                            {
-                                if($col < 21) // Only loop until 20
+                            foreach ($customers as $col => $value) {
+                                if ($col <= 18) // Only loop until 18
                                 {
-                                    if($col == 4) // Convert gender L,P to 1,2
+                                    if ($col == 1) // Get new ic number into variable
                                     {
-                                        $value = ($value == "L") ? 1 : 2;
+                                        $this->ic = $value;
                                     }
 
-                                    $savecustomer[$this->fieldlibrary()[$col]] = $value; // Collecttion
+                                    $savecustomer[$this->fieldlibrary()[$col]] = $value; // Collection
                                 }
                             }
 
-                            foreach($this->autogenfield() as $field => $value)
-                            {
+                            foreach ($this->autogenfield() as $field => $value) {
                                 $savecustomer[$field] = $value; // Add collection with auto gen values
                             }
-                            // dd($savecustomer);
+
                             $save = Customers::create($savecustomer); // Save current row
                         }
                     }
@@ -61,9 +58,7 @@ class Pukal extends Component
                     session()->flash('title', 'Berjaya!');
                     session()->flash('message', 'Muat naik secara pukal telah berjaya. Sila periksa di Senarai Pembayar Zakat.');
                     return redirect()->route('pembayar.pukal');
-                }
-                else
-                {
+                } else {
                     session()->flash('type', 'warning');
                     session()->flash('title', 'Perhatian!');
                     session()->flash('message', 'Tiada data untuk di muat naik.');
@@ -74,7 +69,7 @@ class Pukal extends Component
 
         $this->dokumen = null;
     }
-    
+
     public function render()
     {
         return view('livewire.pembayarzakat.pukal');
@@ -86,30 +81,30 @@ class Pukal extends Component
             '0' => 'name',
             '1' => 'ic_no',
             '2' => 'old_ic',
-            '3' => 'birth_date',
-            '4' => 'gender_id',
-            '5' => 'state_origin_id',
-            '6' => 'mastautin_flag',
-            '7' => 'mastautin_year',
-            '8' => 'address1',
-            '9' => 'address2',
-            '10' => 'address3',
-            '11' => 'postcode',
-            '12' => 'town',
-            '13' => 'state_id',
-            '14' => 'phone_no',
-            '15' => 'email',
-            '16' => 'employer_name',
-            '17' => 'office_no',
-            '18' => 'position',
-            '19' => 'employee_no',
-            '20' => 'fav_ppz_id',
+            '3' => 'state_origin_id',
+            '4' => 'mastautin_flag',
+            '5' => 'mastautin_year',
+            '6' => 'address1',
+            '7' => 'address2',
+            '8' => 'address3',
+            '9' => 'postcode',
+            '10' => 'town',
+            '11' => 'state_id',
+            '12' => 'phone_no',
+            '13' => 'email',
+            '14' => 'employer_name',
+            '15' => 'office_no',
+            '16' => 'position',
+            '17' => 'employee_no',
+            '18' => 'fav_ppz_id',
         ];
     }
 
-    private function autogenfield() 
+    private function autogenfield()
     {
         return [
+            'birth_date' => getdobbyic($this->ic),
+            'gender_id' => getgendercodebyic($this->ic),
             'uuid' => (string) Str::uuid(),
             'agent_id' => auth()->user()->agentinfo->id,
             'created_by' => auth()->user()->id,

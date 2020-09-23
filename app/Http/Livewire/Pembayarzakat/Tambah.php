@@ -12,7 +12,7 @@ class Tambah extends Component
 {
     public $negeri;
     public $ppz;
-    public $uuid, $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
+    public $uuid, $name, $ic_no, $old_ic, $birth_date, $gender_id, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
 
     public function mount()
     {
@@ -80,6 +80,8 @@ class Tambah extends Component
             'name'                => $this->name,
             'ic_no'               => $this->ic_no,
             'old_ic'              => $this->old_ic,
+            'birth_date'          => getdobbyic($this->ic_no),
+            'gender_id'           => getgendercodebyic($this->ic_no),
             'state_origin_id'     => $this->state_origin_id,
             'mastautin_flag'      => $this->mastautin_flag,
             'mastautin_year'      => $this->mastautin_year,
@@ -108,7 +110,7 @@ class Tambah extends Component
         session()->flash('message', 'Maklumat telah berjaya disimpan.');
         return redirect()->route('pembayar.senarai');
     }
-    
+
     public function render()
     {
         return view('livewire.pembayarzakat.tambah');
