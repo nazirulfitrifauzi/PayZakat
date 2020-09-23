@@ -1,8 +1,8 @@
 <x-form.basic-form action="submit">
     <x-slot name="content">
-        <x-form.input class="sm:col-span-6" label="Nama Penuh" value="name"/>
-        <x-form.input class="sm:col-span-3" label="No Kad Pengenalan Baru" value="ic_no"/>
-        <x-form.input class="sm:col-span-3" label="No Kad Pengenalan Lama" value="old_ic"/>
+        <x-form.input class="sm:col-span-6" label="Nama Penuh" value="name" livewire="wire:model.lazy=name wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="No Kad Pengenalan Baru" value="ic_no" livewire="wire:model.lazy=ic_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="No Kad Pengenalan Lama" value="old_ic" livewire="wire:model.lazy=old_ic wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
         <x-form.negeri-dropdown class="sm:col-span-2" label="Negeri Asal" value="state_origin_id">
             @foreach ($negeri as $item)
                 <option value="{{ $item->id }}">{{ $item->description }}</option>
@@ -12,13 +12,13 @@
             <option value="1">Ya</option>
             <option value="0">Tidak</option>
         </x-form.dropdown>
-        <x-form.input class="sm:col-span-2" label="Tempoh Mastautin (Tahun)" value="mastautin_year"/>
-        <x-form.input class="sm:col-span-3" label="Telefon Bimbit" value="phone_no"/>
-        <x-form.input class="sm:col-span-3" label="E-mail" value="email" type="email"/>
-        <x-form.input class="sm:col-span-3" label="Telefon Pejabat" value="office_no"/>
-        <x-form.input class="sm:col-span-3" label="Nama Majikan" value="employer_name"/>
-        <x-form.input class="sm:col-span-3" label="Jawatan" value="position"/>
-        <x-form.input class="sm:col-span-3" label="No Gaji / No Pekerja" value="employee_no"/>
+        <x-form.input class="sm:col-span-2" label="Tempoh Mastautin (Tahun)" value="mastautin_year" livewire="wire:model.lazy=mastautin_year wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="Telefon Bimbit" value="phone_no" livewire="wire:model.lazy=phone_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="E-mail" value="email" type="email" livewire="wire:model.lazy=email wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="Telefon Pejabat" value="office_no" livewire="wire:model.lazy=office_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="Nama Majikan" value="employer_name" livewire="wire:model.lazy=employer_name wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="Jawatan" value="position" livewire="wire:model.lazy=position wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
+        <x-form.input class="sm:col-span-3" label="No Gaji / No Pekerja" value="employee_no" livewire="wire:model.lazy=employee_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
         <x-form.address-input class="sm:col-span-6" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition=""/>
         <x-form.dropdown class="sm:col-span-2" label="Negeri Pembayaran Zakat" value="fav_ppz_id">
             @foreach ($ppz as $item)

@@ -6,18 +6,18 @@
             <li>
                 Isi maklumat Pembayar Zakat dengan lengkap berdasarkan Templat Format.
             </li>
-            <li> 
-                Sila rujuk 
+            <li>
+                Sila rujuk
                 <span x-data="{ open: false }">
                     <a @click="open = true" type="button" class="text-blue-400 hover:text-blue-500 transition duration-300 ease-in-out cursor-pointer">
                     Panduan
                     </a>
                     @include('pages.pembayarzakat.modalpanduan')
-                </span> 
+                </span>
                 untuk memudahkan proses pengisian.</li>
             <li>Muat naik senarai di ruangan yang telah disediakan.</li>
-            <li>Setelah muat naik proses selesai. Klik 
-                <span type="submit" class="px-2 py-1 bg-teal-600 text-white rounded shadow text-xs cursor-default">Simpan</span> 
+            <li>Setelah muat naik proses selesai. Klik
+                <span type="submit" class="px-2 py-1 bg-teal-600 text-white rounded shadow text-xs cursor-default">Simpan</span>
                 untuk menyimpan senarai.</li>
         </ol>
     </div>
