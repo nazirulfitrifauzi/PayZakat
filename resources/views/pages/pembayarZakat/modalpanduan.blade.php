@@ -23,7 +23,7 @@
                   x-transition:leave="ease-in duration-200"
                   x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                   x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                  class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                  class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:mt-20 sm:mb-8 sm:align-middle sm:max-w-3xl sm:w-full sm:p-6 relative" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                   <div>
                         <table class="table-fixed">
                               <thead>
@@ -66,28 +66,6 @@
                                                 </ul>
                                           </td>
                                           <td class="border px-4 py-2">Tidak</td>
-                                    </tr>
-                                    <tr>
-                                          <td class="border px-4 py-2">Tarikh Lahir</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
-                                                      <li>Format Y-m-d.</li>
-                                                      <li>Tahun-Bulan-Hari.</li>
-                                                      <li>Contoh: 1999-01-31.</li>
-                                                </ul>
-                                          </td>
-                                          <td class="border px-4 py-2">Ya</td>
-                                    </tr>
-                                    <tr>
-                                          <td class="border px-4 py-2">Jantina</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
-                                                      <li>Kod jantina.</li>
-                                                      <li>L = Lelaki.</li>
-                                                      <li>P = Perempuan.</li>
-                                                </ul>
-                                          </td>
-                                          <td class="border px-4 py-2">Ya</td>
                                     </tr>
                                     <tr>
                                           <td class="border px-4 py-2">Negeri Asal</td>
@@ -302,6 +280,14 @@
                               type="button" 
                               class="inline-flex justify-center rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5">
                               Tutup
+                        </button>
+                  </div>
+                  <div class="absolute top-0 right-0 pt-2 pr-2 focus:outline-none">
+                        <button 
+                              @click="open = false" 
+                              type="button" 
+                              class="transition duration-200 ease-in-out text-gray-600 hover:text-gray-800 active:bg-gray-300 active:text-gray-100 focus:outline-none rounded-full">
+                              <x-heroicon-o-x class="h-6 w-6"/>
                         </button>
                   </div>
             </div>
