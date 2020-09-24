@@ -65,13 +65,13 @@
             </div>
         </form>
         <div wire:loading wire:target="dokumen" class="absolute z-10 inset-0">
-            <div class="bg-black bg-opacity-25 h-full flex items-center justify-center rounded-lg">
-                <x-heroicon-o-refresh class="h-8 w-8 text-white animate-spin"/>
+            <div class="h-full flex items-center justify-center rounded-lg">
+                <div class="p-2 bg-black bg-opacity-50 rounded-lg"><img class="h-8 w-8" src="{{ asset('img/spin_loading.gif') }}"></div>
             </div>
         </div>
         <div wire:loading wire:target="save" class="absolute z-10 inset-0">
-            <div class="bg-black bg-opacity-25 h-full flex items-center justify-center rounded-lg">
-                <x-heroicon-o-refresh class="h-8 w-8 text-white animate-spin"/>
+            <div class="h-full flex items-center justify-center rounded-lg">
+                <div class="p-2 bg-black bg-opacity-50 rounded-lg"><img class="h-8 w-8" src="{{ asset('img/spin_loading.gif') }}"></div>
             </div>
         </div>
     </div>
