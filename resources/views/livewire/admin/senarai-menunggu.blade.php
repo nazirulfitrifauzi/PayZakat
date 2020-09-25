@@ -25,7 +25,7 @@
             <x-general.table-header class="text-left" value="Nama" sort="name" livewire="wire:click.prevent=sortBy('name')"/>
             <x-general.table-header class="text-left" value="Alamat Emel" sort="email" livewire="wire:click.prevent=sortBy('email')"/>
             <x-general.table-header class="text-left" value="Tarikh Daftar" sort="created_at" livewire="wire:click.prevent=sortBy('created_at')"/>
-            <x-general.table-header class="text-left" value="Tindakan" sort="" livewire=""/>
+            <x-general.table-header class="text-center" value="Tindakan" sort="" livewire=""/>
         </x-slot>
         <x-slot name="tbody">
             @forelse ($list as $lists)
