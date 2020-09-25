@@ -8,7 +8,7 @@
                 <option value="{{ $item->id }}">{{ $item->description }}</option>
             @endforeach
         </x-form.negeri-dropdown>
-        <x-form.dropdown class="sm:col-span-2" label="Mastautin" value="mastautin_flag">
+        <x-form.dropdown class="sm:col-span-2" label="Mastautin" value="mastautin_flag" default="yes">
             <option value="1">Ya</option>
             <option value="0">Tidak</option>
         </x-form.dropdown>
@@ -20,7 +20,7 @@
         <x-form.input class="sm:col-span-3" label="Jawatan" value="position" livewire="wire:model.lazy=position wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
         <x-form.input class="sm:col-span-3" label="No Gaji / No Pekerja" value="employee_no" livewire="wire:model.lazy=employee_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
         <x-form.address-input class="sm:col-span-6" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition=""/>
-        <x-form.dropdown class="sm:col-span-2" label="Negeri Pembayaran Zakat" value="fav_ppz_id">
+        <x-form.dropdown class="sm:col-span-2" label="Negeri Pembayaran Zakat" value="fav_ppz_id" default="yes">
             @foreach ($ppz as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
             @endforeach

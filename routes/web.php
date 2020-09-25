@@ -29,6 +29,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/senarai-menunggu', 'PageController@adminSenaraiMenunggu')->name('admin.pendingAgent');
     Route::get('/admin/senarai-ejen', 'PageController@adminSenaraiEjen')->name('admin.agentList');
     Route::get('/admin/senarai-ditolak', 'PageController@adminSenaraiDitolak')->name('admin.rejectedAgent');
+
+    Route::get('/admin/nisab', 'PageController@adminNisab')->name('admin.nisab');
 });
 
 

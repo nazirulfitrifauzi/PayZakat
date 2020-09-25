@@ -73,4 +73,9 @@ class PageController extends Controller
     {
         return view('pages.admin.pengguna.senaraiDitolak');
     }
+
+    public function adminNisab()
+    {
+        return view('pages.admin.nisab');
+    }
 }
