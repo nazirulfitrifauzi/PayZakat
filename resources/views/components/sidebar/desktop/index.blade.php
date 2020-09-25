@@ -52,6 +52,10 @@
                                     <x-sidebar.child-nav-item route="admin.rejectedAgent" label="Ejen Ditolak" uri="admin/senarai-ditolak"/>
                                 </div>
                             </x-sidebar.parent-nav-item>
+
+                            <x-sidebar.nav-item route="admin.nisab" label="Nisab" uri="admin/nisab">
+                                <x-heroicon-o-currency-dollar class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                            </x-sidebar.nav-item>
                         @endif
 
                         <x-sidebar.hr/>
