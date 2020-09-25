@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2610d94575a15a7f09c317000be0172",
+    "content-hash": "f5d088a93691a69bf5eb4b587982dbd9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1246,32 +1246,30 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.2.6",
+            "version": "v1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "97a380cc39760e3076f26559cd79e4a8c98b8916"
+                "reference": "b1673ff9fc78a3296ca4a3b0d1ca26da0a5cdf82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/97a380cc39760e3076f26559cd79e4a8c98b8916",
-                "reference": "97a380cc39760e3076f26559cd79e4a8c98b8916",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/b1673ff9fc78a3296ca4a3b0d1ca26da0a5cdf82",
+                "reference": "b1673ff9fc78a3296ca4a3b0d1ca26da0a5cdf82",
                 "shasum": ""
             },
             "require": {
-                "illuminate/database": "^7.0|^8.0",
-                "illuminate/support": "^7.0|^8.0",
-                "illuminate/validation": "^7.0|^8.0",
-                "php": "^7.2.5",
-                "symfony/http-kernel": "^5.0"
+                "illuminate/database": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "illuminate/validation": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "php": "^7.1.3",
+                "symfony/http-kernel": "^4.0|^5.0"
             },
             "require-dev": {
-                "calebporzio/sushi": "^2.1",
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0",
                 "mockery/mockery": "^1.3.1",
-                "orchestra/testbench": "^5.0|^6.0",
-                "orchestra/testbench-dusk": "^5.2|^6.0",
-                "phpunit/phpunit": "^8.4|^9.0",
+                "orchestra/testbench": "~3.6.0|~3.7.0|~3.8.0|^4.0|^5.0",
+                "phpunit/phpunit": "^7.5.15|^8.4|^9.0",
                 "psy/psysh": "@stable"
             },
             "type": "library",
@@ -1307,7 +1305,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-22T19:24:38+00:00"
+            "time": "2020-09-17T04:38:16+00:00"
         },
         {
             "name": "maatwebsite/excel",
