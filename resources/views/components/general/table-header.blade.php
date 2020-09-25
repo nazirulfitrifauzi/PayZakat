@@ -3,6 +3,8 @@
 >
     <div class="flex cursor-pointer">
         <span class="mr-2">{{ $value }}</span>
-        @include('pages.misc.sort_icon', ['field' => $sort ])
+        @if ($sort != "")
+            @include('pages.misc.sort_icon', ['field' => $sort ])
+        @endif
     </div>
 </th>
