@@ -22,11 +22,11 @@
                 </x-general.table-body>
                 <x-general.table-body colspan="" class="text-right font-medium">
                     <div class="flex justify-center">
-                        <x-general.button.icon-button label="Terima" livewire="wire:click=approve({{ $lists->id }})" class="text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
+                        <x-general.button.icon-button label="Terima" color="indigo" livewire="wire:click=approve({{ $lists->id }})">
                             <x-heroicon-s-check class="-ml-0.5 mr-2 h-4 w-4"/>
                         </x-general.button.icon-button>
 
-                        <x-general.button.icon-button label="Tolak" livewire="wire:click=reject({{ $lists->id }})" class="text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700">
+                        <x-general.button.icon-button label="Tolak" color="red" livewire="wire:click=reject({{ $lists->id }})">
                             <x-heroicon-s-trash class="-ml-0.5 mr-2 h-4 w-4"/>
                         </x-general.button.icon-button>
                     </div>

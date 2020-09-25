@@ -11,7 +11,6 @@ class SenaraiPengguna extends Component
     use WithPagination;
 
     public $sortField = 'name';
-    // public $sortField2 = 'name';
     public $sortAsc = true;
     public $search = '';
 

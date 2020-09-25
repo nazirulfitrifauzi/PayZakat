@@ -42,7 +42,7 @@ class PageController extends Controller
         $selected_customer = Customers::where('uuid',$uuid)
                             ->where('agent_id',auth()->user()->agentInfo->id)
                             ->firstOrFail();
-                            
+
         return view('pages.pembayarzakat.maklumat', compact(
             'selected_customer'
         ));
@@ -56,21 +56,21 @@ class PageController extends Controller
     // ADMIN
     public function adminSenaraiPengguna()
     {
-        return view('pages.admin.senaraiPengguna');
+        return view('pages.admin.pengguna.senaraiPengguna');
     }
 
     public function adminSenaraiMenunggu()
     {
-        return view('pages.admin.senaraiMenunggu');
+        return view('pages.admin.pengguna.senaraiMenunggu');
     }
 
     public function adminSenaraiEjen()
     {
-        return view('pages.admin.senaraiEjen');
+        return view('pages.admin.pengguna.senaraiEjen');
     }
 
     public function adminSenaraiDitolak()
     {
-        return view('pages.admin.senaraiDitolak');
+        return view('pages.admin.pengguna.senaraiDitolak');
     }
 }
