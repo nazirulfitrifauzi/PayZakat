@@ -8,7 +8,7 @@
                 <option value="{{ $item->id }}" {{ (auth()->user()->agentInfo->state_origin_id == $item->id) ? 'selected': '' }}>{{ $item->description }}</option>
             @endforeach
         </x-form.negeri-dropdown>
-        <x-form.dropdown class="sm:col-span-2" label="Mastautin" value="mastautin_flag">
+        <x-form.dropdown class="sm:col-span-2" label="Mastautin" value="mastautin_flag" default="yes">
             <option value="1">Ya</option>
             <option value="0">Tidak</option>
         </x-form.dropdown>
