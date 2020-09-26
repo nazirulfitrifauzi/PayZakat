@@ -11,7 +11,7 @@ class Input extends Component
     public $type;
     public $livewire;
 
-    public function __construct($label, $value, $type="text", $livewire)
+    public function __construct($label, $value, $type = "text", $livewire)
     {
         $this->label = $label;
         $this->value = $value;
