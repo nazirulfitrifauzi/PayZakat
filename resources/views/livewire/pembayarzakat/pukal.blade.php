@@ -55,7 +55,7 @@
                         @endif
                     </span>
                 </label>
-                <input type="file" class="absolute invisible" id="muatnaikpukal" name="muatnaikpukal" wire:model="dokumen">
+                <input type="file" class="absolute invisible pointer-events-none" id="muatnaikpukal" name="muatnaikpukal" wire:model="dokumen">
             </div>
             @error('dokumen')
                 <span class="text-red-500">{{ $message }}</span>

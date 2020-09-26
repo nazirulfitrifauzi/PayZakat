@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->bigInteger('role')->default('1');
+            $table->string('image');
             $table->bigInteger('ref_id')->nullable();
             $table->integer('active')->default(0);
             $table->timestamps();
