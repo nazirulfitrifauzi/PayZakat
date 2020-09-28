@@ -10,10 +10,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class User extends Authenticatable
 {
     use Notifiable,SoftDeletes;
+    public $timestamps = true;
 
-    protected $fillable = [
-        'name', 'email', 'password', 'uuid',
-    ];
+    // protected $fillable = [
+    //     'name', 'email', 'password', 'uuid',
+    // ];
+
+    protected $guarded = [];
 
     protected $hidden = [
         'password', 'remember_token',

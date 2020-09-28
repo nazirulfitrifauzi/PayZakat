@@ -25,6 +25,11 @@ class CreateUsersTable extends Migration
             $table->string('image');
             $table->bigInteger('ref_id')->nullable();
             $table->integer('active')->default(0);
+
+            $table->bigInteger('created_by');
+            $table->bigInteger('updated_by')->nullable();
+            $table->bigInteger('deleted_by')->nullable();
+            
             $table->timestamps();
             $table->softDeletes();
         });
