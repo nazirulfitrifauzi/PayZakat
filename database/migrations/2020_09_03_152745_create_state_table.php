@@ -20,6 +20,7 @@ class CreateStateTable extends Migration
             $table->bigInteger('created_by');
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
