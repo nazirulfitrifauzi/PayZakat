@@ -21,7 +21,7 @@
         <!-- Profile dropdown -->
             <div class="ml-3 relative" x-data="{ open: false }" @keydown.window.escape="open = false" @click.away="open = false">
                 <button @click="open = !open" class="max-w-xs flex items-center text-sm rounded-full focus:outline-none focus:bg-cool-gray-100 lg:p-2 lg:rounded-md lg:hover:bg-cool-gray-100" id="user-menu" aria-label="User menu" aria-haspopup="true" x-bind:aria-expanded="open">
-                    <img class="h-8 w-8 rounded-full" src="{{ asset('img/avatar/avatar.jpg') }}" alt="">
+                    <img class="h-8 w-8 rounded-full object-cover" src="{{ (is_null(auth()->user()->image)) ? asset('img/avatar/avatar.jpg') : asset('storage/' . auth()->user()->image) }}" alt="">
                 </button>
                 <div x-show="open"
                     x-description="Profile dropdown panel, show/hide based on dropdown state."

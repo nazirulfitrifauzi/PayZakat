@@ -62,15 +62,17 @@ class Profil extends Component
                 session()->flash('type', 'success');
                 session()->flash('title', 'Berjaya!');
                 session()->flash('message', 'Kata Laluan telah berjaya dikemaskini.');
+                return redirect()->route('home');
             } else {
                 session()->flash('type', 'warning');
                 session()->flash('title', 'Tidak Berjaya!');
                 session()->flash('message', 'Kata Laluan Lama tidak betul.');
+                return redirect()->route('profile');
             }
         }
 
         if (!is_null($this->gambar_profil)) {
-            $gambar_profil_name = $this->gambar_profil->store('avatar');
+            $gambar_profil_name = $this->gambar_profil->store('/avatar');
 
             $user = User::find(auth()->user()->id);
 
@@ -82,6 +84,7 @@ class Profil extends Component
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
             session()->flash('message', 'Gambar Profil telah berjaya dikemaskini.');
+            return redirect()->route('home');
         }
     }
 
