@@ -4,10 +4,10 @@
             <div class="flex-1 min-w-0">
                 <!-- Profile -->
                 <div class="flex items-center">
-                    <img class="hidden h-15 w-15 rounded-full sm:block" src="{{ asset('img/avatar/avatar.jpg') }}" alt="">
+                    <img class="hidden h-15 w-15 rounded-full sm:block object-cover" src="{{ (is_null(auth()->user()->image)) ? asset('img/avatar/avatar.jpg') : asset('storage/' . auth()->user()->image) }}" alt="">
                     <div>
                         <div class="flex items-center">
-                            <img class="h-15 w-15 rounded-full sm:hidden" src="{{ asset('img/avatar/avatar.jpg') }}" alt="">
+                            <img class="h-15 w-15 rounded-full sm:hidden object-cover" src="{{ (is_null(auth()->user()->image)) ? asset('img/avatar/avatar.jpg') : asset('storage/' . auth()->user()->image) }}" alt="">
                             <h1 class="ml-3 text-2xl font-bold leading-7 text-cool-gray-900 sm:leading-9 sm:truncate">
                                 Selamat Pagi, {{ Auth()->user()->name }}
                             </h1>
