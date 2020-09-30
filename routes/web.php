@@ -20,6 +20,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/pembayar/muat-naik-pukal', 'PageController@pembayarpukal')->name('pembayar.pukal');
         Route::get('/pembayar/{uuid}', 'PageController@pembayarmaklumat')->name('pembayar.maklumat');
         Route::get('/profil', 'ProfilController@index')->name('profil');
+        Route::get('/bayar', 'BayarController@index')->name('bayar');
     });
 
     // ADMIN
