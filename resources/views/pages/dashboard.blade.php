@@ -8,7 +8,7 @@
     <div class="mt-8">
         <div class="mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-lg leading-6 font-medium text-cool-gray-900">Ringkasan</h2>
-            <x-general.grid class="mt-2" mobile="1" gap="5" sm="2" lg="3">
+            <x-general.grid class="mt-2" mobile="1" gap="5" sm="2" md="2" lg="3" xl="3">
                 <!-- Info Card -->
                 <x-general.info-card bg="bg-white" footerBg="bg-cool-gray-50" title="Baki Akaun" value="RM 30,659.40" footerRoute="/" footerText="Lihat Semua">
                     <x-slot name="svg">

@@ -39,13 +39,11 @@ class Nisab extends Component
 
     public function render()
     {
-        $state_id = State::where('description', 'like', '%' . $this->search . '%')->pluck('id');
-
         return view('livewire.admin.nisab', [
-            'list' => ModelsNisab::whereIn('state_id', $state_id)
-                    ->where('year', $this->year)
-                    ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
-                    ->paginate(7),
+            'state' => ModelsNisab::where('year', $this->year)->get(),
+            'stateNisab' => State::whereNotIn('id', function ($query) {
+                                $query->select('state_id')->from('nisab')->where('year', $this->year);
+                            })->get(),
         ]);
     }
 }

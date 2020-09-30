@@ -71,8 +71,20 @@
                         <x-sidebar.nav-item route="home" label="Privasi" uri="">
                             <x-heroicon-o-shield-check class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                         </x-sidebar.nav-item>
+
                     </nav>
                 </div>
+
+                <div class="flex items-end flex-grow mx-auto">
+                    <x-general.button.icon-button href="{{ route('logout') }}" target="" label="Log Keluar" color="teal" livewire="" onclick="event.preventDefault();getElementById('logout-form').submit();">
+                        <x-heroicon-o-logout class="-ml-0.5 mr-2 h-6 w-6"/>
+                    </x-general.button.icon-button>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

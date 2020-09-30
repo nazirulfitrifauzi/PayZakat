@@ -42,9 +42,6 @@
 
             <div x-init="$el.focus()" class="flex-1 overflow-auto focus:outline-none" tabindex="0">
 
-                <!-- TopBar -->
-                @include('layouts.navbar.topbar')
-
                 <main class="flex-1 relative pb-8 z-0 overflow-y-auto">
                     <!-- Toaster -->
                     <x-general.toaster/>
@@ -65,7 +62,7 @@
 
     @livewireScripts
 
-    
+
     @stack('js')
 </body>
 </html>

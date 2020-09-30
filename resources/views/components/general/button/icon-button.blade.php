@@ -1,4 +1,4 @@
-<span class="inline-flex rounded-md shadow-sm">
+<span class="inline-flex rounded-md">
     <a
         {{ ($href != "") ? 'href='.$href : 'type=button' }} {{ ($target != "") ? 'target="'.$target.'"' : '' }}
         {{ $livewire }}

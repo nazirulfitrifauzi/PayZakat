@@ -1,6 +1,6 @@
 <div class="mt-8">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
-        <x-general.grid class="mt-2" mobile="1" gap="5" sm="2" lg="3">
+        <x-general.grid class="mt-2" mobile="1" gap="5" sm="2" md="2" lg="3" xl="3">
             <!-- Info Card -->
             <x-general.info-card bg="bg-white" footerBg="bg-cool-gray-100" title="Menunggu Pengesahan" value="{{ $pendingAgent }} Orang" footerRoute="/admin/senarai-menunggu" footerText="Lihat Semua">
                 <x-slot name="svg">
