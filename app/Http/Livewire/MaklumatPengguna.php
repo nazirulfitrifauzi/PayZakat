@@ -11,8 +11,7 @@ use Illuminate\Support\Str;
 class MaklumatPengguna extends Component
 {
     public $userid;
-    public $uuid;
-    public $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id;
+    public $uuid, $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id;
     public $negeri;
 
     public function mount()
