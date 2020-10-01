@@ -12,9 +12,8 @@ class Nisab extends Component
     use WithPagination;
 
     public $year;
-    public $sortField = 'state_id';
-    public $sortAsc = true;
-    public $search = '';
+    public $state_id = "";
+    public $value;
 
     public function updatingSearch()
     {
@@ -26,21 +25,37 @@ class Nisab extends Component
         $this->year = $year;
     }
 
-    public function sortBy($field)
+    public function updated($field)
     {
-        if ($this->sortField == $field) {
-            $this->sortAsc = !$this->sortAsc;
-        } else {
-            $this->sortAsc = true;
-        }
+        $this->validateOnly($field, [
+            'value'     => 'required|numeric',
+        ]);
+    }
 
-        $this->sortField = $field;
+    public function submit()
+    {
+        $this->validate([
+            'value'     => 'required|numeric',
+        ]);
+
+        ModelsNisab::create([
+            'year'          => $this->year,
+            'state_id'      => $this->state_id,
+            'value'         => $this->value,
+            'created_by'    => auth()->user()->id,
+            'created_at'    => now(),
+        ]);
+
+        $this->state_id = "";
+        $this->value = "";
     }
 
     public function render()
     {
         return view('livewire.admin.nisab', [
-            'state' => ModelsNisab::where('year', $this->year)->get(),
+            'state' => ModelsNisab::where('year', $this->year)
+                                    ->orderBy('state_id', 'ASC')
+                                    ->get(),
             'stateNisab' => State::whereNotIn('id', function ($query) {
                                 $query->select('state_id')->from('nisab')->where('year', $this->year);
                             })->get(),
