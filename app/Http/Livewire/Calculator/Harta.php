@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Calculator;
 
+use App\Models\Nisab;
+use App\Models\State;
 use Livewire\Component;
 
 class Harta extends Component
@@ -11,6 +13,14 @@ class Harta extends Component
     public $c1, $c2, $c3, $c4, $c5;
     public $d1, $d2;
     public $e;
+    public $negeri;
+    public $nisab;
+
+    public function mount()
+    {
+        $this->negeri   = State::all();
+        $this->nisab    = '';
+    }
 
     public function updated($field)
     {
@@ -51,6 +61,7 @@ class Harta extends Component
             'totalC' => $this->inputCheck($this->c1) + $this->inputCheck($this->c2) + $this->inputCheck($this->c3) + $this->inputCheck($this->c4) + $this->inputCheck($this->c5),
             'totalD' => $this->inputCheck($this->d1) + $this->inputCheck($this->d2),
             'totalE' => $this->inputCheck($this->e),
+            'nisabNegeri'   => Nisab::where('year', now()->format('Y'))->where('state_id', $this->nisab)->value('value'),
         ]);
     }
 }
