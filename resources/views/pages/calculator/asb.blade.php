@@ -1,4 +1,4 @@
-<div class="fixed inset-0 overflow-hidden mt-16"
+<div class="fixed inset-0 overflow-hidden"
     x-data="{ Open5: false }"
     x-cloak
     x-show="Open5"

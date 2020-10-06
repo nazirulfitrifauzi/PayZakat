@@ -32,9 +32,9 @@
 
     @livewireStyles
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
+<body class="h-screen antialiased leading-none bg-gray-100">
     <div id="app">
-        <div class="h-screen flex overflow-hidden bg-cool-gray-200" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
+        <div class="flex h-screen overflow-hidden bg-cool-gray-200" x-data="{ sidebarOpen: false }" @keydown.window.escape="sidebarOpen = false">
             <!-- mobile sidebar -->
             <x-sidebar.mobile.index/>
             <!-- desktop sidebar -->
@@ -45,7 +45,7 @@
                 <!-- TopBar -->
                 @include('layouts.navbar.topbar')
 
-                <main class="flex-1 relative pb-8 z-0 overflow-y-auto">
+                <main class="relative z-0 flex-1 pb-8 overflow-y-auto">
                     <!-- Toaster -->
                     <x-general.toaster/>
 

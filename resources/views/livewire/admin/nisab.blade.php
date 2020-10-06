@@ -79,7 +79,7 @@
     </div>
 
     {{-- loading --}}
-    <div wire:loading wire:target="year">
+    <div wire:loading wire:target="year, submit">
         @include('pages.misc.loading')
     </div>
 </div>
