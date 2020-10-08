@@ -16,12 +16,15 @@ class CreateNisabTable extends Migration
         Schema::create('nisab', function (Blueprint $table) {
             $table->id();
             $table->integer('year');
-            $table->bigInteger('state_id');
-            $table->decimal('value', 14, 4);
+            
+            $table->unsignedBigInteger('state_id');
 
-            $table->bigInteger('created_by');
-            $table->bigInteger('updated_by')->nullable();
-            $table->bigInteger('deleted_by')->nullable();
+            $table->unsignedDecimal('value', 14, 4);
+
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });

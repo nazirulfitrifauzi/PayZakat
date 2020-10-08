@@ -17,22 +17,23 @@ class CreateVirtualAccountStatementsTable extends Migration
             $table->id();
             $table->uuid('uuid');
             
-            $table->bigInteger('virtual_account_id');
+            $table->unsignedBigInteger('virtual_account_id');
             
             $table->datetime('txn_date');
-            $table->bigInteger('transaction_code_id');
-            $table->bigInteger('payment_method_id');
-            $table->bigInteger('transaction_status_id');
-
-            $table->bigInteger('bank_id');
+            $table->unsignedBigInteger('transaction_code_id');
+            $table->unsignedBigInteger('payment_method_id');
+            $table->unsignedBigInteger('transaction_status_id');
+            $table->unsignedBigInteger('bank_id');
+            
             $table->string('document_no')->nullable();
             $table->string('document_date')->nullable();
-            $table->decimal('txn_amount',16,2);
-            $table->decimal('balance',16,2);
+            $table->unsignedDecimal('txn_amount',16,2);
+            $table->unsignedDecimal('total',16,2);
             
-            $table->bigInteger('created_by');
-            $table->bigInteger('updated_by')->nullable();
-            $table->bigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            
             $table->timestamps();
             $table->softDeletes();
         });

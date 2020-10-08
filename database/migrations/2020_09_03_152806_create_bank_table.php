@@ -18,9 +18,10 @@ class CreateBankTable extends Migration
             $table->string('code');
             $table->string('name');
 
-            $table->bigInteger('created_by');
-            $table->bigInteger('updated_by')->nullable();
-            $table->bigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            
             $table->timestamps();
             $table->softDeletes();
         });

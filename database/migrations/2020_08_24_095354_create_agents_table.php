@@ -16,14 +16,14 @@ class CreateAgentsTable extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
 
-            $table->bigInteger('payment_category_id')->nullable();
+            $table->unsignedBigInteger('payment_category_id')->nullable();
             $table->string('ic_no');
             $table->string('old_ic')->nullable();
             $table->string('birth_date')->nullable();
-            $table->bigInteger('gender_id')->nullable();
-            $table->bigInteger('state_origin_id')->nullable();
+            $table->unsignedBigInteger('gender_id')->nullable();
+            $table->unsignedBigInteger('state_origin_id')->nullable();
             $table->integer('mastautin_flag')->nullable();
             $table->integer('mastautin_year')->nullable();
             $table->string('address1')->nullable();
@@ -31,16 +31,18 @@ class CreateAgentsTable extends Migration
             $table->string('address3')->nullable();
             $table->string('postcode')->nullable();
             $table->string('town')->nullable();
-            $table->bigInteger('state_id')->nullable();
+            $table->unsignedBigInteger('state_id')->nullable();
             $table->string('phone_no');
             $table->string('office_no')->nullable();
             $table->string('position')->nullable();
             $table->string('employee_no')->nullable();
             $table->string('employer_name')->nullable();
-            $table->bigInteger('fav_ppz_id')->nullable();
-            $table->bigInteger('created_by')->nullable();
-            $table->bigInteger('updated_by')->nullable();
-            $table->bigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('fav_ppz_id')->nullable();
+
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+            
             $table->timestamps();
             $table->softDeletes();
         });
