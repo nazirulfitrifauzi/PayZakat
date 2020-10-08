@@ -20,7 +20,7 @@ class CreatePpzTable extends Migration
             $table->string('address');
 
             $table->unsignedBigInteger('created_by');
-            $table->bigInunsignedBigIntegerteger('updated_by')->nullable();
+            $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
 
             $table->timestamps();
