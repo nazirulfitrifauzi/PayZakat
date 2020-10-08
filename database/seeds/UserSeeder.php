@@ -12,6 +12,19 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->insert([
+            'uuid' => (string) Str::uuid(),
+            'name' => 'Admin',
+            'email' => 'admin@csc.net.my',
+            'email_verified_at' => now(),
+            'password' => Hash::make('Csc@1234'),
+            'role' => 0,
+            'active' => 1,
+
+            'created_by' => '1',
+            'created_at' => date("Y-m-d h:i:sa")
+        ]);
+
         // agent
         DB::table('users')->insert([
             'uuid' => (string) Str::uuid(),
@@ -21,16 +34,9 @@ class UserSeeder extends Seeder
             'password' => Hash::make('Csc@1234'),
             'role' => 1,
             'active' => 1,
-        ]);
 
-        DB::table('users')->insert([
-            'uuid' => (string) Str::uuid(),
-            'name' => 'Admin',
-            'email' => 'admin@csc.net.my',
-            'email_verified_at' => now(),
-            'password' => Hash::make('Csc@1234'),
-            'role' => 0,
-            'active' => 1,
+            'created_by' => '1',
+            'created_at' => date("Y-m-d h:i:sa")
         ]);
     }
 }
