@@ -21,14 +21,14 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->bigInteger('role')->default('1');
+            $table->unsignedBigInteger('role')->default('1');
             $table->string('image');
-            $table->bigInteger('ref_id')->nullable();
+            $table->unsignedBigInteger('ref_id')->nullable();
             $table->integer('active')->default(0);
 
-            $table->bigInteger('created_by');
-            $table->bigInteger('updated_by')->nullable();
-            $table->bigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
             
             $table->timestamps();
             $table->softDeletes();

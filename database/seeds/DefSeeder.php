@@ -207,6 +207,7 @@ class DefSeeder extends Seeder
             ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '051004', 'description'=>'INSURANCE - REFUND PAYMENT',            'description_malay'=>'INSURAN/TAKAFUL - PULANGAN BAYARAN'],
             ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060001', 'description'=>'VIRTUAL ACCOUNT -  SYSTEM ADJUSTMENT',  'description_malay'=>'VIRTUAL ACCOUNT -  PELARASAN SISTEM'],
             ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060002', 'description'=>'VIRTUAL ACCOUNT -  OPENING BALANCE',    'description_malay'=>'VIRTUAL ACCOUNT -  BAKI MULA'],
+            ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060004', 'description'=>'VIRTUAL ACCOUNT -  PAYMENT',            'description_malay'=>'VIRTUAL ACCOUNT -  BAYARAN'],
             ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060007', 'description'=>'VIRTUAL ACCOUNT -  WITHDRAW',           'description_malay'=>'VIRTUAL ACCOUNT -  KELUARAN'],
             ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060009', 'description'=>'VIRTUAL ACCOUNT -  TOP UP',             'description_malay'=>'VIRTUAL ACCOUNT -  TAMBAH NILAI'],
             ['created_by' => '0', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060907', 'description'=>'VIRTUAL ACCOUNT - REVERSAL WITHDRAW',   'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN KELUARAN'],

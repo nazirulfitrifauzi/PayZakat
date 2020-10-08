@@ -17,17 +17,20 @@ class CreateAccountZakatTable extends Migration
             $table->id();
             $table->uuid('uuid');
             
-            $table->bigInteger('product_id');
-            $table->bigInteger('virtual_account_id')->nullable();
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('virtual_account_id')->nullable();
             $table->string('account_zakat_no');
-            $table->bigInteger('customer_id');
-            $table->decimal('total',16,2)->nullable();
-            $table->decimal('last_payment_amount',16,2)->nullable();
+            $table->unsignedBigInteger('customer_id');
+
+            $table->unsignedDecimal('total',16,2)->nullable();
+            
+            $table->unsignedDecimal('last_payment_amount',16,2)->nullable();
             $table->datetime('last_payment_date')->nullable();
             
-            $table->bigInteger('created_by');
-            $table->bigInteger('updated_by')->nullable();
-            $table->bigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('updated_by')->nullable();
+            $table->unsignedBigInteger('deleted_by')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });
