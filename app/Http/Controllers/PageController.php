@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Customers;
 use App\User;
+use App\Models\Asnaf;
 
 class PageController extends Controller
 {
@@ -77,5 +78,39 @@ class PageController extends Controller
     public function adminNisab()
     {
         return view('pages.admin.nisab');
+    }
+
+    public function asnafSenarai()
+    {
+        if(auth()->user()->role == 1) {
+            return view('pages.asnaf.senarai');
+        } else {
+            return view('pages.admin.asnaf.senarai');
+        }
+    }
+
+    public function asnafTambah()
+    {
+        return view('pages.asnaf.tambah');
+    }
+
+    public function asnafMaklumat($uuid)
+    {
+        if(auth()->user()->role == 1) {
+            $selected_asnaf = Asnaf::where('uuid',$uuid)
+                                ->where('created_by',auth()->user()->id)
+                                ->firstOrFail();
+
+            return view('pages.asnaf.maklumat', compact(
+                'selected_asnaf'
+            ));
+        } else {
+            $selected_asnaf = Asnaf::where('uuid',$uuid)
+                                ->firstOrFail();
+
+            return view('pages.admin.asnaf.maklumat', compact(
+                'selected_asnaf'
+            ));
+        }
     }
 }

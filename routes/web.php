@@ -19,6 +19,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/pembayar/tambah', 'PageController@pembayartambah')->name('pembayar.tambah');
         Route::get('/pembayar/muat-naik-pukal', 'PageController@pembayarpukal')->name('pembayar.pukal');
         Route::get('/pembayar/{uuid}', 'PageController@pembayarmaklumat')->name('pembayar.maklumat');
+        Route::get('/asnaf', 'PageController@asnafSenarai')->name('asnaf.senarai');
+        Route::get('/asnaf/tambah', 'PageController@asnafTambah')->name('asnaf.tambah');
+        Route::get('/asnaf/{uuid}', 'PageController@asnafMaklumat')->name('asnaf.maklumat');
         Route::get('/profil', 'ProfilController@index')->name('profil');
         Route::get('/bayar', 'BayarController@index')->name('bayar');
     });

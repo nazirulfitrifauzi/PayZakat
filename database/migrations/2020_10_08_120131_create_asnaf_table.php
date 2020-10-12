@@ -18,10 +18,11 @@ class CreateAsnafTable extends Migration
             $table->uuid('uuid');
 
             $table->string('name');
-            $table->string('ic');
+            $table->string('ic_no');
             $table->unsignedDecimal('household_income');
             $table->unsignedBigInteger('dependents');
-            $table->string('phone')->nullable();
+            
+            $table->string('phone_no')->nullable();
             $table->string('email')->nullable();
 
             $table->string('address1')->nullable();
@@ -31,11 +32,11 @@ class CreateAsnafTable extends Migration
             $table->string('postcode')->nullable();
             $table->unsignedBigInteger('state_id')->nullable();
 
-            $table->string('recommender_flag')->default(0);
-            $table->string('recomemder_name')->nullable();
-            $table->string('recomemder_ic')->nullable();
-            $table->string('recomemder_phone')->nullable();
-            $table->string('recomemder_email')->nullable();
+            $table->string('recommender_flag')->default(1);
+            $table->string('recommender_name')->nullable();
+            $table->string('recommender_ic')->nullable();
+            $table->string('recommender_phone')->nullable();
+            $table->string('recommender_email')->nullable();
 
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
