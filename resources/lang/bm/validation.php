@@ -172,6 +172,10 @@ return [
 
     'attributes' => [
         'name' => 'Nama Penuh',
+        'recommender_name'    => 'Nama Pencadang',
+        'recommender_ic'      => 'No. Kad Pengenalan Pencadang',
+        'recommender_phone'   => 'Telefon Bimbit Pencadang',
+        'recommender_email'   => 'E-mail Pencadang',
     ],
 
 ];

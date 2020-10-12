@@ -49,6 +49,10 @@
                         <x-heroicon-o-user-group class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                     </x-sidebar.nav-item>
 
+                    <x-sidebar.nav-item route="asnaf.senarai" label="Asnaf" uri="asnaf">
+                        <x-heroicon-o-users class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
+                    </x-sidebar.nav-item>
+
                         <x-sidebar.nav-item route="kalkulator" label="Zakat Kalkulator" uri="kalkulator">
                             <x-heroicon-o-calculator class="mr-4 h-6 w-6 text-teal-200 group-hover:text-teal-200 group-focus:text-teal-200 transition ease-in-out duration-150"/>
                         </x-sidebar.nav-item>

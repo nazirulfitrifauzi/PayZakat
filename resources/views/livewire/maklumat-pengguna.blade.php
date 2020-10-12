@@ -17,7 +17,7 @@
                         <option value="0">Tidak</option>
                     </x-form.dropdown>
                     <x-form.input class="" label="Tempoh Mastautin (Tahun)" value="mastautin_year" livewire="wire:model.lazy=mastautin_year wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-                    <x-form.address-input class="" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition="auth()->user()->agentInfo->state_id"/>
+                    <x-form.address-input class="col-span-2" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition="auth()->user()->agentInfo->state_id"/>
                     <x-form.input class="" label="Telefon Bimbit" value="phone_no" livewire="wire:model.lazy=phone_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
                 </x-general.grid>
             </div>
