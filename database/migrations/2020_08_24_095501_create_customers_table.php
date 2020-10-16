@@ -48,7 +48,8 @@ class CreateCustomersTable extends Migration
             $table->string('email')->nullable();
             
             $table->unsignedBigInteger('fav_ppz_id')->nullable();
-
+            $table->unsignedDecimal('default_amount_zakat')->default(30.00);
+            
             $table->integer('active')->default(0);
             
             $table->unsignedBigInteger('created_by');

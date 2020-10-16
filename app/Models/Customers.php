@@ -42,5 +42,8 @@ class Customers extends Model
         return $this->hasMany('App\Models\AccountZakat','customer_id','id');
     }
 
-    
+    public function screening()
+    {
+        return $this->hasMany('App\Models\Screening','user_id','id');
+    }
 }

@@ -30,4 +30,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Models\Agents', 'user_id', 'id')->withDefault();
     }
+
+    public function screening()
+    {
+        return $this->hasMany('App\Models\Screening', 'user_id', 'id');
+    }
 }
