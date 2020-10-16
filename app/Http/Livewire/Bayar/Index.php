@@ -6,42 +6,35 @@ use Livewire\Component;
 
 class Index extends Component
 {
-    public $stepstatus = [
-        'step1' => 'current',
-        'step2' => 'upcoming',
-        'step3' => 'upcoming',
+    public $steps = [
+        '1' => 'Jenis & Pembayar Zakat',
+        '2' => 'Maklumat Transaksi',
+        '3' => 'Pengesahan Transaksi',
     ];
+    
+    public $currentstep = 1;
 
-    public $navigate;
-
-    public function mount()
+    public function navigation($keyword)
     {
-        //
-    }
-
-    public function navigation($current, $next, $flow)
-    {
-        if ($flow == "next") {
-            $this->next($current, $next);
-        } else {
-            $this->prev($current, $next);
+        if ($keyword == "next") {
+            $this->currentstep++;
+        } elseif ($keyword == "prev") {
+            $this->currentstep--;
         }
-    }
 
-    private function next($current, $next)
-    {
-        $this->stepstatus[$current] = "completed";
-        $this->stepstatus[$next] = "current";
-    }
-
-    private function prev($current, $next)
-    {
-        $this->stepstatus[$current] = "upcoming";
-        $this->stepstatus[$next] = "current";
+        if ($this->currentstep < 1) $this->currentstep = 1;
     }
 
     public function render()
     {
         return view('livewire.bayar.index');
     }
+
+
+
+    /*******************************/
+    /*******************************/
+    /*******Private Functions*******/
+    /*******************************/
+    /*******************************/
 }
