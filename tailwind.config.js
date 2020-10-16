@@ -8,6 +8,11 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var'],
       },
+      transitionProperty: {
+        'height': 'height',
+        'width': 'width',
+        'spacing': 'margin, padding',
+      },
     },
   },
   variants: {},
