@@ -19,16 +19,18 @@ class CreateVirtualAccountStatementsTable extends Migration
             
             $table->unsignedBigInteger('virtual_account_id');
             
-            $table->datetime('txn_date');
+            $table->datetime('transaction_date');
             $table->unsignedBigInteger('transaction_code_id');
             $table->unsignedBigInteger('payment_method_id');
             $table->unsignedBigInteger('transaction_status_id');
             $table->unsignedBigInteger('bank_id');
+
+            $table->unsignedBigInteger('ppz_id')->nullable();
+            $table->unsignedBigInteger('asnaf_id')->nullable();
             
             $table->string('document_no')->nullable();
             $table->string('document_date')->nullable();
-            $table->unsignedDecimal('txn_amount',16,2);
-            $table->unsignedDecimal('total',16,2);
+            $table->unsignedDecimal('transaction_amount',16,2);
             
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
