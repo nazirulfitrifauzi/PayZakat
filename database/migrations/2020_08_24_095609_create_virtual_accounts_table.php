@@ -18,7 +18,7 @@ class CreateVirtualAccountsTable extends Migration
             $table->uuid('uuid');
 
             $table->string('virtual_account_no');
-            $table->unsignedBigInteger('agent_id');
+            $table->unsignedBigInteger('agent_id')->nullable();
 
             $table->unsignedDecimal('last_year_total',16,2)->default(0);
             $table->unsignedDecimal('last_year_one_day_float')->default(0);

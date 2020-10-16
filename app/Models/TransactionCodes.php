@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class TransactionCodes extends Model
 {
     use SoftDeletes;
-    public $timestamps = true;
+    pprotected $guarded = [];ublic $timestamps = true;
 
     protected $table = 'transaction_codes';
-    protected $guarded = [];
+    
 
     public function virtual_account_statements()
     {
