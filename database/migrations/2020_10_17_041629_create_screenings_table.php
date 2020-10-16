@@ -15,6 +15,8 @@ class CreateScreeningsTable extends Migration
     {
         Schema::create('screenings', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
+
             $table->unsignedBigInteger('user_id');
 
             $table->unsignedBigInteger('sanction_id');
@@ -25,7 +27,6 @@ class CreateScreeningsTable extends Migration
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
             
-            $table->timestamps();
             $table->timestamps();
         });
     }

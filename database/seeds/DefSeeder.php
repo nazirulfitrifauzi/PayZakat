@@ -21,6 +21,7 @@ class DefSeeder extends Seeder
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'INSURANCE'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'VIRTUAL ACCOUNT'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'ZAKAT'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'GOLD'],
         ]);
 
         DB::table('products')->insert([
@@ -68,7 +69,6 @@ class DefSeeder extends Seeder
         ]);
 
         DB::table('role')->insert([
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'ADMIN'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'AGENT - CORPORATE'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'AGENT - PUBLIC'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'CUSTOMER'],
@@ -282,9 +282,8 @@ class DefSeeder extends Seeder
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'EU Most Wanted Warnings', 'website' => 'https://eumostwanted.eu/'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Bureau of Industry and Security', 'website' => 'https://www.bis.doc.gov/'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'State Department Foreign Terrorist Organizations List and Non-Proliferation List', 'website' => 'https://www.state.gov/foreign-terrorist-organizations/'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => '2018', 'website' => 'https://www.state.gov/foreign-terrorist-organizations/'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Intepol Wanted - Red Notices', 'website' => 'https://www.interpol.int/en/How-we-work/Notices/View-Red-Notices'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Intepol Wanted - Yellow Notices', 'website' => 'https://www.interpol.int/en/How-we-work/Notices/View-Yellow-Notices'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Interpol Wanted - Red Notices', 'website' => 'https://www.interpol.int/en/How-we-work/Notices/View-Red-Notices'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Interpol Wanted - Yellow Notices', 'website' => 'https://www.interpol.int/en/How-we-work/Notices/View-Yellow-Notices'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Central Bureau of Investigation - List', 'website' => 'http://www.cbi.gov.in/wantedbycbi.php'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'name' => 'Bank Negara Malaysia Watchlist - Consumer Alert', 'website' => 'https://www.bnm.gov.my/index.php?lang=en&ch=en_financialconsumeralert'],
         ]);
