@@ -14,6 +14,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'uuid' => (string) Str::uuid(),
+            'username' => 'admin',
             'name' => 'Admin',
             'email' => 'admin@csc.net.my',
             'email_verified_at' => now(),
@@ -28,6 +29,7 @@ class UserSeeder extends Seeder
         // agent
         DB::table('users')->insert([
             'uuid' => (string) Str::uuid(),
+            'username' => 'agent',
             'name' => 'Agent',
             'email' => 'agent@csc.net.my',
             'email_verified_at' => now(),

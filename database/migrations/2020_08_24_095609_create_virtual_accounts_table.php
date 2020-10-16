@@ -20,10 +20,25 @@ class CreateVirtualAccountsTable extends Migration
             $table->string('virtual_account_no');
             $table->unsignedBigInteger('agent_id');
 
-            $table->unsignedDecimal('balance',16,2)->default(0);
-            $table->unsignedDecimal('one_day_float')->default(0);
-            $table->unsignedDecimal('two_day_float')->default(0);
-            $table->unsignedDecimal('late_clearing')->default(0);
+            $table->unsignedDecimal('last_year_total',16,2)->default(0);
+            $table->unsignedDecimal('last_year_one_day_float')->default(0);
+            $table->unsignedDecimal('last_year_two_day_float')->default(0);
+            $table->unsignedDecimal('last_year_late_clearing')->default(0);
+            $table->unsignedDecimal('last_year_success')->default(0);
+            $table->unsignedDecimal('last_year_fail')->default(0);
+            $table->unsignedDecimal('last_year_refund')->default(0);
+            $table->unsignedDecimal('last_year_revert')->default(0);
+            $table->unsignedDecimal('last_year_utilize')->default(0);
+
+            $table->unsignedDecimal('current_year_total',16,2)->default(0);
+            $table->unsignedDecimal('current_year_one_day_float')->default(0);
+            $table->unsignedDecimal('current_year_two_day_float')->default(0);
+            $table->unsignedDecimal('current_year_late_clearing')->default(0);
+            $table->unsignedDecimal('current_year_success')->default(0);
+            $table->unsignedDecimal('current_year_fail')->default(0);
+            $table->unsignedDecimal('current_year_refund')->default(0);
+            $table->unsignedDecimal('current_year_revert')->default(0);
+            $table->unsignedDecimal('current_year_utilize')->default(0);
 
             $table->unsignedDecimal('last_withdraw_amount',16,2)->nullable();
             $table->datetime('last_withdraw_date')->nullable();
