@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVirtualAccountsTable extends Migration
+class CreateVirtualAccountHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateVirtualAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('virtual_accounts', function (Blueprint $table) {
+        Schema::create('virtual_account_histories', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid');
 
-            $table->string('ref_no');
-            $table->string('virtual_account_no');
-            $table->unsignedBigInteger('agent_id')->nullable();
+            $table->unsignedBigInteger('virtual_account_id');
+            $table->datetime('report_date');
 
             $table->unsignedDecimal('total',16,2)->default(0);
 
@@ -46,6 +44,6 @@ class CreateVirtualAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('virtual_accounts');
+        Schema::dropIfExists('virtual_account_histories');
     }
 }

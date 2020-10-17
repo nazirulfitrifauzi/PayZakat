@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVirtualAccountStatementsTable extends Migration
+class CreateAccountZakatRefundStatementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateVirtualAccountStatementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('virtual_account_statements', function (Blueprint $table) {
+        Schema::create('account_zakat_refund_statements', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
             
             $table->unsignedBigInteger('virtual_account_id');
+            $table->unsignedBigInteger('virtual_account_statements_id');
+            $table->unsignedBigInteger('account_zakat_refund_id');
             
             $table->datetime('transaction_date');
             $table->unsignedBigInteger('transaction_code_id');
@@ -25,11 +27,12 @@ class CreateVirtualAccountStatementsTable extends Migration
             $table->unsignedBigInteger('transaction_status_id');
             $table->unsignedBigInteger('bank_id');
 
-            $table->unsignedBigInteger('ppz_id')->nullable();
+            $table->unsignedBigInteger('asnaf_id')->nullable();
             
             $table->string('document_no')->nullable();
             $table->string('document_date')->nullable();
             $table->unsignedDecimal('transaction_amount',16,2)->default(0);
+            $table->unsignedDecimal('owings')->default(0);
 
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
@@ -47,6 +50,6 @@ class CreateVirtualAccountStatementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('virtual_account_statements');
+        Schema::dropIfExists('account_zakat_refund_statements');
     }
 }

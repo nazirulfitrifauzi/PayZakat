@@ -30,8 +30,7 @@ class CreateAccountZakatStatementsTable extends Migration
 
             $table->string('document_no')->nullable();
             $table->string('document_date')->nullable();
-            $table->unsignedDecimal('transaction_amount',16,2);
-            $table->unsignedDecimal('total',16,2);
+            $table->unsignedDecimal('transaction_amount',16,2)->default(0);
 
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
