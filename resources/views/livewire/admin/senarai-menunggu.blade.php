@@ -1,5 +1,5 @@
 <div>
-    <div class="my-4 flex justify-between">
+    <div class="flex justify-between my-4">
         <div class="flex items-center">
             <span class="mr-2 text-base text-gray-500">Carian : </span>
             <x-form.input class="" label="" value="search" livewire="wire:model=search"/>
@@ -39,21 +39,20 @@
                     <x-general.table-body colspan="" class="text-gray-500">
                         {{ $lists->created_at->format('d F Y') }}
                     </x-general.table-body>
-                    <x-general.table-body colspan="" class="text-right font-medium">
-                        <div class="flex justify-center">
-                            <x-general.button.icon-button href="" target="" label="Terima" color="indigo" livewire="wire:click=approve({{ $lists->id }})">
-                                <x-heroicon-s-check class="-ml-0.5 mr-2 h-4 w-4"/>
+                    <x-general.table-body colspan="" class="font-medium text-right">
+                        <div class="flex justify-center" x-data="{ open: false }">
+                            <x-general.button.icon-button href="" target="" label="Saringan" color="indigo" livewire="" @click="open = true" >
+                                <x-heroicon-s-shield-check class="-ml-0.5 mr-2 h-4 w-4"/>
                             </x-general.button.icon-button>
 
-                            <x-general.button.icon-button href="" target="" label="Tolak" color="red" livewire="wire:click=reject({{ $lists->id }})">
-                                <x-heroicon-s-trash class="-ml-0.5 mr-2 h-4 w-4"/>
-                            </x-general.button.icon-button>
+                            {{-- modal screening --}}
+                            @include('pages.admin.pengguna.modalScreening')
                         </div>
                     </x-general.table-body>
                 </tr>
             @empty
                 <tr>
-                    <x-general.table-body colspan="5" class="text-gray-500 text-center">
+                    <x-general.table-body colspan="5" class="text-center text-gray-500">
                         Tiada Data
                     </x-general.table-body>
                 </tr>

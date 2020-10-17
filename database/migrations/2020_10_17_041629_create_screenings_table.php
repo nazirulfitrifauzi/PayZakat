@@ -21,12 +21,13 @@ class CreateScreeningsTable extends Migration
 
             $table->unsignedBigInteger('sanction_id');
             $table->integer('status');
-            $table->string('remarks');
+            $table->string('remarks')->nullable();
 
+            $table->unsignedBigInteger('deleted_at')->nullable();
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-            
+
             $table->timestamps();
         });
     }

@@ -2,7 +2,10 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\SanctionListWebsite;
+use App\Models\Screening;
 use App\User;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -30,27 +33,41 @@ class SenaraiMenunggu extends Component
         $this->sortField = $field;
     }
 
-    public function approve($user_id)
+    public function screenResult($user_id, $screen_id, $status)
     {
-        $user = User::find($user_id);
-        $user->active = 1;
-        $user->save();
 
-        session()->flash('type', 'success');
-        session()->flash('title', 'Berjaya!');
-        session()->flash('message', 'Permohonan Ejen telah diterima.');
-        return redirect()->to('/admin/senarai-menunggu');
+        return Screening::create([
+            'uuid'          => (string) Str::uuid(),
+            'user_id'       => $user_id,
+            'sanction_id'   => $screen_id,
+            'status'        => $status == "pass" ? 1 : 0,
+            'created_by'    => auth()->user()->id,
+        ]);
     }
 
-    public function reject($user_id)
+    public function finalResult($user_id, $status)
     {
-        $user = User::find($user_id);
-        $user->active = 2;
-        $user->save();
+        if ($status == 'terima')
+        {
+            $user = User::find($user_id);
+            $user->active = 1;
+            $user->save();
 
-        session()->flash('type', 'success');
-        session()->flash('title', 'Berjaya!');
-        session()->flash('message', 'Permohonan ejen telah ditolak.');
+            session()->flash('type', 'success');
+            session()->flash('title', 'Berjaya!');
+            session()->flash('message', 'Permohonan Ejen telah diterima.');
+        }
+        elseif ($status == 'tolak')
+        {
+            $user = User::find($user_id);
+            $user->active = 2;
+            $user->save();
+
+            session()->flash('type', 'success');
+            session()->flash('title', 'Berjaya!');
+            session()->flash('message', 'Permohonan ejen telah ditolak.');
+        }
+
         return redirect()->to('/admin/senarai-menunggu');
     }
 
@@ -61,7 +78,8 @@ class SenaraiMenunggu extends Component
                             ->whereRole(1)
                             ->whereActive(0)
                             ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
-                            ->paginate(2),
+                            ->paginate(10),
+            'sanctionList' => SanctionListWebsite::all(),
         ]);
     }
 }

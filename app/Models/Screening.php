@@ -10,7 +10,7 @@ class Screening extends Model
     use SoftDeletes;
     public $timestamps = true;
 
-    protected $table = 'transaction_codes';
+    protected $table = 'screenings';
     protected $guarded = [];
 
     public function customer()
@@ -21,5 +21,10 @@ class Screening extends Model
     public function user()
     {
         return $this->belongsTo('App\Users','user_id','id');
+    }
+
+    public function sanction()
+    {
+        return $this->belongsTo('App\Models\SanctionListWebsite', 'sanction_id', 'id');
     }
 }
