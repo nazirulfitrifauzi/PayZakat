@@ -1,7 +1,7 @@
-<div  x-show="open" 
+<div  x-show="open"
       x-cloak
-      class="fixed z-10 inset-0 overflow-y-auto">
-      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      class="fixed inset-0 z-10 overflow-y-auto">
+      <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
             <div x-show="open"
                   x-description="Background overlay, show/hide based on modal state."
                   x-transition:enter="ease-out duration-300"
@@ -23,54 +23,54 @@
                   x-transition:leave="ease-in duration-200"
                   x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                   x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                  class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:mt-20 sm:mb-8 sm:align-middle sm:max-w-3xl sm:w-full sm:p-6 relative" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                  class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:mt-20 sm:mb-8 sm:align-middle sm:max-w-3xl sm:w-full sm:p-6" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                   <div>
                         <table class="table-fixed">
                               <thead>
-                                  <tr>
-                                      <th class="w-2/5 px-4 py-2">Ruangan</th>
-                                      <th class="w-2/5 px-4 py-2">Format</th>
-                                      <th class="w-1/5 px-4 py-2">Mandatori</th>
-                                  </tr>
+                                    <tr>
+                                          <th class="w-2/5 px-4 py-2">Ruangan</th>
+                                          <th class="w-2/5 px-4 py-2">Format</th>
+                                          <th class="w-1/5 px-4 py-2">Mandatori</th>
+                                    </tr>
                               </thead>
                               <tbody>
                                     <tr>
-                                          <td class="border px-4 py-2">Nama Penuh</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Nama Penuh</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Simbol @ sahaja dibenarkan.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">No. Kad Pengenalan Baru</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">No. Kad Pengenalan Baru</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua nombor.</li>
                                                       <li>Simbol - TIDAK dibenarkan.</li>
                                                       <li>Maksimum 12 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">No. Kad Pengenalan Lama</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">No. Kad Pengenalan Lama</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Huruf dan Nombor sahaja.</li>
                                                       <li>Simbol - TIDAK dibenarkan.</li>
                                                       <li>Maksimum 12 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Tidak</td>
+                                          <td class="px-4 py-2 border">Tidak</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Negeri Asal</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Negeri Asal</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Kod negeri.</li>
                                                       <li>1 = JOHOR</li>
                                                       <li>2 = KEDAH</li>
@@ -88,91 +88,91 @@
                                                       <li>14 = WILAYAH PERSEKUTUAN</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Status Bermastautin</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Status Bermastautin</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Kod bermastautin.</li>
                                                       <li>1 = Bermastautin.</li>
                                                       <li>2 = Tidak bermastautin.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Tempoh Bermastautin</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Tempoh Bermastautin</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Ruangan ini hanya perlu diisi jika ruangan Status Bermastautin berkod 1.</li>
                                                       <li>Tempoh dalam kiraan tahun</li>
                                                       <li>Nombor sahaja</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Alamat 1</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Alamat 1</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Semua nombor.</li>
                                                       <li>Hanya simbol / - , @ yang dibenarkan.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Alamat 2</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Alamat 2</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Semua nombor.</li>
                                                       <li>Hanya simbol / - , @ yang dibenarkan.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Alamat 3</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Alamat 3</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Semua nombor.</li>
                                                       <li>Hanya simbol / - , @ yang dibenarkan.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Tidak</td>
+                                          <td class="px-4 py-2 border">Tidak</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Poskod</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Poskod</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua nombor.</li>
                                                       <li>Maksimum 5 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Bandar</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Bandar</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Semua nombor.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Negeri</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Negeri</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Kod negeri.</li>
                                                       <li>1 = JOHOR</li>
                                                       <li>2 = KEDAH</li>
@@ -190,73 +190,73 @@
                                                       <li>14 = WILAYAH PERSEKUTUAN</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">No. Telefon Bimbit</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">No. Telefon Bimbit</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua nombor.</li>
                                                       <li>Kod Negara +6 tidak dibenarkan.</li>
                                                       <li>Maksimum 12 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">E-mel</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">E-mel</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Alamat e-mel yang sah.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Nama Majikan</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Nama Majikan</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Tidak</td>
+                                          <td class="px-4 py-2 border">Tidak</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">No. Telefon Pejabat</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">No. Telefon Pejabat</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua nombor.</li>
                                                       <li>Kod Negara +6 tidak dibenarkan.</li>
                                                       <li>Maksimum 12 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Tidak</td>
+                                          <td class="px-4 py-2 border">Tidak</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Jawatan</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Jawatan</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Tidak</td>
+                                          <td class="px-4 py-2 border">Tidak</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">No. Pekerja</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">No. Pekerja</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Semua huruf dan nombor.</li>
                                                       <li>Maksimum 255 karakter.</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Tidak</td>
+                                          <td class="px-4 py-2 border">Tidak</td>
                                     </tr>
                                     <tr>
-                                          <td class="border px-4 py-2">Kod PPZ Pilihan</td>
-                                          <td class="border px-4 py-2">
-                                                <ul class="list-disc px-4">
+                                          <td class="px-4 py-2 border">Kod PPZ Pilihan</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
                                                       <li>Kod PPZ.</li>
                                                       <li>1 = PPZ - Shamelin (HQ)</li>
                                                       <li>2 = PPZ - Daruzzakah</li>
@@ -269,25 +269,25 @@
                                                       <li>9 = PPZ - Labuan</li>
                                                 </ul>
                                           </td>
-                                          <td class="border px-4 py-2">Ya</td>
+                                          <td class="px-4 py-2 border">Ya</td>
                                     </tr>
                               </tbody>
-                        </table>                          
+                        </table>
                   </div>
-                  <div class="mt-5 sm:mt-6 text-center">
-                        <button 
-                              @click="open = false" 
-                              type="button" 
-                              class="inline-flex justify-center rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                  <div class="mt-5 text-center sm:mt-6">
+                        <button
+                              @click="open = false"
+                              type="button"
+                              class="inline-flex justify-center px-4 py-2 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5">
                               Tutup
                         </button>
                   </div>
                   <div class="absolute top-0 right-0 pt-2 pr-2 focus:outline-none">
-                        <button 
-                              @click="open = false" 
-                              type="button" 
-                              class="transition duration-200 ease-in-out text-gray-600 hover:text-gray-800 active:bg-gray-300 active:text-gray-100 focus:outline-none rounded-full">
-                              <x-heroicon-o-x class="h-6 w-6"/>
+                        <button
+                              @click="open = false"
+                              type="button"
+                              class="text-gray-600 transition duration-200 ease-in-out rounded-full hover:text-gray-800 active:bg-gray-300 active:text-gray-100 focus:outline-none">
+                              <x-heroicon-o-x class="w-6 h-6"/>
                         </button>
                   </div>
             </div>
