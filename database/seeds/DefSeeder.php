@@ -21,7 +21,7 @@ class DefSeeder extends Seeder
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'INSURANCE'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'VIRTUAL ACCOUNT'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'ZAKAT'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'GOLD'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'ZAKAT REFUND'],
         ]);
 
         DB::table('products')->insert([
@@ -215,21 +215,18 @@ class DefSeeder extends Seeder
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060009', 'description'=>'VIRTUAL ACCOUNT -  DEPOSIT',                            'description_malay'=>'VIRTUAL ACCOUNT -  SIMPANAN'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060907', 'description'=>'VIRTUAL ACCOUNT - REVERSAL WITHDRAW',                   'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN KELUARAN'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060909', 'description'=>'VIRTUAL ACCOUNT - REVERSAL DEPOSIT',                    'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN SIMPANAN'],
-            
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060010', 'description'=>'VIRTUAL ACCOUNT - PAYMENT ZAKAT',                       'description_malay'=>'VIRTUAL ACCOUNT - BAYARAN ZAKAT'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060011', 'description'=>'VIRTUAL ACCOUNT - PAYMENT ASNAF',                       'description_malay'=>'VIRTUAL ACCOUNT - BAYARAN ASNAF'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060012', 'description'=>'VIRTUAL ACCOUNT - REFUND ALLOCATED FROM PPZ',           'description_malay'=>'VIRTUAL ACCOUNT - BAYARAN BALIK DARI PPZ'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060013', 'description'=>'VIRTUAL ACCOUNT - REVERT TO PPZ',                       'description_malay'=>'VIRTUAL ACCOUNT - BAYARAN BALIK KE PPZ'],
-
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060910', 'description'=>'VIRTUAL ACCOUNT - REVERSAL PAYMENT ZAKAT',              'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN BAYARAN ZAKAT'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060911', 'description'=>'VIRTUAL ACCOUNT - REVERSAL PAYMENT ASNAF',              'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN BAYARAN ASNAF'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060912', 'description'=>'VIRTUAL ACCOUNT - REVERSAL REFUND ALLOCATED FROM PPZ',  'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN BAYARAN BALIK DARI PPZ'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '060913', 'description'=>'VIRTUAL ACCOUNT - REVERSAL REVERT TO PPZ',              'description_malay'=>'VIRTUAL ACCOUNT - PEMBATALAN BALIK KE PPZ'],
-
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '070001', 'description'=>'ZAKAT -  SYSTEM ADJUSTMENT',                            'description_malay'=>'ZAKAT -  PELARASAN SISTEM'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '070002', 'description'=>'ZAKAT -  OPENING BALANCE',                              'description_malay'=>'ZAKAT -  BAKI MULA'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '070010', 'description'=>'ZAKAT - PAYMENT ZAKAT',                                 'description_malay'=>'ZAKAT - BAYARAN ZAKAT'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '070910', 'description'=>'ZAKAT - REVERSAL PAYMENT ZAKAT',                        'description_malay'=>'ZAKAT - PEMBATALAN BAYARAN ZAKAT'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '080011', 'description'=>'ZAKAT REFUND - PAYMENT ASNAF',                          'description_malay'=>'BAYARAN BALIK ZAKAT - BAYARAN ASNAF'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '080013', 'description'=>'ZAKAT REFUND - REVERT TO PPZ',                          'description_malay'=>'BAYARAN BALIK ZAKAT - BAYARAN BALIK KE PPZ'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '080911', 'description'=>'ZAKAT REFUND - REVERSAL PAYMENT ASNAF',                 'description_malay'=>'BAYARAN BALIK ZAKAT - PEMBATALAN BAYARAN ASNAF'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '080912', 'description'=>'ZAKAT REFUND - REVERSAL REFUND ALLOCATED FROM PPZ',     'description_malay'=>'BAYARAN BALIK ZAKAT - PEMBATALAN BAYARAN BALIK DARI PPZ'],
         ]);
 
         DB::table('transaction_status')->insert([
