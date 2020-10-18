@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('image')->nullable();
             $table->unsignedBigInteger('ref_id')->nullable();
             $table->integer('active')->default(0);
+            $table->string('screen_remarks')->nullable();
 
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();

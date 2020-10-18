@@ -16,6 +16,7 @@ class SenaraiMenunggu extends Component
     public $sortField = 'name';
     public $sortAsc = true;
     public $search = '';
+    public $remarks;
 
     public function updatingSearch()
     {
@@ -35,7 +36,6 @@ class SenaraiMenunggu extends Component
 
     public function screenResult($user_id, $screen_id, $status)
     {
-
         return Screening::create([
             'uuid'          => (string) Str::uuid(),
             'user_id'       => $user_id,
@@ -47,11 +47,21 @@ class SenaraiMenunggu extends Component
 
     public function finalResult($user_id, $status)
     {
+        $this->validate([
+            'remarks'  => 'required|max:255',
+        ]);
+
         if ($status == 'terima')
         {
             $user = User::find($user_id);
             $user->active = 1;
             $user->save();
+
+            User::whereId($user_id)
+                ->update([
+                    'active' => 1,
+                    'screen_remarks' => $this->remarks
+                ]);
 
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
@@ -59,9 +69,11 @@ class SenaraiMenunggu extends Component
         }
         elseif ($status == 'tolak')
         {
-            $user = User::find($user_id);
-            $user->active = 2;
-            $user->save();
+            User::whereId($user_id)
+                ->update([
+                    'active' => 2,
+                    'screen_remarks' => $this->remarks
+                ]);
 
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
