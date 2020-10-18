@@ -12,7 +12,7 @@ class Tambah extends Component
 {
     public $negeri;
     public $ppz;
-    public $uuid, $name, $ic_no, $old_ic, $birth_date, $gender_id, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
+    public $uuid, $name, $ic_no, $old_ic, $birth_date, $gender_id, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id, $nilai_zakat;
 
     public function mount()
     {
@@ -24,6 +24,7 @@ class Tambah extends Component
         $this->state_origin_id = "";
         $this->state_id = "";
         $this->fav_ppz_id = "";
+        $this->nilai_zakat = "";
     }
 
     public function updated($field)
@@ -48,6 +49,7 @@ class Tambah extends Component
             'town'                => 'required|string',
             'state_id'            => 'required|integer',
             'fav_ppz_id'          => 'required|integer',
+            'nilai_zakat'          => 'required|numeric',
         ]);
     }
 
@@ -73,6 +75,7 @@ class Tambah extends Component
             'town'                => 'required|string',
             'state_id'            => 'required|integer',
             'fav_ppz_id'          => 'required|integer',
+            'nilai_zakat'          => 'required|numeric',
         ]);
 
         $create_customer = Customers::create([
@@ -98,6 +101,7 @@ class Tambah extends Component
             'postcode'            => $this->postcode,
             'state_id'            => $this->state_id,
             'fav_ppz_id'          => $this->fav_ppz_id,
+            'default_amount_zakat' => $this->nilai_zakat,
             'agent_id'            => auth()->user()->agentInfo->id,
             'created_by'          => auth()->user()->id,
             'created_at'          => now(),

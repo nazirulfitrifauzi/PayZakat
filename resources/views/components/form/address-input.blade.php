@@ -17,7 +17,7 @@
     </div>
     @if($errors->has($value3)) <p class="text-sm text-red-600">{{ $errors->first($value3) }}</p> @endif
 </div>
-<div class="col-span-2">
+<div>
     <label class="block text-sm font-semibold leading-5 text-gray-700">
         Bandar
     </label>
@@ -26,7 +26,7 @@
     </div>
     @if($errors->has($value4)) <p class="text-sm text-red-600">{{ $errors->first($value4) }}</p> @endif
 </div>
-<div class="col-span-2">
+<div>
     <label class="block text-sm font-semibold leading-5 text-gray-700">
         Poskod
     </label>
@@ -35,7 +35,7 @@
     </div>
     @if($errors->has($value5)) <p class="text-sm text-red-600">{{ $errors->first($value5) }}</p> @endif
 </div>
-<x-form.negeri-dropdown class="col-span-2" label="Negeri" value="state_id">
+<x-form.negeri-dropdown label="Negeri" value="state_id">
     @foreach ($negeri as $item)
         <option value="{{ $item->id }}" {{ ($condition == $item->id) ? 'selected': '' }}>{{ $item->description }}</option>
     @endforeach

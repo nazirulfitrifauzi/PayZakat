@@ -1,3 +1,6 @@
+// tailwind.config.js
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: [
     './resources/views/**/*.blade.php',
@@ -6,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var'],
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       transitionProperty: {
         'height': 'height',
