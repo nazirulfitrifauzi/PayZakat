@@ -16,7 +16,7 @@ class Customers extends Model
     public function agent(){
         return $this->belongsTo('App\Models\Agents', 'agent_id', 'id');
     }
-    
+
     public function payment_category(){
         return $this->belongsTo('App\Models\PaymentCategory', 'payment_category_id', 'id');
     }
@@ -44,6 +44,6 @@ class Customers extends Model
 
     public function screening()
     {
-        return $this->hasMany('App\Models\Screening','user_id','id');
+        return $this->hasMany('App\Models\CustomerScreening','customer_id','id');
     }
 }

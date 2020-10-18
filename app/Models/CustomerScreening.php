@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Screening extends Model
+class CustomerScreening extends Model
 {
     use SoftDeletes;
     public $timestamps = true;
 
-    protected $table = 'screenings';
+    protected $table = 'customer_screenings';
     protected $guarded = [];
 
-    public function user()
+    public function customer()
     {
-        return $this->belongsTo('App\Users','user_id','id');
+        return $this->belongsTo('App\Models\CustomerScreening', 'customer_id', 'id');
     }
 
     public function sanction()
