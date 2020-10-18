@@ -271,6 +271,16 @@
                                           </td>
                                           <td class="px-4 py-2 border">Ya</td>
                                     </tr>
+                                    <tr>
+                                          <td class="px-4 py-2 border">Nilai Pembayaran Zakat</td>
+                                          <td class="px-4 py-2 border">
+                                                <ul class="px-4 list-disc">
+                                                      <li>Nilai Matawang dalam Ringgit Malaysia.</li>
+                                                      <li>Dua(2) titik perpuluhan sahaja.</li>
+                                                </ul>
+                                          </td>
+                                          <td class="px-4 py-2 border">Ya</td>
+                                    </tr>
                               </tbody>
                         </table>
                   </div>

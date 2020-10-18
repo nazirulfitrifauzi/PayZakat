@@ -39,6 +39,7 @@
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
                     </x-form.dropdown>
+                    <x-form.input label="Nilai Pembayaran Zakat" value="nilai_zakat" livewire="wire:model.lazy=nilai_zakat wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
                 </x-general.grid>
             </div>
         </x-general.grid>
