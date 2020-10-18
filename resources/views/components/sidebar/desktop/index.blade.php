@@ -58,6 +58,7 @@
                                     <x-sidebar.child-nav-item route="admin.pendingAgent" label="Menunggu Pengesahan" uri="admin/senarai-menunggu"/>
                                     <x-sidebar.child-nav-item route="admin.agentList" label="Ejen Aktif" uri="admin/senarai-ejen"/>
                                     <x-sidebar.child-nav-item route="admin.rejectedAgent" label="Ejen Ditolak" uri="admin/senarai-ditolak"/>
+                                    <x-sidebar.child-nav-item route="admin.pembayarZakat" label="Pembayar Zakat" uri="admin/senarai-pembayar-zakat"/>
                                 </div>
                             </x-sidebar.parent-nav-item>
 

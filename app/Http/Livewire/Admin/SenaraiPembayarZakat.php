@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Customers;
+use App\Models\CustomerScreening;
 use App\Models\SanctionListWebsite;
-use App\Models\Screening;
-use App\User;
 use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class SenaraiMenunggu extends Component
+class SenaraiPembayarZakat extends Component
 {
     use WithPagination;
 
@@ -34,59 +34,57 @@ class SenaraiMenunggu extends Component
         $this->sortField = $field;
     }
 
-    public function screenResult($user_id, $screen_id, $status)
+    public function screenResult($customer_id, $screen_id, $status)
     {
-        return Screening::create([
+        return CustomerScreening::create([
             'uuid'          => (string) Str::uuid(),
-            'user_id'       => $user_id,
+            'customer_id'   => $customer_id,
             'sanction_id'   => $screen_id,
             'status'        => $status == "pass" ? 1 : 0,
             'created_by'    => auth()->user()->id,
         ]);
     }
 
-    public function finalResult($user_id, $status)
+    public function finalResult($customer_id, $status)
     {
         $this->validate([
             'remarks'  => 'required|max:255',
         ]);
 
-        if ($status == 'terima')
-        {
-            User::whereId($user_id)
+        if ($status == 'terima') {
+            Customers::whereId($customer_id)
                 ->update([
                     'active' => 1,
+                    'screen_status' => 1,
                     'screen_remarks' => $this->remarks
                 ]);
 
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
-            session()->flash('message', 'Permohonan Ejen telah diterima.');
-        }
-        elseif ($status == 'tolak')
-        {
-            User::whereId($user_id)
+            session()->flash('message', 'Saringan Pembayar Zakat telah berjaya.');
+        } elseif ($status == 'tolak') {
+            Customers::whereId($customer_id)
                 ->update([
                     'active' => 2,
+                    'screen_status' => 1,
                     'screen_remarks' => $this->remarks
                 ]);
 
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
-            session()->flash('message', 'Permohonan ejen telah ditolak.');
+            session()->flash('message', 'Saringan Pembayar Zakat telah ditolak.');
         }
 
-        return redirect()->to('/admin/senarai-menunggu');
+        return redirect()->to('/admin/senarai-pembayar-zakat');
     }
 
     public function render()
     {
-        return view('livewire.admin.senarai-menunggu',[
-            'list' => User::where('name', 'like', '%' . $this->search . '%')
-                            ->whereRole(1)
-                            ->whereActive(0)
-                            ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
-                            ->paginate(10),
+        return view('livewire.admin.senarai-pembayar-zakat', [
+            'list' => Customers::where('name', 'like', '%' . $this->search . '%')
+                ->where('screen_status',0)
+                ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
+                ->paginate(10),
             'sanctionList' => SanctionListWebsite::all(),
         ]);
     }

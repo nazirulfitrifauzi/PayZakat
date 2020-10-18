@@ -75,6 +75,11 @@ class PageController extends Controller
         return view('pages.admin.pengguna.senaraiDitolak');
     }
 
+    public function adminSenaraiPembayarZakat()
+    {
+        return view('pages.admin.pengguna.senaraiPembayarZakat');
+    }
+
     public function adminNisab()
     {
         return view('pages.admin.nisab');
