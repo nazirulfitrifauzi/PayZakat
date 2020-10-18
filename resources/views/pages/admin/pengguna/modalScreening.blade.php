@@ -55,6 +55,15 @@
                                 <p class="text-base font-semibold text-gray-500 ">( {{ $fail->sanction->name }} )</p>
                             @endforeach
                         </div>
+                        <div class="max-w-lg mx-auto mt-6 rounded-md shadow-sm">
+                            <label for="about" class="text-base font-semibold sm:mt-px sm:pt-2">
+                                Remarks:
+                            </label>
+                            <textarea wire:model.lazy="remarks" rows="3" class="block w-full transition duration-150 ease-in-out form-textarea sm:text-sm sm:leading-5"></textarea>
+                            @error('remarks')
+                                <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
                         <div class="mt-6">
                             <x-general.button.icon-button href="" target="" label="Terima" color="indigo"
                                 livewire="wire:click=finalResult({{ $lists->id }},'terima')"

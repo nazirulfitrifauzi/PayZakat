@@ -61,4 +61,9 @@
 
         {{ $list->links('pagination::tailwind') }}
     </x-general.table>
+
+    {{-- loading --}}
+    <div wire:loading wire:target="screenResult, finalResult">
+        @include('pages.misc.loading')
+    </div>
 </div>
