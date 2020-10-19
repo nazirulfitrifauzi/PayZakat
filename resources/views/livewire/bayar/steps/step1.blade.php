@@ -13,6 +13,9 @@
     </div>
     <div class="flex items-center gap-3">
         <div>
+            <h1 class="font-semibold text-gray-700">2. Papar Zakat Institusi</h1>
+        </div>
+        {{-- <div>
             <h1 class="font-semibold text-gray-700">2. Pilih Zakat Institusi</h1>
         </div>
         <div>
@@ -22,10 +25,10 @@
                     <option value="{{ $ppz->id }}">{{ $ppz->name }}</option>
                 @endforeach
             </select>
-        </div>
+        </div> --}}
     </div>
     <div class="relative">
-        @if ($ppzid != "")
+        {{-- @if ($ppzid != "")
             @if (count($donorlist) > 0)
                 <div class="py-3">
                     <h1 class="text-sm font-medium text-gray-400">Hasil Carian</h1>
@@ -46,8 +49,11 @@
                 </div>
                 @foreach ($donorlist as $donor)
                     <div class="flex items-center py-1">
+                        @php
+                            $check = (isset($selectedDonor[$donor->id]) && $selectedDonor[$donor->id] != false) ? "checked" : "" ;
+                        @endphp
                         <div class="px-2">
-                            <input type="checkbox" class="form-checkbox text-sm leading-none" {{ (isset($selectedDonor[$donor->id]) && $selectedDonor[$donor->id] != false) ? 'checked' : '' }} value="{{ $donor->name }}" wire:model="selectedDonor.{{ $donor->id }}">
+                            <input type="checkbox" class="form-checkbox text-sm leading-none" {{ $check }} value="{{ $donor->name }}" wire:model="selectedDonor.{{ $donor->id }}">
                         </div>
                         <div class="w-full px-2">
                             {{ $donor->name }}
@@ -63,7 +69,41 @@
             @else
                 <p class="text-sm italic text-gray-600">Tiada Pembayar Zakat berdaftar dengan Institusi pilihan.</p>
             @endif
-        @endif
+        @endif --}}
+        <div class="flex items-center py-1 mb-2 text-sm">
+            <div class="w-full font-semibold">
+                Nama
+            </div>
+            <div class="w-full font-semibold">
+                Kad Pengenalan
+            </div>
+            <div class="w-full font-semibold text-right whitespace-no-wrap">
+                Nilai Pembayaran Zakat (RM)
+            </div>
+        </div>
+        <div class="grid grid-col-1 gap-3">
+            @foreach ($donorGrouped as $ppz => $donors)
+                <div class="border border-cool-gray-200 p-3 rounded">
+                    <div class="flex items-center justify-between py-3">
+                        <p>{{ $ppzlist[$ppz]->name }} ({{ count($donors) }})</p>
+                        <p>RM{{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>
+                    </div>
+                    @foreach ($donors as $donor)
+                        <div class="flex items-center py-1 text-sm">
+                            <div class="w-full">
+                                {{ $donor['nama'] }}
+                            </div>
+                            <div class="w-full">
+                                {{ $donor['ic'] }}
+                            </div>
+                            <div class="w-full text-right">
+                                {{ $donor['nilai_zakat'] }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
         <div class="absolute inset-0 z-10" wire:loading wire:target="ppzid">
             <div class="flex justify-center">
                 <span class="rounded-full p-2 bg-black bg-opacity-50">
