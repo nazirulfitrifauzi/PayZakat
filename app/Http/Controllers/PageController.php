@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function home()
     {
-        if(auth()->user()->role == 1) {
+        if (auth()->user()->role == 1) {
             return view('pages.dashboard');
         } else {
             return view('pages.admin.dashboard');
@@ -40,9 +40,9 @@ class PageController extends Controller
 
     public function pembayarmaklumat($uuid)
     {
-        $selected_customer = Customers::where('uuid',$uuid)
-                            ->where('agent_id',auth()->user()->agentInfo->id)
-                            ->firstOrFail();
+        $selected_customer = Customers::where('uuid', $uuid)
+            ->where('agent_id', auth()->user()->agentInfo->id)
+            ->firstOrFail();
 
         return view('pages.pembayarzakat.maklumat', compact(
             'selected_customer'
@@ -52,6 +52,11 @@ class PageController extends Controller
     public function pembayarpukal()
     {
         return view('pages.pembayarzakat.pukal');
+    }
+
+    public function asnafpukal()
+    {
+        return view('pages.asnaf.pukal');
     }
 
     // ADMIN
@@ -87,7 +92,7 @@ class PageController extends Controller
 
     public function asnafSenarai()
     {
-        if(auth()->user()->role == 1) {
+        if (auth()->user()->role == 1) {
             return view('pages.asnaf.senarai');
         } else {
             return view('pages.admin.asnaf.senarai');
@@ -101,17 +106,17 @@ class PageController extends Controller
 
     public function asnafMaklumat($uuid)
     {
-        if(auth()->user()->role == 1) {
-            $selected_asnaf = Asnaf::where('uuid',$uuid)
-                                ->where('created_by',auth()->user()->id)
-                                ->firstOrFail();
+        if (auth()->user()->role == 1) {
+            $selected_asnaf = Asnaf::where('uuid', $uuid)
+                ->where('created_by', auth()->user()->id)
+                ->firstOrFail();
 
             return view('pages.asnaf.maklumat', compact(
                 'selected_asnaf'
             ));
         } else {
-            $selected_asnaf = Asnaf::where('uuid',$uuid)
-                                ->firstOrFail();
+            $selected_asnaf = Asnaf::where('uuid', $uuid)
+                ->firstOrFail();
 
             return view('pages.admin.asnaf.maklumat', compact(
                 'selected_asnaf'

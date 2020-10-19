@@ -6,10 +6,10 @@
             </svg>
             <h1 class="tracking-wider">Tambah</h1>
         </a>
-        {{-- <a href="{{ route('asnaf.pukal') }}" class="relative inline-flex items-center px-4 py-2 shadow hover:shadow-lg text-sm leading-5 font-medium rounded-md text-cool-gray-500 bg-white hover:text-cool-gray-800 focus:outline-none focus:shadow-outline-blue active:bg-cool-gray-100 active:text-cool-gray-700 transition ease-in-out duration-150">
+        <a href="{{ route('asnaf.pukal') }}" class="relative inline-flex items-center px-4 py-2 shadow hover:shadow-lg text-sm leading-5 font-medium rounded-md text-cool-gray-500 bg-white hover:text-cool-gray-800 focus:outline-none focus:shadow-outline-blue active:bg-cool-gray-100 active:text-cool-gray-700 transition ease-in-out duration-150">
             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
             <h1 class="tracking-wider">Muat Naik Pukal</h1>
-        </a> --}}
+        </a>
     </div>
     <!-- Activity list (smallest breakopoint only) -->
     <div class="shadow sm:hidden">

@@ -18,7 +18,7 @@
                             <x-heroicon-o-scale class="h-6 w-6 text-cool-gray-400"/>
                         </div>
                         <div class="ml-5 w-0 flex-1">
-                            <p class="text-cool-gray-700 text-xl font-semibold">Baki Akaun </p>
+                            <p class="text-cool-gray-700 text-xl font-semibold">Jumlah Transaksi Pembayaran Berjaya</p>
                         </div>
                         <div>
                             <p class="font-bold text-2xl">RM 30,659.45</p>
@@ -30,10 +30,30 @@
                     <div>
                         <div class="flex items-center p-4">
                             <div class="ml-5 w-0 flex-1">
-                                <p class="text-cool-gray-500 font-semibold">Baki Semasa</p>
+                                <p class="text-cool-gray-500 font-semibold">Jumlah Transaksi Pembayaran</p>
                             </div>
                             <div>
-                                <p>RM 30,659.45</p>
+                                <p>RM 34,229.30</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center p-4">
+                            <div class="ml-5 w-0 flex-1">
+                                <p class="text-cool-gray-500 font-semibold">Jumlah Zakat Refund Pada Tahun 2019</p>
+                            </div>
+                            <div>
+                                <p>RM 35,049.15</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-center p-4">
+                            <div class="ml-5 w-0 flex-1">
+                                <p class="text-cool-gray-500 font-semibold">Jumlah Zakat Refund Pada Tahun 2020<b>*</b></p>
+                            </div>
+                            <div>
+                                <p>RM 41,365.30</p>
                             </div>
                         </div>
                     </div>
@@ -50,20 +70,10 @@
                     <div>
                         <div class="flex items-center p-4">
                             <div class="ml-5 w-0 flex-1">
-                                <p class="text-cool-gray-500 font-semibold">Two Day Float</p>
+                                <p class="text-cool-gray-500 font-semibold">Jumlah Transaksi Gagal</p>
                             </div>
                             <div>
-                                <p>RM 0.00</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex items-center p-4">
-                            <div class="ml-5 w-0 flex-1">
-                                <p class="text-cool-gray-500 font-semibold">Late Clearing/Outstation Cheque Float</p>
-                            </div>
-                            <div>
-                                <p>RM 0.00</p>
+                                <p>RM 3,569.85</p>
                             </div>
                         </div>
                     </div>
@@ -74,15 +84,15 @@
         <div class="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 gap-5 mt-8">
             <div>
                 <select id="location" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                    <option selected>All Transaction History</option>
-                    <option>Debit Card Transaction</option>
+                    <option selected>Rekod Transaksi</option>
+                    <option>Transaksi Debit</option>
                 </select>
             </div>
             <div>
                 <select id="location" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                    <option>Last 30 Days</option>
-                    <option selected>Last 60 Days</option>
-                    <option>Last 90 Days</option>
+                    <option>30 Hari Lepas</option>
+                    <option selected>60 Hari Lepas</option>
+                    <option>90 Hari Lepas</option>
                 </select>
             </div>
         </div>

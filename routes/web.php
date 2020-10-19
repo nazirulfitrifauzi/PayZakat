@@ -18,6 +18,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/pembayar', 'PageController@pembayarsenarai')->name('pembayar.senarai');
         Route::get('/pembayar/tambah', 'PageController@pembayartambah')->name('pembayar.tambah');
         Route::get('/pembayar/muat-naik-pukal', 'PageController@pembayarpukal')->name('pembayar.pukal');
+        Route::get('/asnaf/muat-naik-pukal', 'PageController@asnafpukal')->name('asnaf.pukal');
         Route::get('/pembayar/{uuid}', 'PageController@pembayarmaklumat')->name('pembayar.maklumat');
         Route::get('/asnaf', 'PageController@asnafSenarai')->name('asnaf.senarai');
         Route::get('/asnaf/tambah', 'PageController@asnafTambah')->name('asnaf.tambah');
