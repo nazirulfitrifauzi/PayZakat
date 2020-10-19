@@ -9,22 +9,20 @@ use App\Models\Customers;
 
 class Step1 extends Component
 {
-    public $ppzid = "", $donorlist = [];
+    public $ppzid = "", $donorlist = [], $selectedDonor = [];
     public $productlist = [], $ppzlist = [];
+    public $checkAll = "";
 
-    public function mount()
-    {
-        //
-    }
-
-    public function get_alllist()
+    public function get_allList()
     {
         $this->productlist = Products::select('product_code', 'product_name')->get();
         $this->ppzlist = PPZ::select('id', 'name')->get();
     }
 
-    public function get_donorlist()
+    public function get_donorList()
     {
+        $this->checkAll = "";
+
         if ($this->ppzid != "") {
             $this->donorlist = Customers::where('fav_ppz_id', $this->ppzid)->orderBy('name')->get();
         } else {
@@ -32,10 +30,28 @@ class Step1 extends Component
         }
     }
 
+    public function selectAll()
+    {
+        if ($this->checkAll == "") {
+            $this->checkAll = "1";
+        } else {
+            $this->checkAll = "";
+        }
+
+        if ($this->checkAll == "1") {
+            foreach ($this->donorlist as $donor) {
+                $this->selectedDonor[$donor->id] = $donor->name;
+            }
+        } else {
+            foreach ($this->donorlist as $donor) {
+                $this->selectedDonor[$donor->id] = false;
+            }
+        }
+    }
+
     public function render()
     {
-        $this->get_alllist();
-        $this->get_donorlist();
+        $this->get_allList();
         return view('livewire.bayar.steps.step1');
     }
 }

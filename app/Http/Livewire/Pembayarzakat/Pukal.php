@@ -26,6 +26,7 @@ class Pukal extends Component
     public function save()
     {
         $customercollection = Excel::toArray(new CustomerImport, $this->dokumen);
+
         if (!empty($customercollection)) // Check collection not empty
         {
             foreach ($customercollection as $customerlist) {
@@ -35,7 +36,7 @@ class Pukal extends Component
                         if ($row > 0) // Skip field name
                         {
                             foreach ($customers as $col => $value) {
-                                if ($col <= 18) // Only loop until 18
+                                if ($col <= 19) // Only loop until 19
                                 {
                                     if ($col == 1) // Get new ic number into variable
                                     {
@@ -97,6 +98,7 @@ class Pukal extends Component
             '16' => 'position',
             '17' => 'employee_no',
             '18' => 'fav_ppz_id',
+            '19' => 'default_amount_zakat',
         ];
     }
 

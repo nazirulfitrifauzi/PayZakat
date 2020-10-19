@@ -1,6 +1,6 @@
 <div x-show="open" x-cloak
     class="fixed inset-0 z-10 overflow-y-auto"
->
+    >
     <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
         <div x-show="open"
             x-description="Background overlay, show/hide based on modal state."
