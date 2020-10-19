@@ -33,16 +33,18 @@
             x-transition:leave="ease-in duration-200"
             x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
             x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-            <div class="bg-gray-100 px-4 py-3 sm:px-6 relative h-16 flex items-center">
-                  <span>{{ (isset($header)) ? $header : '' }}</span>
-                  <span class="absolute inset-y-0 right-0 pr-4 sm:pr-6 inline-flex items-center">
-                        <button x-on:click="show=false">
-                              <span class="text-xl text-gray-400 hover:text-black">
-                                    <x-heroicon-o-x class="h-6 w-6"/>
-                              </span>
-                        </button>
-                  </span>
-            </div>
+            @isset($header)
+                <div class="bg-gray-100 px-4 py-3 sm:px-6 relative h-16 flex items-center">
+                        <span>{{ (isset($header)) ? $header : '' }}</span>
+                        <span class="absolute inset-y-0 right-0 pr-4 sm:pr-6 inline-flex items-center">
+                              <button x-on:click="show=false">
+                                    <span class="text-xl text-gray-400 hover:text-black">
+                                          <x-heroicon-o-x class="h-6 w-6"/>
+                                    </span>
+                              </button>
+                        </span>
+                  </div>
+            @endisset
             @isset($body)
                 <div class="bg-white px-4 py-5 sm:p-6">
                         <div class="sm:flex sm:items-start">

@@ -10,24 +10,26 @@ use App\Models\Customers;
 class Step1 extends Component
 {
     public $ppzid = "", $donorlist = [], $selectedDonor = [];
-    public $productlist = [], $ppzlist = [];
+    public $productlist = [], $ppzlist = [], $donorGrouped = [], $donorGroupTotal = [];
     public $checkAll = "";
 
     public function get_allList()
     {
         $this->productlist = Products::select('product_code', 'product_name')->get();
         $this->ppzlist = PPZ::select('id', 'name')->get();
+        $this->donorlist = Customers::orderBy('fav_ppz_id')->get();
+        $this->groupDonor();
     }
 
     public function get_donorList()
     {
-        $this->checkAll = "";
+        // $this->checkAll = "";
 
-        if ($this->ppzid != "") {
-            $this->donorlist = Customers::where('fav_ppz_id', $this->ppzid)->orderBy('name')->get();
-        } else {
-            $this->donorlist = [];
-        }
+        // if ($this->ppzid != "") {
+        //     $this->donorlist = Customers::where('fav_ppz_id', $this->ppzid)->orderBy('name')->get();
+        // } else {
+        //     $this->donorlist = [];
+        // }
     }
 
     public function selectAll()
@@ -53,5 +55,21 @@ class Step1 extends Component
     {
         $this->get_allList();
         return view('livewire.bayar.steps.step1');
+    }
+
+
+
+
+    private function groupDonor()
+    {
+        foreach ($this->donorlist as $donor) {
+            $this->donorGrouped[$donor->fav_ppz_id][] = [
+                'nama' => $donor->name,
+                'ic' => $donor->ic_no,
+                'nilai_zakat' => $donor->default_amount_zakat,
+            ];
+
+            $this->donorGroupTotal[$donor->fav_ppz_id][] = $donor->default_amount_zakat;
+        }
     }
 }
