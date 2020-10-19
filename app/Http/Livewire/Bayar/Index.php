@@ -11,7 +11,7 @@ class Index extends Component
         '2' => 'Maklumat Transaksi',
         '3' => 'Pengesahan Transaksi',
     ];
-    
+
     public $currentstep = 1;
 
     public function navigation($keyword)

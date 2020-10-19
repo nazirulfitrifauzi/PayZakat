@@ -2,7 +2,6 @@
 
 namespace App\Imports;
 
-use App\models\Customers;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class CustomerImport implements ToModel

@@ -12,14 +12,14 @@ class Maklumat extends Component
     public $customer_id;
     public $negeri;
     public $ppz;
-    public $uuid, $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id;
+    public $uuid, $name, $ic_no, $old_ic, $state_origin_id, $mastautin_flag, $mastautin_year, $phone_no, $email, $office_no, $employer_name, $position, $employee_no, $address1, $address2, $address3, $town, $postcode, $state_id, $fav_ppz_id, $nilai_zakat;
 
-    public function mount($customer) 
+    public function mount($customer)
     {
         $this->negeri = State::all();
         $this->ppz = PPZ::all();
         $this->customer_id = $customer->id;
-        
+
         $this->uuid             = $customer->uuid ?? "";
         $this->name             = $customer->name ?? "";
         $this->ic_no            = $customer->ic_no ?? "";
@@ -38,8 +38,9 @@ class Maklumat extends Component
         $this->address3         = $customer->address3 ?? "";
         $this->town             = $customer->town ?? "";
         $this->postcode         = $customer->postcode ?? "";
-        $this->state_id         = $customer->state_id ?? "";   
-        $this->fav_ppz_id       = $customer->fav_ppz_id ?? "";  
+        $this->state_id         = $customer->state_id ?? "";
+        $this->fav_ppz_id       = $customer->fav_ppz_id ?? "";
+        $this->nilai_zakat       = $customer->default_amount_zakat ?? "";
     }
 
     public function updated($field)
@@ -64,6 +65,7 @@ class Maklumat extends Component
             'town'                => 'required|string',
             'state_id'            => 'required|integer',
             'fav_ppz_id'          => 'required|integer',
+            'nilai_zakat'          => 'required|numeric',
         ]);
     }
 
@@ -89,9 +91,10 @@ class Maklumat extends Component
             'town'                => 'required|string',
             'state_id'            => 'required|integer',
             'fav_ppz_id'          => 'required|integer',
+            'nilai_zakat'          => 'required|numeric',
         ]);
 
-        Customers::where('id',$this->customer_id)->update([
+        Customers::where('id', $this->customer_id)->update([
             'name'                => $this->name,
             'ic_no'               => $this->ic_no,
             'old_ic'              => $this->old_ic,
@@ -111,6 +114,7 @@ class Maklumat extends Component
             'postcode'            => $this->postcode,
             'state_id'            => $this->state_id,
             'fav_ppz_id'          => $this->fav_ppz_id,
+            'default_amount_zakat' => $this->nilai_zakat,
             'updated_by'          => auth()->user()->id,
             'updated_at'          => now(),
         ]);
@@ -120,7 +124,7 @@ class Maklumat extends Component
         session()->flash('message', 'Maklumat telah berjaya disimpan.');
         return redirect()->route('pembayar.senarai');
     }
-    
+
     public function render()
     {
         return view('livewire.pembayarzakat.maklumat');
