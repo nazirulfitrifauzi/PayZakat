@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Asnaf;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Imports\CustomerImport;
-use App\Models\Customers;
+use App\Models\Asnaf;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Str;
 
@@ -23,52 +23,52 @@ class Pukal extends Component
     ]);
   }
 
-  // public function save()
-  // {
-  //   $customercollection = Excel::toArray(new CustomerImport, $this->dokumen);
-  //   if (!empty($customercollection)) // Check collection not empty
-  //   {
-  //     foreach ($customercollection as $customerlist) {
-  //       if (count($customerlist) > 1) // Check file content exists, not only field name row else consider as empty
-  //       {
-  //         foreach ($customerlist as $row => $customers) {
-  //           if ($row > 0) // Skip field name
-  //           {
-  //             foreach ($customers as $col => $value) {
-  //               if ($col <= 11) // Only loop until 11
-  //               {
-  //                 if ($col == 1) // Get new ic number into variable
-  //                 {
-  //                   $this->ic = $value;
-  //                 }
+  public function save()
+  {
+    $customercollection = Excel::toArray(new CustomerImport, $this->dokumen);
+    if (!empty($customercollection)) // Check collection not empty
+    {
+      foreach ($customercollection as $customerlist) {
+        if (count($customerlist) > 1) // Check file content exists, not only field name row else consider as empty
+        {
+          foreach ($customerlist as $row => $customers) {
+            if ($row > 0) // Skip field name
+            {
+              foreach ($customers as $col => $value) {
+                if ($col <= 11) // Only loop until 11
+                {
+                  if ($col == 1) // Get new ic number into variable
+                  {
+                    $this->ic = $value;
+                  }
 
-  //                 $savecustomer[$this->fieldlibrary()[$col]] = $value; // Collection
-  //               }
-  //             }
+                  $savecustomer[$this->fieldlibrary()[$col]] = $value; // Collection
+                }
+              }
 
-  //             foreach ($this->autogenfield() as $field => $value) {
-  //               $savecustomer[$field] = $value; // Add collection with auto gen values
-  //             }
+              foreach ($this->autogenfield() as $field => $value) {
+                $savecustomer[$field] = $value; // Add collection with auto gen values
+              }
 
-  //             $save = Customers::create($savecustomer); // Save current row
-  //           }
-  //         }
+              $save = Asnaf::create($savecustomer); // Save current row
+            }
+          }
 
-  //         session()->flash('type', 'success');
-  //         session()->flash('title', 'Berjaya!');
-  //         session()->flash('message', 'Muat naik secara pukal telah berjaya. Sila periksa di Senarai Asnaf.');
-  //         return redirect()->route('asnaf.pukal');
-  //       } else {
-  //         session()->flash('type', 'warning');
-  //         session()->flash('title', 'Perhatian!');
-  //         session()->flash('message', 'Tiada data untuk di muat naik.');
-  //         return redirect()->route('asnaf.pukal');
-  //       }
-  //     }
-  //   }
+          session()->flash('type', 'success');
+          session()->flash('title', 'Berjaya!');
+          session()->flash('message', 'Muat naik secara pukal telah berjaya. Sila periksa di Senarai Asnaf.');
+          return redirect()->route('asnaf.pukal');
+        } else {
+          session()->flash('type', 'warning');
+          session()->flash('title', 'Perhatian!');
+          session()->flash('message', 'Tiada data untuk di muat naik.');
+          return redirect()->route('asnaf.pukal');
+        }
+      }
+    }
 
-  //   $this->dokumen = null;
-  // }
+    $this->dokumen = null;
+  }
 
   public function render()
   {

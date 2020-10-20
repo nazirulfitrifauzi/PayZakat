@@ -2,7 +2,7 @@
   <div>
       <p>Prosedur memuat naik senarai Penerima Zakat secara pukal</p>
       <ol class="px-10 text-sm list-decimal">
-          <li>Sila muat turun <a href="{{ asset('template/PayZakat - Templat Pembayar Zakat.xlsx') }}" target="_blank" class="text-blue-400 transition duration-300 ease-in-out hover:text-blue-500">Templat Format</a>.</li>
+          <li>Sila muat turun <a href="{{ asset('template/PayZakat - Templat Penerima Zakat.xlsx') }}" target="_blank" class="text-blue-400 transition duration-300 ease-in-out hover:text-blue-500">Templat Format</a>.</li>
           <li>
               Isi maklumat Penerima Zakat dengan lengkap berdasarkan Templat Format.
           </li>
@@ -12,7 +12,7 @@
                   <a @click="open = true" type="button" class="text-blue-400 transition duration-300 ease-in-out cursor-pointer hover:text-blue-500">
                   Panduan
                   </a>
-                  @include('pages.pembayarzakat.modalpanduan')
+                  @include('pages.asnaf.modalpanduan')
               </span>
               untuk memudahkan proses pengisian.</li>
           <li>Muat naik Templat Format yang telah disempurnakan di ruangan yang telah disediakan.</li>

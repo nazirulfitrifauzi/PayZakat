@@ -5,7 +5,7 @@
                 <x-general.logo class="w-auto h-20"/>
             </div>
             <div class="flex flex-col flex-1 mt-5 overflow-y-auto">
-                <div class="overflow-y-auto">
+                <div class="overflow-y-auto" id="left-scroll">
                     <nav class="px-2 space-y-1">
                         <x-sidebar.nav-item route="home" label="Halaman Utama" uri="home">
                             <x-heroicon-o-home class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
