@@ -5,7 +5,7 @@
       <div class="grid grid-col-1 gap-3">
             @foreach ($donorGrouped as $ppz => $donors)
                   <div class="flex items-center justify-between py-3">
-                        <p>{{ $ppzlist[$ppz]->name }} ({{ count($donors) }})</p>
+                        <p>{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
                         <p>RM {{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>
                   </div>
             @endforeach

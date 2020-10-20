@@ -10,7 +10,7 @@ use App\Models\Customers;
 class Step1 extends Component
 {
     public $ppzid = "", $donorlist = [], $selectedDonor = [];
-    public $productlist = [], $ppzlist = [], $donorGrouped = [], $donorGroupTotal = [];
+    public $productlist = [], $ppzlist = [], $ppzarray = [], $donorGrouped = [], $donorGroupTotal = [];
     public $checkAll = "";
 
     public function get_allList()
@@ -70,6 +70,10 @@ class Step1 extends Component
             ];
 
             $this->donorGroupTotal[$donor->fav_ppz_id][] = $donor->default_amount_zakat;
+        }
+
+        foreach ($this->ppzlist as $ppz) {
+            $this->ppzarray[$ppz->id] = $ppz->name;
         }
     }
 }
