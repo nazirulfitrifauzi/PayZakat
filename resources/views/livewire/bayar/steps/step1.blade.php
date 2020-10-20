@@ -85,7 +85,7 @@
             @foreach ($donorGrouped as $ppz => $donors)
                 <div class="border border-cool-gray-200 p-3 rounded">
                     <div class="flex items-center justify-between py-3">
-                        <p>{{ $ppzlist[$ppz]->name }} ({{ count($donors) }})</p>
+                        <p>{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
                         <p>RM{{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>
                     </div>
                     @foreach ($donors as $donor)
