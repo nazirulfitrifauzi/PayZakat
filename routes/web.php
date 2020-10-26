@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/asnaf/{uuid}', 'PageController@asnafMaklumat')->name('asnaf.maklumat');
         Route::get('/profil', 'ProfilController@index')->name('profil');
         Route::get('/bayar', 'BayarController@index')->name('bayar');
+        Route::get('/bayar/resit', 'BayarController@resit')->name('bayar.resit');
     });
 
     // ADMIN
