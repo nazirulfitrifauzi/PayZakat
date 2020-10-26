@@ -7,7 +7,7 @@ class DefSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     * Add new row of data at the last 
+     * Add new row of data at the last
      *
      * @return void
      */
@@ -46,24 +46,24 @@ class DefSeeder extends Seeder
                 'product_name'          => 'Harta',
                 'product_category_id'   => '7',
                 'effective_date'        => date("Y-m-d h:i:sa"),
-                'active_flag'                => '1', 
-                'created_by'            => '0', 
+                'active_flag'                => '1',
+                'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'product_code'          => '7004',
                 'product_name'          => 'KWSP',
                 'product_category_id'   => '7',
                 'effective_date'        => date("Y-m-d h:i:sa"),
-                'active_flag'                => '1', 
-                'created_by'            => '0', 
+                'active_flag'                => '1',
+                'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'product_code'          => '7005',
                 'product_name'          => 'ASB',
                 'product_category_id'   => '7',
                 'effective_date'        => date("Y-m-d h:i:sa"),
-                'active_flag'                => '1', 
-                'created_by'            => '0', 
+                'active_flag'                => '1',
+                'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],
         ]);
@@ -93,24 +93,24 @@ class DefSeeder extends Seeder
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'SABAH',                 'img'=>'sabah.svg'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'SARAWAK',               'img'=>'sarawak.svg'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'SELANGOR',              'img'=>'selangor.svg'],
-            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'TERENGGANU',            'img'=>'terangganu.svg'],
+            ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'TERENGGANU',            'img'=>'terengganu.svg'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'description'=>'WILAYAH PERSEKUTUAN',   'img'=>'kl.svg'],
         ]);
 
         DB::table('ppz')->insert([
             [
                 'name'                  => 'PPZ - Shamelin (HQ)',
-                'address'               => 'Wisma PPZ, 68-1-6, Dataran Shamelin, Jalan 4/91, Taman Shamelin Perkasa, 56100 Wilayah Persekutuan Kuala Lumpur', 
+                'address'               => 'Wisma PPZ, 68-1-6, Dataran Shamelin, Jalan 4/91, Taman Shamelin Perkasa, 56100 Wilayah Persekutuan Kuala Lumpur',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'name'                  => 'PPZ - Daruzzakah',
-                'address'               => 'Daruzzakah, Lorong Hj Hussein 2, 50676 Wilayah Persekutuan Kuala Lumpur', 
+                'address'               => 'Daruzzakah, Lorong Hj Hussein 2, 50676 Wilayah Persekutuan Kuala Lumpur',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'name'                  => 'PPZ - Masjid Negara',
-                'address'               => 'Masjid Negara,Jalan Perdana, 50480 Wilayah Persekutuan Kuala Lumpur', 
+                'address'               => 'Masjid Negara,Jalan Perdana, 50480 Wilayah Persekutuan Kuala Lumpur',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
@@ -120,17 +120,17 @@ class DefSeeder extends Seeder
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'name'                  => 'PPZ - PUTRAJAYA',
-                'address'               => '10A, Jalan P9B/1A, Presint 9,62250 Putrajaya.', 
+                'address'               => '10A, Jalan P9B/1A, Presint 9,62250 Putrajaya.',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'name'                  => 'PPZ - Masjid At-Taqwa,Taman Tun Dr. Ismail (TTDI)',
-                'address'               => 'Jalan Datuk Sulaiman, Taman Tun Dr. Ismail, 60000 Kuala Lumpur', 
+                'address'               => 'Jalan Datuk Sulaiman, Taman Tun Dr. Ismail, 60000 Kuala Lumpur',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
                 'name'                  => 'PPZ - Masjid Abdul Rahman Bin Auf, Puchong',
-                'address'               => 'Masjid Abdul Rahman Bin Auf, Batu 5 1/2, Jalan Puchong, Wilayah Persekutuan Kuala Lumpur', 
+                'address'               => 'Masjid Abdul Rahman Bin Auf, Batu 5 1/2, Jalan Puchong, Wilayah Persekutuan Kuala Lumpur',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
             ],[
@@ -143,7 +143,7 @@ class DefSeeder extends Seeder
                 'address'               => 'Unit C-012, Aras 1, Kompleks Ujana Kewangan Labuan, Jalan Merdeka 87000 Labuan',
                 'created_by'            => '0',
                 'created_at'            => date("Y-m-d h:i:sa")
-                
+
             ],
         ]);
 
@@ -234,7 +234,7 @@ class DefSeeder extends Seeder
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '1', 'description'=>'FAIL - TAC'],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'code' => '2', 'description'=>'FAIL - TIMEOUT'],
         ]);
-        
+
         DB::table('nisab')->insert([
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'year' => '2018', 'state_id' => '2',  'value' => 13758.95],
             ['created_by' => '1', 'created_at' => date("Y-m-d h:i:sa"), 'year' => '2018', 'state_id' => '3',  'value' => 14700.00],
@@ -286,5 +286,5 @@ class DefSeeder extends Seeder
         ]);
     }
 
-    
+
 }
