@@ -14,9 +14,11 @@
                         Seterusnya
                     </button>
                 @endif
-                <button class="flex items-center justify-center w-40 py-3 text-sm leading-none text-white transition duration-300 ease-in-out bg-teal-400 rounded cursor-pointer hover:bg-teal-600" wire:click="navigation('prev')">
-                    Kembali
-                </button>
+                @if ($currentstep != 1)
+                    <button class="flex items-center justify-center w-40 py-3 text-sm leading-none text-white transition duration-300 ease-in-out bg-teal-400 rounded cursor-pointer hover:bg-teal-600" wire:click="navigation('prev')">
+                        Kembali
+                    </button>
+                @endif
             </div>
         </div>
     </div>
