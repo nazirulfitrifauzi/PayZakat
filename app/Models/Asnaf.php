@@ -12,4 +12,9 @@ class Asnaf extends Model
 
     protected $table = 'asnaf';
     protected $guarded = [];
+
+    public function screening()
+    {
+        return $this->hasMany('App\Models\AsnafScreening', 'asnaf_id', 'id');
+    }
 }

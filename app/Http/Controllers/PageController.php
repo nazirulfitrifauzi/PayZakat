@@ -92,11 +92,12 @@ class PageController extends Controller
 
     public function asnafSenarai()
     {
-        if (auth()->user()->role == 1) {
-            return view('pages.asnaf.senarai');
-        } else {
-            return view('pages.admin.asnaf.senarai');
-        }
+        return view('pages.asnaf.senarai');
+    }
+
+    public function adminSenaraiPenerimaZakat()
+    {
+        return view('pages.admin.asnaf.senaraiPenerimaZakat');
     }
 
     public function asnafTambah()
