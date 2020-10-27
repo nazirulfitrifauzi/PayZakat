@@ -69,6 +69,9 @@
                                 <th class="px-6 py-3 bg-cool-gray-50 text-center text-xs leading-4 font-medium text-cool-gray-500 uppercase tracking-wider">
                                     Tarikh Daftar
                                 </th>
+                                <th class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-center uppercase bg-cool-gray-50 text-cool-gray-500">
+                                    Status Saringan
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-cool-gray-200" x-max="1">
@@ -97,6 +100,13 @@
                                     </td>
                                     <td class="px-6 py-4 text-center whitespace-no-wrap text-sm leading-5 text-cool-gray-500">
                                         {{ date('d/m/Y', strtotime($asnaf->created_at)) }}
+                                    </td>
+                                    <td class="flex justify-center px-6 py-4 text-sm leading-5 whitespace-no-wrap text-cool-gray-500">
+                                            @if ($asnaf->screen_status == 0)
+                                                <x-heroicon-o-refresh class="w-5 h-5 text-yellow-400 "/>
+                                            @else
+                                                <x-heroicon-o-check class="w-5 h-5 text-green-600 "/>
+                                            @endif
                                     </td>
                                 </tr>
                             @empty

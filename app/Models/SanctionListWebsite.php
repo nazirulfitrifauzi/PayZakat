@@ -15,4 +15,9 @@ class SanctionListWebsite extends Model
     {
         return $this->hasMany('App\Models\CustomerScreening', 'sanction_id', 'id');
     }
+
+    public function asnafScreening()
+    {
+        return $this->hasMany('App\Models\AsnafScreening', 'sanction_id', 'id');
+    }
 }
