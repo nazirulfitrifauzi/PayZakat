@@ -48,23 +48,31 @@
                         @endif
 
                         @if (auth()->user()->role == 0) <!-- admin -->
-                            <x-sidebar.parent-nav-item label="Pengguna" uri="admin/*">
+                            <x-sidebar.parent-nav-item label="Pengguna" uri="admin/pengguna/*">
                                 <x-slot name="svg">
                                     <x-heroicon-o-user-group class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                                 </x-slot>
 
                                 <div x-show="isOpen" x-cloak>
-                                    <x-sidebar.child-nav-item route="admin.userList" label="Semua" uri="admin/senarai-pengguna"/>
-                                    <x-sidebar.child-nav-item route="admin.pendingAgent" label="Menunggu Pengesahan" uri="admin/senarai-menunggu"/>
-                                    <x-sidebar.child-nav-item route="admin.agentList" label="Ejen Aktif" uri="admin/senarai-ejen"/>
-                                    <x-sidebar.child-nav-item route="admin.rejectedAgent" label="Ejen Ditolak" uri="admin/senarai-ditolak"/>
-                                    <x-sidebar.child-nav-item route="admin.pembayarZakat" label="Pembayar Zakat" uri="admin/senarai-pembayar-zakat"/>
-                                    <x-sidebar.child-nav-item route="admin.penerimaZakat" label="Asnaf" uri="admin/senarai-penerima-zakat"/>
+                                    <x-sidebar.child-nav-item route="admin.userList" label="Semua" uri="admin/pengguna/senarai-pengguna"/>
+                                    <x-sidebar.child-nav-item route="admin.pendingAgent" label="Menunggu Pengesahan" uri="admin/pengguna/senarai-menunggu"/>
+                                    <x-sidebar.child-nav-item route="admin.agentList" label="Ejen Aktif" uri="admin/pengguna/senarai-ejen"/>
+                                    <x-sidebar.child-nav-item route="admin.rejectedAgent" label="Ejen Ditolak" uri="admin/pengguna/senarai-ditolak"/>
+                                    <x-sidebar.child-nav-item route="admin.pembayarZakat" label="Pembayar Zakat" uri="admin/pengguna/senarai-pembayar-zakat"/>
+                                    <x-sidebar.child-nav-item route="admin.penerimaZakat" label="Asnaf" uri="admin/pengguna/senarai-penerima-zakat"/>
                                 </div>
                             </x-sidebar.parent-nav-item>
 
                             <x-sidebar.nav-item route="admin.nisab" label="Nisab" uri="admin/nisab">
                                 <x-heroicon-o-currency-dollar class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="admin.nisab" label="Agihan" uri="admin/agihan">
+                                <x-heroicon-o-document-search class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="admin.nisab" label="Refund" uri="admin/refund">
+                                <x-heroicon-o-switch-horizontal class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                             </x-sidebar.nav-item>
                         @endif
 

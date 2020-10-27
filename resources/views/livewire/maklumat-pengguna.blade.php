@@ -29,15 +29,15 @@
             <div>
                 <h1 class="font-semibold">Maklumat Majikan</h1>
                 <x-general.grid mobile="1" gap="3" sm="1" md="1" lg="1" xl="1" class="mt-5">
+                    <x-form.input class="" label="Nama Majikan" value="employer_name" livewire="wire:model.lazy=employer_name wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
                     <x-form.input class="" label="Telefon Pejabat" value="office_no" livewire="wire:model.lazy=office_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
                     <x-form.input class="" label="Jawatan" value="position" livewire="wire:model.lazy=position wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
                     <x-form.input class="" label="No Gaji / No Pekerja" value="employee_no" livewire="wire:model.lazy=employee_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-                    <x-form.input class="" label="Nama Majikan" value="employer_name" livewire="wire:model.lazy=employer_name wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
                 </x-general.grid>
             </div>
         </x-general.grid>
     </x-slot>
 
-    <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan"/>
+    <x-form.submit-cancel-button class="pt-5 mt-8 border-t border-gray-200" cancel="Batal" submit="Simpan"/>
 
 </x-form.basic-form>

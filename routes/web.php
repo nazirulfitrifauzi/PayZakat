@@ -29,15 +29,16 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     // ADMIN
-    Route::get('/admin/senarai-pengguna', 'PageController@adminSenaraiPengguna')->name('admin.userList');
-    Route::get('/admin/senarai-pengguna-excel', 'ExportController@adminSenaraiPenggunaExcel')->name('admin.userListExcel');
-    Route::get('/admin/senarai-pengguna-pdf', 'ExportController@adminSenaraiPenggunaPdf')->name('admin.userListPdf');
+    Route::get('/admin/pengguna/senarai-pengguna', 'PageController@adminSenaraiPengguna')->name('admin.userList');
+    Route::get('/admin/pengguna/senarai-pengguna-excel', 'ExportController@adminSenaraiPenggunaExcel')->name('admin.userListExcel');
+    Route::get('/admin/pengguna/senarai-pengguna-pdf', 'ExportController@adminSenaraiPenggunaPdf')->name('admin.userListPdf');
 
-    Route::get('/admin/senarai-menunggu', 'PageController@adminSenaraiMenunggu')->name('admin.pendingAgent');
-    Route::get('/admin/senarai-ejen', 'PageController@adminSenaraiEjen')->name('admin.agentList');
-    Route::get('/admin/senarai-ditolak', 'PageController@adminSenaraiDitolak')->name('admin.rejectedAgent');
-    Route::get('/admin/senarai-pembayar-zakat', 'PageController@adminSenaraiPembayarZakat')->name('admin.pembayarZakat');
-    Route::get('/admin/senarai-penerima-zakat', 'PageController@adminSenaraiPenerimaZakat')->name('admin.penerimaZakat');
+    Route::get('/admin/pengguna/senarai-menunggu', 'PageController@adminSenaraiMenunggu')->name('admin.pendingAgent');
+    Route::get('/admin/pengguna/senarai-ejen', 'PageController@adminSenaraiEjen')->name('admin.agentList');
+    Route::get('/admin/pengguna/senarai-ditolak', 'PageController@adminSenaraiDitolak')->name('admin.rejectedAgent');
+    Route::get('/admin/pengguna/senarai-pembayar-zakat', 'PageController@adminSenaraiPembayarZakat')->name('admin.pembayarZakat');
+
+    Route::get('/admin/pengguna/senarai-penerima-zakat', 'PageController@adminSenaraiPenerimaZakat')->name('admin.penerimaZakat');
     Route::get('/admin/nisab', 'PageController@adminNisab')->name('admin.nisab');
 });
 

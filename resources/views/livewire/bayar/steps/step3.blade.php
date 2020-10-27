@@ -34,7 +34,7 @@
                 <p>Transaksi ID: 12548</p>
             </div>
             <div class="flex items-center justify-between">
-                <p>Transaksi di atas telah berjaya. Sila <a href="{{ route('bayar.resit') }}" class="text-blue-500">cetak resit</a> untuk rekod anda.</p>
+                <p>Transaksi di atas telah berjaya. Sila <a href="{{ route('bayar.resit') }}" target="_blank" class="text-blue-500">cetak resit</a> untuk rekod anda.</p>
             </div>
         </div>
     </div>
