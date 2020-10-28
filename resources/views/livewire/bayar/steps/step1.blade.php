@@ -70,34 +70,29 @@
                 <p class="text-sm italic text-gray-600">Tiada Pembayar Zakat berdaftar dengan Institusi pilihan.</p>
             @endif
         @endif --}}
-        <div class="flex items-center py-1 mb-2 text-sm">
-            <div class="w-full font-semibold">
+        <div class="flex items-center justify-between py-1 mb-2 text-sm">
+            <p class="font-bold">
                 Nama
-            </div>
-            <div class="w-full font-semibold">
-                Kad Pengenalan
-            </div>
-            <div class="w-full font-semibold text-right whitespace-no-wrap">
+            </p>
+            <p class="font-bold text-right whitespace-no-wrap">
                 Nilai Pembayaran Zakat (RM)
-            </div>
+            </p>
         </div>
         <div class="grid grid-col-1 gap-3">
             @foreach ($donorGrouped as $ppz => $donors)
-                <div class="border border-cool-gray-200 p-3 rounded">
+                <div class="">
                     <div class="flex items-center justify-between py-3">
-                        <p>{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
-                        <p>RM{{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>
+                        <p class="font-semibold">{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
+                        <p class="font-semibold">RM {{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>
                     </div>
                     @foreach ($donors as $donor)
-                        <div class="flex items-center py-1 text-sm">
-                            <div class="w-full">
-                                {{ $donor['nama'] }}
+                        <div class="flex items-center justify-between py-1 text-sm">
+                            <div>
+                                <p>{{ $donor['nama'] }}</p>
+                                <p class="text-gray-400">{{ $donor['ic'] }}</p>
                             </div>
-                            <div class="w-full">
-                                {{ $donor['ic'] }}
-                            </div>
-                            <div class="w-full text-right">
-                                {{ $donor['nilai_zakat'] }}
+                            <div>
+                                <p>{{ $donor['nilai_zakat'] }}</p>
                             </div>
                         </div>
                     @endforeach
