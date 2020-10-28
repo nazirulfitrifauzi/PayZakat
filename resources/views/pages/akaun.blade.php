@@ -39,30 +39,6 @@
             </div>
         </div>
 
-        {{-- <div class=" flex mt-8 px-8 justify-between">
-            <h2 class="text-lg sm:px-6 lg:px-8 font-bold leading-7 text-gray-900 sm:text-2xl sm:leading-9 sm:truncate">
-                Maklumat Akaun (Simpanan) <span class="text-gray-400 text-sm ml-3">164823439821</span>
-            </h2>
-            <div x-data="{ open: false }" class="relative">
-                <button x-on:click="open = true" class="overflow-hidden focus:outline-none">
-                    <svg class="mt-3 h-5 w-5"
-                        viewBox="0 0 24 24"
-                        style=" fill:#000000;"><path d="M 3 9 C 1.34375 9 0 10.34375 0 12 C 0 13.65625 1.34375 15 3 15 C 4.65625 15 6 13.65625 6 12 C 6 10.34375 4.65625 9 3 9 Z M 12 9 C 10.34375 9 9 10.34375 9 12 C 9 13.65625 10.34375 15 12 15 C 13.65625 15 15 13.65625 15 12 C 15 10.34375 13.65625 9 12 9 Z M 21 9 C 19.34375 9 18 10.34375 18 12 C 18 13.65625 19.34375 15 21 15 C 22.65625 15 24 13.65625 24 12 C 24 10.34375 22.65625 9 21 9 Z"></path>
-                    </svg>
-                </button>
-            <!-- Dropdown Body -->
-                <div x-show.transition="open" x-on:click.away="open = false" class="absolute right-0 w-40 -mt-4 py-2 bg-white border rounded shadow-xl">   
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:text-teal-300">
-                    Bayaran Bil
-                    </a>
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:text-teal-300">    
-                    Pemindahan Wang
-                    </a>
-                </div>
-            </div>
-            <!-- // Dropdown Body -->
-        </div> --}}
-
     <div class="mt-8">
         <div class="mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mt-2" x-max="1">
@@ -122,15 +98,15 @@
         <div class="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 gap-5 mt-8">
             <div>
                 <select id="location" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                    <option selected>All Transaction History</option>
-                    <option>Debit Card Transaction</option>
+                    <option selected>Semua Transaksi</option>
+                    <option>Transaksi Debit</option>
                 </select>
             </div>
             <div>
                 <select id="location" class="mt-1 form-select block w-full pl-3 pr-10 py-2 text-base leading-6 border-gray-300 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-                    <option>Last 30 Days</option>
-                    <option selected>Last 60 Days</option>
-                    <option>Last 90 Days</option>
+                    <option>30 Hari Sebelum</option>
+                    <option selected>60 Hari Sebelum</option>
+                    <option>90 Hari Sebelum</option>
                 </select>
             </div>
         </div>
@@ -265,13 +241,13 @@
                             <thead>
                                 <tr>
                                     <th class="px-6 py-4 bg-cool-gray-700 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">
-                                        Date
+                                        Tarikh
                                     </th>
                                     <th class="px-6 py-4 bg-cool-gray-700 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider">
-                                        Description
+                                        Butiran
                                     </th>
                                     <th class="hidden px-6 py-4 bg-cool-gray-700 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider md:block">
-                                        Amount
+                                        Jumlah
                                     </th>
                                 </tr>
                             </thead>
@@ -363,24 +339,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <!-- Pagination -->
-                        {{--
-                        <nav class="bg-white px-4 py-3 flex items-center justify-between border-t border-cool-gray-200 sm:px-6">
-                            <div class="hidden sm:block">
-                                <p class="text-sm leading-5 text-cool-gray-700">
-                                    Memaparkan <span class="font-medium">1</span> sehingga <span class="font-medium">5</span> daripada <span class="font-medium">10</span> carian
-                                </p>
-                            </div>
-                            <div class="flex-1 flex justify-between sm:justify-end">
-                                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-cool-gray-300 text-sm leading-5 font-medium rounded-md text-cool-gray-700 bg-white hover:text-cool-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-cool-gray-100 active:text-cool-gray-700 transition ease-in-out duration-150">
-                                    Sebelumnya
-                                </a>
-                                <a href="#" class="ml-3 relative inline-flex items-center px-4 py-2 border border-cool-gray-300 text-sm leading-5 font-medium rounded-md text-cool-gray-700 bg-white hover:text-cool-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-cool-gray-100 active:text-cool-gray-700 transition ease-in-out duration-150">
-                                    Seterusnya
-                                </a>
-                            </div>
-                        </nav>
-                        --}}
                     </div>
                 </div>
             </div>
@@ -397,7 +355,7 @@
             <div class="mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex justify-center">
                 <span class="inline-flex rounded-md shadow-sm">
                     <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-black bg-white hover:bg-gray-300 border border-gray-400 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
-                        View Statement
+                        Paparan Penyata
                         <svg class="ml-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                         </svg>

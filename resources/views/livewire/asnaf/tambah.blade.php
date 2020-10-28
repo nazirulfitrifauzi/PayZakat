@@ -1,22 +1,3 @@
-{{-- <x-form.basic-form action="submit">
-    <x-slot name="content">
-        <x-form.input class="sm:col-span-6" label="Nama Penuh" value="name" livewire="wire:model.lazy=name wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-        <x-form.input class="sm:col-span-2" label="No Kad Pengenalan Baru" value="ic_no" livewire="wire:model.lazy=ic_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-
-        <x-form.input class="sm:col-span-2" label="Jumlah Pendapatan Isi Rumah" value="household_income" livewire="wire:model.lazy=household_income wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-        <x-form.input class="sm:col-span-2" label="Bilangan Tanggungan" value="dependents" livewire="wire:model.lazy=dependents wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-
-        <x-form.input class="sm:col-span-2" label="Telefon Bimbit" value="phone_no" livewire="wire:model.lazy=phone_no wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-        <x-form.input class="sm:col-span-2" label="E-mail" value="email" type="email" livewire="wire:model.lazy=email wire:loading.attr=readonly wire:loading.class=bg-gray-300 wire:target=submit"/>
-
-        <x-form.address-input class="sm:col-span-6" label="Alamat" value1="address1" value2="address2" value3="address3" value4="town" value5="postcode" condition=""/>
-
-        
-    </x-slot>
-
-    <x-form.submit-cancel-button class="mt-8 border-t border-gray-200 pt-5" cancel="Batal" submit="Simpan" cancelpage="{{ url()->previous() }}"/>
-</x-form.basic-form> --}}
-
 <x-form.basic-form action="submit">
     <x-slot name="content">
         <x-general.grid mobile="1" gap="16" sm="2" md="2" lg="2" xl="2" class="col-span-6">
@@ -53,7 +34,7 @@
                         <option value="1">Ya</option>
                         <option value="0">Tidak</option>
                     </x-form.dropdown>
-                    
+
                 </x-general.grid>
             </div>
         </x-general.grid>
