@@ -76,7 +76,7 @@ class SenaraiMenunggu extends Component
             session()->flash('message', 'Permohonan ejen telah ditolak.');
         }
 
-        return redirect()->to('/admin/senarai-menunggu');
+        return redirect()->to('/admin/pengguna/senarai-menunggu');
     }
 
     public function render()
