@@ -1,41 +1,44 @@
 @extends('layouts.app.auth')
 @section('content')
+ <x-general.header bgimg="https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg"/>
     <!-- Content -->
-        <div class="flex justify-between mt-8 px-8">
-            <div class="flex items-center">
-                <h2 class="text-lg font-bold leading-7 text-gray-900 sm:text-2xl sm:leading-9 sm:truncate">Maklumat Akaun</h2>
-            <span class="text-gray-400 text-sm ml-3">164823439821</span>
-            </div>
-            <div x-data="{ open: false }">
-                <div>
-                   
+       <div class="m-5">
+            <div class="flex items-center justify-between p-4 mb-8 text-md font-semibold text-teal-100 bg-teal-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-teal my-6">
+                <div class="flex items-center">
+                    <h2 class="text-xl">Maklumat Akaun</h2>
+                <span class="text-gray-300 text-xs ml-3 mt-1">164823439821</span>
+                </div>
+                <div x-data="{ open: false }" class="cursor-pointer">
+                    <div>
+                    
 
-                        <span class="relative inline-flex">
-                            {{-- <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-400 text-base leading-6 font-medium rounded-md text-gray-800 bg-white hover:text-gray-700 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150">
-                              Transactions
-                            </button> --}}
-                            <x-heroicon-o-dots-horizontal class="h-5 w-5 " x-on:click="open = true"/>
-                            <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1 pointer-events-none">
-                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-                              <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                            <span class="relative inline-flex">
+                                {{-- <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-400 text-base leading-6 font-medium rounded-md text-gray-800 bg-white hover:text-gray-700 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50 transition ease-in-out duration-150">
+                                Transactions
+                                </button> --}}
+                                <x-heroicon-o-dots-horizontal class="h-5 w-5 " x-on:click="open = true"/>
+                                <span class="flex absolute h-3 w-3 top-0 right-0 -mt-1 -mr-1 pointer-events-none">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
+                                </span>
                             </span>
-                        </span>
+                    </div>
+                    <!-- Dropdown Body -->
+                    <div 
+                        x-show.transition="open" 
+                        x-cloak
+                        x-on:click.away="open = false" 
+                        class="absolute right-0 w-62 -mt-4 py-2 bg-white border rounded shadow-xl"
+                    >   
+                        <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:text-teal-300">
+                        Tambah Nilai
+                        </a>
+                        <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:text-teal-300">    
+                        Salur Zakat Kepada Asnaf
+                        </a>
+                    </div>
+                <!-- // Dropdown Body -->
                 </div>
-                <!-- Dropdown Body -->
-                <div 
-                    x-show.transition="open" 
-                    x-cloak
-                    x-on:click.away="open = false" 
-                    class="absolute right-0 w-62 -mt-4 py-2 bg-white border rounded shadow-xl"
-                >   
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:text-teal-300">
-                    Tambah Nilai
-                    </a>
-                    <a href="#" class="transition-colors duration-200 block px-4 py-2 text-normal text-gray-900 rounded hover:text-teal-300">    
-                    Salur Zakat Kepada Asnaf
-                    </a>
-                </div>
-            <!-- // Dropdown Body -->
             </div>
         </div>
 
@@ -45,9 +48,9 @@
                 <!-- Card -->
                 <x-general.card class="bg-white p-5">
                     <div class="flex items-center p-4">
-                        {{--<div class="flex-shrink-0">
-                            <x-heroicon-o-scale class="h-6 w-6 text-cool-gray-400"/>
-                        </div>--}}
+                        <div class="flex-shrink-0">
+                            <x-heroicon-o-scale class="h-8 w-8 text-blue-400"/>
+                        </div>
                         <div class="ml-5 w-0 flex-1">
                             <p class="text-cool-gray-700 text-xl font-semibold">Baki Akaun Keseluruhan</p>
                         </div>
@@ -60,37 +63,56 @@
                 <x-general.card class="bg-white p-5 mt-8">
                     <div>
                         <div class="flex items-center p-4">
+                            <div class="flex-shrink-0">
+                              <x-heroicon-o-scale class="h-6 w-6 text-blue-400"/>
+                            </div>
                             <div class="ml-5 w-0 flex-1">
                                 <p class="text-cool-gray-500 font-semibold">Baki Semasa</p>
                             </div>
-                            <div>
+                            <div class="font-semibold text-teal-700">
                                 <p>RM 30,659.45</p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="flex items-center p-4">
+                            <div class="flex-shrink-0">
+                              <x-heroicon-o-currency-dollar class="h-6 w-6 text-yellow-400"/>
+                            </div>
                             <div class="ml-5 w-0 flex-1">
                                 <p class="text-cool-gray-500 font-semibold">Jumlah Zakat Refund Pada Tahun 2019</p>
                             </div>
-                            <div>
+                            <div class="font-semibold text-teal-700">
                                 <p>RM 5,000.00</p>
                             </div>
                         </div>
                     </div>
-                    <div>
+                     <div>
+                        <div class="flex items-center p-4">
+                            <div class="flex-shrink-0">
+                              <x-heroicon-o-calendar class="h-6 w-6 text-green-400"/>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <p class="text-cool-gray-500 font-semibold">One Day Float</p>
+                            </div>
+                            <div class="font-semibold text-teal-700">
+                                <p>RM 0.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div>
                         <div class="flex items-center p-4 justify-between">
                             <div class="ml-5  flex">
                                 <span class="text-cool-gray-500 font-semibold">One Day Float</span>
                             </div>
                             <div class="flex justify-between">
-                                {{-- <p>RM 0.00</p> --}}
+                    
                                 <div class="flex"><span>RM</span></div>
                                 
                                 <span>0.00</span>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </x-general.card>
             </div>
         </div>

@@ -5,10 +5,10 @@
           <x-form.input class="" label="" value="search" livewire="wire:model=search"/>
       </div>
       <div wire:loading  >
-          <div class="flex items-center text-gray-500">
-              <x-heroicon-o-cog class="-ml-0.5 mr-2 h-8 w-8 animate-spin"/>
-              <p class="text-sm">Sedang memuatkan<span class="animate-ping">...</span></p>
-          </div>
+            <div class="flex items-center text-white absolute  flex items-center bg-teal-700 p-4 rounded" style="left: 38%; top:55%">
+                <x-heroicon-o-cog class="-ml-0.5 mr-2 h-8 w-8 animate-spin"/>
+                <p class="text-sm">Sedang memuatkan<span class="animate-ping">...</span></p>
+            </div>
       </div>
       <div class="flex items-center">
           <x-general.button.icon-button href="#_" target="_blank" label="Excel" color="green" livewire="">

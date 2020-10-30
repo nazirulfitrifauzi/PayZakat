@@ -2,6 +2,7 @@
 
 @section('content')
     <!-- Content -->
+    <x-general.header bgimg="https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg"/>
     <div class="mt-8">
         <x-general.page-title title="Maklumat Peribadi Pengguna"/>
 

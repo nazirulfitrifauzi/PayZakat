@@ -3,6 +3,7 @@
 @section('content')
     <!-- Page header -->
     @include('layouts.navbar.header')
+  
 
     <!-- Content -->
     <div class="mt-8">
@@ -12,19 +13,19 @@
                 <!-- Info Card -->
                 <x-general.info-card bg="bg-white" footerBg="bg-cool-gray-50" title="Baki Akaun" value="RM 30,659.40" footerRoute="/" footerText="Lihat Semua">
                     <x-slot name="svg">
-                        <x-heroicon-o-scale class="h-6 w-6 text-cool-gray-400"/>
+                        <x-heroicon-o-scale class="h-8 w-8 text-blue-400"/>
                     </x-slot>
                 </x-general.info-card>
 
                 <x-general.info-card bg="bg-white" footerBg="bg-cool-gray-50" title="Belum Diproses" value="-RM 19,500.00" footerRoute="/" footerText="Lihat Semua">
                     <x-slot name="svg">
-                        <x-heroicon-o-refresh class="h-6 w-6 text-cool-gray-400"/>
+                        <x-heroicon-o-refresh class="h-8 w-8 text-yellow-400"/>
                     </x-slot>
                 </x-general.info-card>
 
                 <x-general.info-card bg="bg-white" footerBg="bg-cool-gray-50" title="Telah diproses" value="RM 20,000" footerRoute="/" footerText="Lihat Semua">
                     <x-slot name="svg">
-                        <x-heroicon-o-check-circle class="h-6 w-6 text-cool-gray-400"/>
+                        <x-heroicon-o-check-circle class="h-8 w-8 text-green-400"/>
                     </x-slot>
                 </x-general.info-card>
             </x-general.grid>
