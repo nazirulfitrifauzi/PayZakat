@@ -15,8 +15,10 @@ class CreateBankTable extends Migration
     {
         Schema::create('bank', function (Blueprint $table) {
             $table->id();
-            $table->string('code');
             $table->string('name');
+            $table->string('category');
+            $table->string('active_flag');
+            $table->string('bnm_approve');
 
             $table->unsignedBigInteger('created_by');
             $table->unsignedBigInteger('updated_by')->nullable();
