@@ -29,11 +29,11 @@
         >
             <div>
                 <div class="text-center">
-                    <div class="flex items-center justify-between">
-                        <h3 class="text-lg font-semibold leading-6 text-gray-900" id="modal-headline">
+                    <div class="flex items-center justify-between p-4  text-md font-semibold text-teal-100 bg-teal-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-teal">
+                        <h3 class="text-lg font-semibold leading-6 text-teal-100" id="modal-headline">
                             {{ $lists->screening->count() == 11 ? 'Status Saringan ': 'Senarai Saringan' }}
                         </h3>
-                        <x-heroicon-o-x-circle class="w-6 h-6 text-red-600 cursor-pointer" @click="open = false"/>
+                        <x-heroicon-o-x-circle class="w-6 h-6 text-teal-100 cursor-pointer" @click="open = false"/>
                     </div>
 
                     @if ($lists->screening->count() == 11)

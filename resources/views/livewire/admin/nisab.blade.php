@@ -5,6 +5,8 @@
 @endphp
 
 <div>
+     <x-general.page-title title="Tetapan Nisab"/>
+     
     <div class="mx-auto mt-8 px-6 flex justify-between">
         {{-- page title --}}
         <div class="flex items-center">
@@ -56,13 +58,13 @@
                 <x-general.card class=" bg-gray-100 p-5 cursor-pointer hover:bg-teal-100">
                     <div class="flex justify-between items-center">
                         <div class="flex-shrink-0">
-                            <img class="h-10" src="{{ asset('img/state/'.$item->state->img) }}" alt="">
+                            <img class="h-10 rounded" src="{{ asset('img/state/'.$item->state->img) }}" alt="">
                         </div>
                         <div class="ml-5 w-0 flex-1">
                             <p class="text-cool-gray-700 text-xl font-semibold">{{ $item->state->description }}</p>
                         </div>
                         <div>
-                            <p class="font-bold text-2xl">RM {{ number_format($item->value,2) }}</p>
+                            <p class="font-bold text-xl">RM {{ number_format($item->value,2) }}</p>
                         </div>
                     </div>
                 </x-general.card>

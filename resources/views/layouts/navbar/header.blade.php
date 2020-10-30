@@ -1,6 +1,7 @@
-<div class="bg-white shadow">
+<x-general.header bgimg="https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg"/>
+<div class="bg-white absolute w-full bg-opacity-0" style="top:0px">
     <div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
-        <div class="py-6 md:flex md:items-center md:justify-between lg:border-t lg:border-cool-gray-200">
+        <div class="py-4 md:flex md:items-center md:justify-between lg:border-t lg:border-cool-gray-200">
             <div class="flex-1 min-w-0">
                 <!-- Profile -->
                 <div class="flex items-center">
@@ -8,13 +9,13 @@
                     <div>
                         <div class="flex items-center">
                             <img class="h-15 w-15 rounded-full sm:hidden object-cover" src="{{ (is_null(auth()->user()->image)) ? asset('img/avatar/avatar.jpg') : asset('storage/' . auth()->user()->image) }}" alt="">
-                            <h1 class="ml-3 text-2xl font-bold leading-7 text-cool-gray-900 sm:leading-9 sm:truncate">
+                            <h1 class="ml-3 text-2xl font-bold leading-7 text-cool-gray-100 sm:leading-9 sm:truncate">
                                 Selamat Pagi, {{ Auth()->user()->name }}
                             </h1>
                         </div>
                         <dl class="mt-6 flex flex-col sm:ml-3 sm:mt-1 sm:flex-row sm:flex-wrap">
                             <dt class="sr-only">IC No</dt>
-                            <dd class="flex items-center text-sm leading-5 text-cool-gray-500 font-medium capitalize sm:mr-6">
+                            <dd class="flex items-center text-sm leading-5 text-cool-gray-100 font-medium capitalize sm:mr-6">
                                 <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-cool-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="identification w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
                                 </svg>
@@ -22,7 +23,7 @@
                             </dd>
 
                             <dt class="sr-only">Ejen ID</dt>
-                            <dd class="flex items-center text-sm leading-5 text-cool-gray-500 font-medium capitalize sm:mr-6">
+                            <dd class="flex items-center text-sm leading-5 text-cool-gray-100 font-medium capitalize sm:mr-6">
                                 <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-cool-gray-400" viewBox="0 0 20 20" fill="currentColor" class="finger-print w-6 h-6">
                                     <path fill-rule="evenodd" d="M6.625 2.655A9 9 0 0119 11a1 1 0 11-2 0 7 7 0 00-9.625-6.492 1 1 0 11-.75-1.853zM4.662 4.959A1 1 0 014.75 6.37 6.97 6.97 0 003 11a1 1 0 11-2 0 8.97 8.97 0 012.25-5.953 1 1 0 011.412-.088z" clip-rule="evenodd"></path>
                                     <path fill-rule="evenodd" d="M5 11a5 5 0 1110 0 1 1 0 11-2 0 3 3 0 10-6 0c0 1.677-.345 3.276-.968 4.729a1 1 0 11-1.838-.789A9.964 9.964 0 005 11zm8.921 2.012a1 1 0 01.831 1.145 19.86 19.86 0 01-.545 2.436 1 1 0 11-1.92-.558c.207-.713.371-1.445.49-2.192a1 1 0 011.144-.83z" clip-rule="evenodd"></path>
@@ -32,7 +33,7 @@
                             </dd>
 
                             <dt class="sr-only">VA ID</dt>
-                            <dd class="mt-3 flex items-center text-sm leading-5 text-cool-gray-500 font-medium sm:mr-6 sm:mt-0 capitalize">
+                            <dd class="mt-3 flex items-center text-sm leading-5 text-cool-gray-100 font-medium sm:mr-6 sm:mt-0 capitalize">
                                 <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
                                 </svg>
