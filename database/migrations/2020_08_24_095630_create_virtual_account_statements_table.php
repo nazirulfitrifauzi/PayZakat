@@ -28,7 +28,7 @@ class CreateVirtualAccountStatementsTable extends Migration
             $table->unsignedBigInteger('ppz_id')->nullable();
             
             $table->string('document_no')->nullable();
-            $table->string('document_date')->nullable();
+            $table->datetime('document_date')->nullable();
             $table->unsignedDecimal('transaction_amount',16,2)->default(0);
 
             $table->unsignedBigInteger('created_by');

@@ -17,7 +17,7 @@ class CreateVirtualAccountsTable extends Migration
             $table->id();
             $table->uuid('uuid');
 
-            $table->string('ref_no');
+            $table->string('ref_no')->nullable();
             $table->string('virtual_account_no');
             $table->unsignedBigInteger('agent_id')->nullable();
 
