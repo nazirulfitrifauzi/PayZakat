@@ -90,6 +90,11 @@ class PageController extends Controller
         return view('pages.admin.nisab');
     }
 
+    public function adminZakatR()
+    {
+        return view('pages.admin.zakatRefunds');
+    }
+
     public function asnafSenarai()
     {
         return view('pages.asnaf.senarai');

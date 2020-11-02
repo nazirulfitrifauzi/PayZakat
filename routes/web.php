@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin/pengguna/senarai-penerima-zakat', 'PageController@adminSenaraiPenerimaZakat')->name('admin.penerimaZakat');
     Route::get('/admin/nisab', 'PageController@adminNisab')->name('admin.nisab');
+    Route::get('/admin/zakat-refund', 'PageController@adminZakatR')->name('admin.zakatRefunds');
 });
 
 
