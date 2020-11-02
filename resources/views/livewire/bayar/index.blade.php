@@ -1,6 +1,6 @@
 
 <div>
-    <x-general.card class="bg-teal-600 rounded-lg pt-4">
+    <x-general.card class="bg-white rounded-lg pt-4">
         <x-general.steps :steps="$steps" :currentstep="$currentstep" />
         <div class="mt-8">
             <div class="flex items-center justify-between gap-5 p-5 ">
