@@ -2,17 +2,17 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Nisab as ModelsNisab;
-use App\Models\State;
+use App\Models\PPZ;
+use App\Models\ZakatRefunds as ZakatR;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class Nisab extends Component
+class ZakatRefunds extends Component
 {
     use WithPagination;
 
     public $year;
-    public $state_id = "";
+    public $ppz_id = "";
     public $value;
 
     public function updatingSearch()
@@ -38,26 +38,26 @@ class Nisab extends Component
             'value'     => 'required|numeric',
         ]);
 
-        ModelsNisab::create([
+        ZakatR::create([
             'year'          => $this->year,
-            'state_id'      => $this->state_id,
+            'ppz_id'        => $this->ppz_id,
             'value'         => $this->value,
             'created_by'    => auth()->user()->id,
             'created_at'    => now(),
         ]);
 
-        $this->state_id = "";
+        $this->ppz_id = "";
         $this->value = "";
     }
 
     public function render()
     {
-        return view('livewire.admin.nisab', [
-            'state' => ModelsNisab::where('year', $this->year)
-                ->orderBy('state_id', 'ASC')
+        return view('livewire.admin.zakat-refunds', [
+            'ppz' => ZakatR::where('year', $this->year)
+                ->orderBy('ppz_id', 'ASC')
                 ->get(),
-            'stateNisab' => State::whereNotIn('id', function ($query) {
-                $query->select('state_id')->from('nisab')->where('year', $this->year);
+            'PPZData' => PPZ::whereNotIn('id', function ($query) {
+                $query->select('ppz_id')->from('zakat_refunds')->where('year', $this->year);
             })->get(),
         ]);
     }
