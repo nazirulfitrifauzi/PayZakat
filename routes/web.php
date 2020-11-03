@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/asnaf', 'PageController@asnafSenarai')->name('asnaf.senarai');
         Route::get('/asnaf/tambah', 'PageController@asnafTambah')->name('asnaf.tambah');
         Route::get('/asnaf/{uuid}', 'PageController@asnafMaklumat')->name('asnaf.maklumat');
-        Route::get('/profil', 'ProfilController@index')->name('profil');
+        Route::get('/tetapan', 'ProfilController@index')->name('tetapan');
         Route::get('/bayar', 'BayarController@index')->name('bayar');
         Route::get('/bayar/resit', 'BayarController@resit')->name('bayar.resit');
     });
