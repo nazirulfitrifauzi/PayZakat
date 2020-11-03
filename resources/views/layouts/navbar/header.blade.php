@@ -1,7 +1,7 @@
 <x-general.header bgimg="https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg"/>
 <div class="bg-white absolute w-full bg-opacity-0" style="top:0px">
     <div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
-        <div class="py-4 md:flex md:items-center md:justify-between lg:border-t lg:border-cool-gray-200">
+        <div class="py-4 md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
                 <!-- Profile -->
                 <div class="flex items-center">

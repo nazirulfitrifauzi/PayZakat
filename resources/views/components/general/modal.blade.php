@@ -24,12 +24,13 @@
             x-transition:leave="ease-in duration-200"
             x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
             x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            class="inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg lg:max-w-2xl xl:max-w-5xl sm:w-full sm:p-6"
+            class="inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg lg:max-w-xl xl:max-w-2xl sm:w-full sm:p-6"
             role="dialog" aria-modal="true" aria-labelledby="modal-headline"
         >
             <div>
                 <div class="text-center">
-                    <h3 class="text-lg font-semibold leading-6 text-gray-900" id="modal-headline">
+                    <h3 class="flex items-center justify-between p-4 mb-8 text-md font-semibold text-teal-100 bg-teal-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-teal w-full" id="modal-headline">
+                    {{-- <h3 class="text-lg font-semibold leading-6 text-gray-900" id="modal-headline"> --}}
                         {{ $title }}
                     </h3>
                     {{ $slot }}
