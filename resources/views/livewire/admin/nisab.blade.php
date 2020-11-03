@@ -24,35 +24,90 @@
         @if ($stateNisab->count() > 0 )
             <div class="flex items-center" x-data="{ open: false }">
                 {{-- button add nisab --}}
-                <x-general.button.icon-button href="" target="" label="Tambah Nisab" color="blue" livewire="" @click="open = true" >
+                <x-general.button.icon-button href="" target="" label="Tambah Nisab" color="blue" livewire="" @click="open = true">
                     <x-heroicon-o-plus-circle class="-ml-0.5 mr-2 h-6 w-6"/>
                 </x-general.button.icon-button>
 
                 {{-- modal add nisab --}}
                 <x-general.modal title="Tambah Nisab" submit="submit" submitLabel="Tambah" cancel="Batal">
-                    <div class="mt-3 text-justify grid grid-cols-3" >
-                        <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
-                        <div class="text-sm leading-5 font-medium text-gray-700 col-span-2">{{ $this->year }}</div>
-                    </div>
-                    <div class="mt-3 text-justify grid grid-cols-3" >
-                        <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center col-span-1">Negeri</label>
-                        <x-form.dropdown class="col-span-2" label="" value="state_id" default="yes">
-                            @foreach ($stateNisab as $item)
-                                <option value="{{ $item->id }}">{{ $item->description }}</option>
-                            @endforeach
-                        </x-form.dropdown>
-                    </div>
-                    <div class="mt-3 text-justify grid grid-cols-3" >
-                        <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center">Nisab (RM)</label>
-                        <x-form.input class="col-span-2" label="" value="value" livewire="wire:model=value"/>
+                    <div class="pl-4 pr-4">
+                        <div class="mt-3 text-justify grid grid-cols-3">
+                            <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
+                            <div class="text-sm leading-5 font-medium text-gray-700 col-span-2">{{ $this->year }}</div>
+                        </div>
+                        <div class="mt-3 text-justify grid grid-cols-3" >
+                            <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center col-span-1">Negeri</label>
+                            <x-form.dropdown class="col-span-2" label="" value="state_id" default="yes">
+                                @foreach ($stateNisab as $item)
+                                    <option value="{{ $item->id }}">{{ $item->description }}</option>
+                                @endforeach
+                            </x-form.dropdown>
+                        </div>
+                        <div class="mt-3 text-justify grid grid-cols-3" >
+                            <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center">Nisab (RM)</label>
+                            <x-form.input class="col-span-2" label="" value="value" livewire="wire:model=value"/>
+                        </div>
                     </div>
                 </x-general.modal>
             </div>
         @endif
     </div>
 
-    {{-- each Negeri card --}}
-    <div class="mx-auto px-0 my-8 text-lg leading-6 font-medium text-cool-gray-900 sm:px-6 lg:px-8">
+   {{-- each Negeri card --}}
+    <x-general.card class="bg-white rounded-lg ml-6 mr-6 mt-4">
+        <div class="pr-4 pb-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6">      
+            @foreach ($state as $item)
+                <div class="max-w-sm rounded overflow-hidden shadow-lg mt-10  ml-4 bg-teal-100">
+                    <img class="w-full p-4 bg-gray-100" src="{{ asset('img/state/'.$item->state->img) }}" alt="Sunset in the mountains">
+                    <div class="px-4 py-4">
+                        <div class="font-bold text-base mb-2 leading-5">{{ $item->state->description }}</div>
+                        <div class="">
+                            <p class="font-semibold text-teal-700 ">
+                            RM {{ number_format($item->value,2) }}
+                            </p>
+                            <div x-data="{ open: false }">
+                                <button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-1 px-1 rounded w-full mt-4" @click="open = true">
+                                        <div class="flex">
+                                            <x-heroicon-o-pencil-alt class="h-5 w-5 text-white"/>
+                                            <span class="text-sm pt-1 pl-1 text-white sm:text-sm lg:text-xs xl:text-sm">Kemas kini Nisab</span>
+                                        </div>
+                                    </button>
+                                    
+                                    {{-- modal update nisab --}}
+                                    <x-general.modal title="Kemas kini Nisab" submit="" submitLabel="Kemas kini" cancel="Batal">
+                                        <div class="pl-4 pr-4">
+                                            <div class="mt-3 text-justify grid grid-cols-3">
+                                                <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
+                                                <div class="text-sm leading-5 font-medium text-gray-700 col-span-2">{{ $this->year }}</div>
+                                            </div>
+                                            <div class="mt-3 text-justify grid grid-cols-3" >
+                                                <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center col-span-1">Negeri</label>
+                                                <x-form.dropdown class="col-span-2" label="" value="state_id" default="yes" livewire="wire:model=state_id">
+                                                    @foreach ($stateNisab as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->description }}</option>
+                                                    @endforeach
+                                                </x-form.dropdown>
+                                            </div>
+                                            <div class="mt-3 text-justify grid grid-cols-3" >
+                                                <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center">Nisab (RM)</label>
+                                                <x-form.input class="col-span-2" label="" value="value" livewire=""/>
+                                            </div>
+                                        </div>
+                                    </x-general.modal>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            @endforeach      
+        </div>
+        @if($state->isEmpty())          
+            <div class="flex justify-center">
+                <p class="text-cool-gray-700 text-xl font-semibold">Tiada Data</p>
+            </div>
+        @endif
+    </x-general.card>
+        
+    {{-- <div class="mx-auto px-0 my-8 text-lg leading-6 font-medium text-cool-gray-900 sm:px-6 lg:px-8">
         <x-general.grid class="mt-2" mobile="1" gap="5" sm="1" md="1" lg="1" xl="2">
             @foreach ($state as $item)
                 <x-general.card class=" bg-gray-100 p-5 cursor-pointer hover:bg-teal-100">
@@ -78,7 +133,7 @@
                 </div>
             </x-general.card>
         @endif
-    </div>
+    </div> --}}
 
     {{-- loading --}}
     <div wire:loading wire:target="year, submit">

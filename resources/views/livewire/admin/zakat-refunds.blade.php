@@ -5,6 +5,7 @@
 @endphp
 
 <div>
+    <x-general.page-title title="Tetapan Refund"/>
     <div class="mx-auto mt-8 px-6 flex justify-between">
         {{-- page title --}}
         <div class="flex items-center">
@@ -48,9 +49,70 @@
             </div>
         @endif
     </div>
+   <diV class="mx-auto px-0 my-6 sm:px-6 lg:px-8">
+        <x-general.table>
+            <x-slot name="thead">
+                <x-general.table-header class="text-left" value="Pusat Pungutan Zakat" sort="" livewire=""/>
+                <x-general.table-header class="text-left" value="Zakat Refund (RM)" sort="" livewire=""/>
+                <x-general.table-header class="text-left" value="Tindakan" sort="" livewire=""/>
+            </x-slot>
+            <x-slot name="tbody">
+                @foreach ($ppz as $item)
+                    <tr>
+                        <x-general.table-body colspan="" class="font-medium text-gray-900">
+                            {{ $item->ppz->name }}
+                        </x-general.table-body>
 
+                        <x-general.table-body colspan="" class="font-medium text-gray-500">
+                            RM {{ number_format($item->value,2) }}
+                        </x-general.table-body>
+
+                        <x-general.table-body colspan="" class="font-medium text-gray-900">
+
+                            <div x-data="{ open: false }">
+                                <x-general.button.icon-button href="" target="" label="Kemas kini Refund" color="teal" livewire="" @click="open = true" >
+                                    <x-heroicon-o-pencil-alt class="-ml-0.5 mr-2 h-4 w-4"/>
+                                </x-general.button.icon-button>
+
+                                {{-- modal update zakat refund --}}
+                                <x-general.modal title="kemas kini Zakat Refund" submit="" submitLabel="Kemas kini" cancel="Batal">
+                                    <div class="mt-3 text-justify grid grid-cols-3" >
+                                        <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
+                                        <div class="text-sm leading-5 font-medium text-gray-700 col-span-2">{{ $this->year }}</div>
+                                    </div>
+                                    <div class="mt-3 text-justify grid grid-cols-3" >
+                                        <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center col-span-1">Pusat Pungutan Zakat</label>
+                                        <x-form.dropdown class="col-span-2" label="" value="ppz_id" default="yes">
+                                            @foreach ($PPZData as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </x-form.dropdown>
+                                    </div>
+                                    <div class="mt-3 text-justify grid grid-cols-3" >
+                                        <label for="location" class="text-sm leading-5 font-medium text-gray-700 flex items-center">Zakat Refund (RM)</label>
+                                        <x-form.input class="col-span-2" label="" value="value" livewire=""/>
+                                    </div>
+                                </x-general.modal>
+                            </div>
+                        </x-general.table-body>
+                    </tr>
+                @endforeach  
+
+                @if($ppz->isEmpty())        
+                    <tr>
+                        <x-general.table-body colspan="4" class="text-gray-500 text-center">
+                            Tiada Data
+                        </x-general.table-body>
+                    </tr>
+                @endif
+            </x-slot>
+          {{-- {{ $list->links('pagination::tailwind') }} --}}
+        </x-general.table>
+    </diV>
+
+    
     {{-- each PPZ card --}}
-    <div class="mx-auto px-0 my-8 text-lg leading-6 font-medium text-cool-gray-900 sm:px-6 lg:px-8">
+    {{-- <div class="mx-auto px-0 my-8 text-lg leading-6 font-medium text-cool-gray-900 sm:px-6 lg:px-8">
         <x-general.grid class="mt-2" mobile="1" gap="5" sm="1" md="1" lg="1" xl="2">
             @foreach ($ppz as $item)
                 <x-general.card class=" bg-gray-100 p-5 cursor-pointer hover:bg-teal-100">
@@ -73,7 +135,7 @@
                 </div>
             </x-general.card>
         @endif
-    </div>
+    </div> --}}
 
     {{-- loading --}}
     <div wire:loading wire:target="year, submit">
