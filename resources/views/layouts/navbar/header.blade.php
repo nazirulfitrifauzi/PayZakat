@@ -1,4 +1,12 @@
-<x-general.header bgimg="https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg"/>
+<header>
+    <div class="w-full bg-cover bg-center rounded-b-3xl" style="height:14rem; background-image: url(https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg);">
+        <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
+            <div class="text-center mt-8">
+                <h1 class="text-white text-2xl italic font-bold uppercase md:text-3xl">Pay <span class="underline text-teal-400">Zakat</span></h1>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="bg-white absolute w-full bg-opacity-0" style="top:0px">
     <div class="px-4 sm:px-6 lg:mx-auto lg:px-8">
         <div class="py-4 md:flex md:items-center md:justify-between">

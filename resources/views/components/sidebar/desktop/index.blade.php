@@ -78,7 +78,7 @@
 
                         <x-sidebar.hr/>
 
-                        <x-sidebar.nav-item route="home" label="Tetapan" uri="">
+                        <x-sidebar.nav-item route="tetapan" label="Tetapan" uri="tetapan">
                             <x-heroicon-o-cog class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                         </x-sidebar.nav-item>
 
