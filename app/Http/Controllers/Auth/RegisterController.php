@@ -55,7 +55,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name'      => ['required', 'string', 'max:255'],
-            'username'  => ['required', 'string', 'max:255', 'unique:users'],
+            'nric'      => ['required', 'string', 'min:12', 'max:12', 'unique:users'],
             'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'  => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -72,7 +72,7 @@ class RegisterController extends Controller
         return User::create([
             'uuid'      => (string) Str::uuid(),
             'name'      => $data['name'],
-            'username'  => $data['username'],
+            'nric'      => $data['nric'],
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
         ]);
@@ -85,7 +85,7 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         return $this->registered($request, $user)
-            ?: redirect()->route('login')->with('error', 'Sila tunggu pengesahan daripada pihak Admin.');
+            ?: redirect()->route('kyc', ['uuid' => $user->uuid]);
 
         return $request->wantsJson()
             ? new Response('', 201)

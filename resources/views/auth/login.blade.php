@@ -19,7 +19,7 @@
                 </p>
             </div>
 
-            @if (session('error'))
+            @if (session()->has('message'))
             <div class="bg-yellow-100 border-l-4 border-yellow-400 p-4 mt-8">
                 <div class="flex">
                     <div class="flex-shrink-0">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="ml-3">
                         <p class="text-sm leading-5 text-yellow-700">
-                            {{ session('error') }}
+                            {{ session('message') }}
                         </p>
                     </div>
                 </div>

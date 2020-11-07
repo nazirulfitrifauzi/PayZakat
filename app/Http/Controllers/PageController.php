@@ -95,6 +95,11 @@ class PageController extends Controller
         return view('pages.admin.zakatRefunds');
     }
 
+    public function adminAgihan()
+    {
+        return view('pages.admin.agihan');
+    }
+
     public function asnafSenarai()
     {
         return view('pages.asnaf.senarai');
@@ -109,6 +114,12 @@ class PageController extends Controller
     {
         return view('pages.asnaf.tambah');
     }
+
+    public function kyc()
+    {
+        return view('pages.kyc');
+    }
+
 
     public function asnafMaklumat($uuid)
     {

@@ -37,12 +37,12 @@
 
                     <div class="mt-6">
                         <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
-                            User ID
+                            Nombor IC
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
-                            <input id="username" name="username" type="text" required value="{{ old('username') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('username')  border-red-500 @enderror">
+                            <input id="nric" name="nric" type="text" required value="{{ old('nric') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('nric')  border-red-500 @enderror">
 
-                            @error('username')
+                            @error('nric')
                                 <p class="mt-4 text-xs italic text-red-500">
                                     {{ $message }}
                                 </p>
