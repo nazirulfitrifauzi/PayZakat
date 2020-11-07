@@ -41,8 +41,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/pengguna/senarai-penerima-zakat', 'PageController@adminSenaraiPenerimaZakat')->name('admin.penerimaZakat');
     Route::get('/admin/nisab', 'PageController@adminNisab')->name('admin.nisab');
     Route::get('/admin/zakat-refund', 'PageController@adminZakatR')->name('admin.zakatRefunds');
+    Route::get('/admin/agihan', 'PageController@adminAgihan')->name('admin.agihan');
 });
 
 
 // ======= KALKULATOR =========
 Route::get('/kalkulator', 'KalkulatorController@index')->name('kalkulator');
+
+Route::get('/kyc', 'PageController@kyc')->name('kyc');
