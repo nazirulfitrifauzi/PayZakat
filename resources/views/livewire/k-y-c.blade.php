@@ -1,9 +1,9 @@
 <div>
-    <label for="kycf" class="block text-sm font-medium leading-5 text-gray-700">
+    <label for="kycf" class="block text-sm mb-3 font-medium leading-5 text-gray-700">
         Kad Pengenalan (Hadapan)
     </label>
 
-    <div class="flex mt-1 rounded-md shadow-sm">
+    <div class="flex mt-1 mb-3 rounded-md shadow-sm">
         <label for="kycf" class="w-full p-10 text-center transition duration-300 ease-in-out bg-gray-100 rounded-lg shadow cursor-pointer hover:bg-white group truncate">
 
         
@@ -26,13 +26,22 @@
         <input type="file" class="absolute invisible pointer-events-none" id="kycf" name="kycf" wire:model="kycf">
     </div>
     @error('kycf')
-        <span class="flex mt-2 text-red-500">{{ $message }}</span>
+        <span class="flex mt-2 mb-2 text-red-500">{{ $message }}</span>
     @enderror
 
-    <label for="kycb" class="block text-sm font-medium leading-5 text-gray-700">
+    {{-- loading kycf  --}}
+    <div wire:loading wire:target="kycf"  class="absolute z-10 inset-0" style="top:43px;">
+        <div class="h-full flex items-center justify-center rounded-lg">
+            <div class="p-2 bg-black bg-opacity-50 rounded-full">
+                <img class="h-8 w-8" src="{{ asset('img/spin_loading.gif') }}">
+            </div>
+        </div>
+    </div>
+
+    <label for="kycb" class="block text-sm mb-3 font-medium leading-5 text-gray-700">
         Kad Pengenalan (Belakang)
     </label>
-    <div class="flex mt-1 rounded-md shadow-sm">
+    <div class="flex mt-1 mb-3 rounded-md shadow-sm">
         <label for="kycb" class="w-full p-10 text-center transition duration-300 ease-in-out bg-gray-100 rounded-lg shadow cursor-pointer hover:bg-white group truncate">
 
             
@@ -55,8 +64,17 @@
         <input type="file" class="absolute invisible pointer-events-none" id="kycb" name="kycb" wire:model="kycb">
     </div>
     @error('kycb')
-        <span class="flex mt-2 text-red-500">{{ $message }}</span>
+        <span class="flex mt-2 mb-2 text-red-500">{{ $message }}</span>
     @enderror
+
+    {{-- loading kycb  --}}
+    <div wire:loading wire:target="kycb" class="absolute z-10 inset-0" style="top:339px;">
+        <div class="h-full flex items-center justify-center rounded-lg">
+            <div class="p-2 bg-black bg-opacity-50 rounded-full">
+                <img class="h-8 w-8" src="{{ asset('img/spin_loading.gif') }}">
+            </div>
+        </div>
+    </div>
 
     <div class="mt-6">
         <span class="block w-full rounded-md shadow-sm">
