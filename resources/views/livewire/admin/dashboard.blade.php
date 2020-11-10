@@ -25,3 +25,33 @@
         </x-general.grid>
     </div>
 </div>
+
+<h2 class="mx-auto mt-8 px-4 text-lg leading-6 font-medium text-cool-gray-900 sm:px-6 lg:px-8">
+Dashboard 
+</h2>
+
+<x-general.grid class="mt-4 ml-8 mr-8" mobile="1" gap="5" sm="1" md="1" lg="2" xl="2">
+    <x-general.card class="bg-white">
+        <div class="p-2">
+             {!! $UserBarChart->container() !!}
+        </div>
+    </x-general.card>
+    
+    <x-general.card class="bg-white">
+        <div class="p-4">
+             {!! $UserDoughnutChart->container() !!}
+        </div>
+    </x-general.card>
+</x-general.grid>
+
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+@if($UserBarChart)
+    {!! $UserBarChart->script() !!}
+@endif
+
+@if($UserDoughnutChart)
+     {!! $UserDoughnutChart->script() !!}
+@endif
+
