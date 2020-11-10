@@ -32,7 +32,7 @@ Dashboard
 
 <x-general.grid class="mt-4 ml-8 mr-8" mobile="1" gap="5" sm="1" md="1" lg="2" xl="2">
     <x-general.card class="bg-white">
-        <div class="p-2">
+        <div class="p-4">
              {!! $UserBarChart->container() !!}
         </div>
     </x-general.card>
