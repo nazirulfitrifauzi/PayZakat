@@ -20,7 +20,7 @@
     <!-- alpine js support for IE11 -->
     <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine-ie11.min.js" defer></script>
-
+    
     @livewireStyles
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
@@ -59,5 +59,6 @@
     </div>
 
     @livewireScripts
+    
 </body>
 </html>
