@@ -202,14 +202,14 @@
             </div>
 
             <div class="mt-16 maklumat">
-                <p class="font-bold underline ">MAKLUMAT</p>
-                <div class="text-justify ">Terima kasih di atas pembayaran zakat yang telah dilakukan. Semoga perlaksanaan rukun Islam ketiga ini akan membawa barakah kepada harta dan diri kita.</div>
-                <div class="mt-5 text-justify">
-                    Bagi pembayar zakat individu, Slip Pengesahan Bayaran ini boleh dikemukakan kepada LHDN bagi tujuan rebat cukai di bawah Seksyen 6A (3), Akta Cukai Pendapatan 1967. Bagi pembayar zakat bukan individu pula, slip ini boleh dikemukakan kepada LHDN bagi tujuan tuntutan tolakan cukai dibawah Seksyen 44 (11 A), Akta Cukai Pendapatan 1967.
-                </div>
-                <div class="mt-5 text-justify">
-                    Untuk mengemaskini maklumat peribadi serta melihat atau mencetak cendiri rekod pembayaran zakat dan selain selain zakat secara terperinci melalui kaedah (Kaunter, perbankan internet, Penolong Amil IPT dan lain-lain), anda diminta mendaftar untuk E-Penyata pembayaran zakat di alamat http://www.payzakat.com.my.
-                </div>
+                <p class="font-bold underline mb-2">MAKLUMAT</p>
+                    <div class="text-justify">Terima kasih di atas pembayaran zakat yang telah dilakukan. Semoga perlaksanaan rukun Islam ketiga ini akan membawa barakah kepada harta dan &nbsp;&nbsp;diri kita.</div>
+                    <div class="mt-5 text-justify">
+                        Bagi pembayar zakat individu, Slip Pengesahan Bayaran ini boleh dikemukakan kepada LHDN bagi tujuan rebat cukai di bawah Seksyen 6A (3), Akta &nbsp;&nbsp;Cukai Pendapatan 1967. Bagi pembayar zakat bukan individu pula, slip ini boleh dikemukakan kepada LHDN bagi tujuan tuntutan tolakan cukai &nbsp;&nbsp;dibawah Seksyen 44 (11 A), Akta Cukai Pendapatan 1967.
+                    </div>
+                    <div class="mt-5 text-justify">
+                        Untuk mengemaskini maklumat peribadi serta melihat atau mencetak cendiri rekod pembayaran zakat dan selain selain zakat secara terperinci melalui &nbsp;&nbsp;kaedah (Kaunter, perbankan internet, Penolong Amil IPT dan lain-lain), anda diminta mendaftar untuk E-Penyata pembayaran zakat di alamat &nbsp;&nbsp;http://www.payzakat.com.my.
+                    </div>
             </div>
 
             <div class="float-right mt-4">

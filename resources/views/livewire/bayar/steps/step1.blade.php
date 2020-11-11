@@ -27,6 +27,44 @@
             </select>
         </div> --}}
     </div>
+     
+    <x-general.grid class="mt-2" mobile="1" gap="5" sm="1" md="1" lg="1" xl="2">
+        @foreach ($donorGrouped as $ppz => $donors)
+            <x-general.card class=" bg-gray-100 shadow">
+                <div class="flex flex-col lg:flex-row items-center pl-5 pr-5 pt-5 border-b border-gray-200 bg-teal-500">
+                    <div class="pb-4">
+                        <p class="font-semibold text-base text-white">{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
+                    </div>
+                    
+                </div>
+                <div class="flex justify-between font-semibold p-4 text-lg bg-gray-200 p-4">
+                    <p class="text-center">Jumlah</p>
+                    <p>RM {{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>                   
+                </div>
+                <x-general.grid class="p-5" mobile="1" gap="3" sm="2" md="2" lg="2" xl="2">
+                    <div class="text-base leading-6 font-semibold text-teal-500">
+                        <p>Nama</p>                                  
+                    </div>
+                    
+                    <div class="text-base leading-6 font-semibold text-right text-teal-500">
+                        <p>Bayaran Zakat</p>  
+                        
+                    </div>
+                    @foreach ($donors as $donor)
+                        <div class="text-base leading-6">
+                            <p>{{ $donor['nama'] }}</p>
+                            <p class="text-gray-500">{{ $donor['ic'] }}</p>                                           
+                        </div>
+                        
+                        <div class="text-base leading-6 mt-4 text-right">
+                            <p>RM {{ $donor['nilai_zakat'] }}</p>
+                            
+                        </div>
+                    @endforeach
+                </x-general.grid>
+            </x-general.card>
+        @endforeach
+    </x-general.grid>
     <div class="relative">
         {{-- @if ($ppzid != "")
             @if (count($donorlist) > 0)
@@ -70,7 +108,7 @@
                 <p class="text-sm italic text-gray-600">Tiada Pembayar Zakat berdaftar dengan Institusi pilihan.</p>
             @endif
         @endif --}}
-        <div class="flex items-center justify-between py-1 mb-2 text-sm">
+        {{-- <div class="flex items-center justify-between py-1 mb-2 text-sm">
             <p class="font-bold">
                 Nama
             </p>
@@ -98,7 +136,7 @@
                     @endforeach
                 </div>
             @endforeach
-        </div>
+        </div> --}}
         <div class="absolute inset-0 z-10" wire:loading wire:target="ppzid">
             <div class="flex justify-center">
                 <span class="rounded-full p-2 bg-black bg-opacity-50">
