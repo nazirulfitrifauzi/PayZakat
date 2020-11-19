@@ -12,6 +12,7 @@
                     @livewire('pembayarzakat.maklumat', ['customer'=>$selected_customer])
                 </div>
             </div>
+            @livewire('statement-pembayar-zakat')
         </div>
     </main>
 @endsection
