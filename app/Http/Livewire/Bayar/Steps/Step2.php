@@ -44,4 +44,8 @@ class Step2 extends Component
             $this->ppzarray[$ppz->id] = $ppz->name;
         }
     }
+
+    public function paymentCompleted() {
+       $this->emit('navigation', 'next');
+    }
 }
