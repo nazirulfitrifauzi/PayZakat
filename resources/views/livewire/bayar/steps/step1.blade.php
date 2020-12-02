@@ -4,7 +4,7 @@
             <h1 class="font-semibold text-gray-700">1. Pilih Jenis Zakat</h1>
         </div>
         <div>
-            <select class="form-select text-sm tracking-wide">
+            <select class="text-sm tracking-wide form-select">
                 @foreach ($productlist as $product)
                     <option {{ ($product->product_name != "Pendapatan") ? "disabled" : "" }}>{{ $product->product_name }}</option>
                 @endforeach
@@ -19,7 +19,7 @@
             <h1 class="font-semibold text-gray-700">2. Pilih Zakat Institusi</h1>
         </div>
         <div>
-            <select class="form-select text-sm tracking-wide" wire:model="ppzid" wire:change="get_donorList">
+            <select class="text-sm tracking-wide form-select" wire:model="ppzid" wire:change="get_donorList">
                 <option value="" disabled>Sila Pilih</option>
                 @foreach ($ppzlist as $ppz)
                     <option value="{{ $ppz->id }}">{{ $ppz->name }}</option>
@@ -30,23 +30,23 @@
      
     <x-general.grid class="mt-2" mobile="1" gap="5" sm="1" md="1" lg="1" xl="2">
         @foreach ($donorGrouped as $ppz => $donors)
-            <x-general.card class=" bg-gray-100 shadow">
-                <div class="flex flex-col lg:flex-row items-center pl-5 pr-5 pt-5 border-b border-gray-200 bg-teal-500">
+            <x-general.card class="bg-gray-100 shadow ">
+                <div class="flex flex-col items-center pt-5 pl-5 pr-5 bg-teal-500 border-b border-gray-200 lg:flex-row">
                     <div class="pb-4">
-                        <p class="font-semibold text-base text-white">{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
+                        <p class="text-base font-semibold text-white">{{ $ppzarray[$ppz] }} ({{ count($donors) }})</p>
                     </div>
                     
                 </div>
-                <div class="flex justify-between font-semibold p-4 text-lg bg-gray-200 p-4">
+                <div class="flex justify-between p-4 text-lg font-semibold bg-gray-200">
                     <p class="text-center">Jumlah</p>
                     <p>RM {{ number_format(array_sum($donorGroupTotal[$ppz]),2) }}</p>                   
                 </div>
                 <x-general.grid class="p-5" mobile="1" gap="3" sm="2" md="2" lg="2" xl="2">
-                    <div class="text-base leading-6 font-semibold text-teal-500">
+                    <div class="text-base font-semibold leading-6 text-teal-500">
                         <p>Nama</p>                                  
                     </div>
                     
-                    <div class="text-base leading-6 font-semibold text-right text-teal-500">
+                    <div class="text-base font-semibold leading-6 text-right text-teal-500">
                         <p>Bayaran Zakat</p>  
                         
                     </div>
@@ -56,7 +56,7 @@
                             <p class="text-gray-500">{{ $donor['ic'] }}</p>                                           
                         </div>
                         
-                        <div class="text-base leading-6 mt-4 text-right">
+                        <div class="mt-4 text-base leading-6 text-right">
                             <p>RM {{ $donor['nilai_zakat'] }}</p>
                             
                         </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="flex items-center py-1 mb-5">
                     <div class="px-2">
-                        <input type="checkbox" class="form-checkbox text-sm leading-none" value="1" wire:click="selectAll">
+                        <input type="checkbox" class="text-sm leading-none form-checkbox" value="1" wire:click="selectAll">
                     </div>
                     <div class="w-full px-2 font-semibold">
                         Nama
@@ -91,7 +91,7 @@
                             $check = (isset($selectedDonor[$donor->id]) && $selectedDonor[$donor->id] != false) ? "checked" : "" ;
                         @endphp
                         <div class="px-2">
-                            <input type="checkbox" class="form-checkbox text-sm leading-none" {{ $check }} value="{{ $donor->name }}" wire:model="selectedDonor.{{ $donor->id }}">
+                            <input type="checkbox" class="text-sm leading-none form-checkbox" {{ $check }} value="{{ $donor->name }}" wire:model="selectedDonor.{{ $donor->id }}">
                         </div>
                         <div class="w-full px-2">
                             {{ $donor->name }}
@@ -116,7 +116,7 @@
                 Nilai Pembayaran Zakat (RM)
             </p>
         </div>
-        <div class="grid grid-col-1 gap-3">
+        <div class="grid gap-3 grid-col-1">
             @foreach ($donorGrouped as $ppz => $donors)
                 <div class="">
                     <div class="flex items-center justify-between py-3">
@@ -137,15 +137,15 @@
                 </div>
             @endforeach
         </div> --}}
-        <div class="absolute inset-0 z-10" wire:loading wire:target="ppzid">
+        {{-- <div class="absolute inset-0 z-10" wire:loading wire:target="ppzid">
             <div class="flex justify-center">
-                <span class="rounded-full p-2 bg-black bg-opacity-50">
-                    <x-heroicon-o-globe class="h-6 w-6 animate-spin bg-transparent text-white"/>
+                <span class="p-2 bg-black bg-opacity-50 rounded-full">
+                    <x-heroicon-o-globe class="w-6 h-6 text-white bg-transparent animate-spin"/>
                 </span>
             </div>
-        </div>
+        </div> --}}
     </div>
-    <x-general.modal.content id="donor-bucket" align="top">
+    {{-- <x-general.modal.content id="donor-bucket" align="top">
         <x-slot name="header">
             <p class="font-bold">Pilihan Pembayar Zakat</p>
         </x-slot>
@@ -155,5 +155,5 @@
                 dump($checkAll);
             @endphp
         </x-slot>
-    </x-general.modal.content>
+    </x-general.modal.content> --}}
 </div>

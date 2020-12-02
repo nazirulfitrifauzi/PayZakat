@@ -32,24 +32,24 @@ class Step1 extends Component
         // }
     }
 
-    public function selectAll()
-    {
-        if ($this->checkAll == "") {
-            $this->checkAll = "1";
-        } else {
-            $this->checkAll = "";
-        }
+   //  public function selectAll()
+   //  {
+   //      if ($this->checkAll == "") {
+   //          $this->checkAll = "1";
+   //      } else {
+   //          $this->checkAll = "";
+   //      }
 
-        if ($this->checkAll == "1") {
-            foreach ($this->donorlist as $donor) {
-                $this->selectedDonor[$donor->id] = $donor->name;
-            }
-        } else {
-            foreach ($this->donorlist as $donor) {
-                $this->selectedDonor[$donor->id] = false;
-            }
-        }
-    }
+   //      if ($this->checkAll == "1") {
+   //          foreach ($this->donorlist as $donor) {
+   //              $this->selectedDonor[$donor->id] = $donor->name;
+   //          }
+   //      } else {
+   //          foreach ($this->donorlist as $donor) {
+   //              $this->selectedDonor[$donor->id] = false;
+   //          }
+   //      }
+   //  }
 
     public function render()
     {

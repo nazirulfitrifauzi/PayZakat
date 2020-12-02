@@ -14,6 +14,8 @@ class Index extends Component
 
     public $currentstep = 1;
 
+    protected $listeners = ['navigation'];
+
     public function navigation($keyword)
     {
         if ($keyword == "next") {
