@@ -21,45 +21,12 @@ class Step1 extends Component
         $this->groupDonor();
     }
 
-    public function get_donorList()
-    {
-        // $this->checkAll = "";
-
-        // if ($this->ppzid != "") {
-        //     $this->donorlist = Customers::where('fav_ppz_id', $this->ppzid)->orderBy('name')->get();
-        // } else {
-        //     $this->donorlist = [];
-        // }
-    }
-
-   //  public function selectAll()
-   //  {
-   //      if ($this->checkAll == "") {
-   //          $this->checkAll = "1";
-   //      } else {
-   //          $this->checkAll = "";
-   //      }
-
-   //      if ($this->checkAll == "1") {
-   //          foreach ($this->donorlist as $donor) {
-   //              $this->selectedDonor[$donor->id] = $donor->name;
-   //          }
-   //      } else {
-   //          foreach ($this->donorlist as $donor) {
-   //              $this->selectedDonor[$donor->id] = false;
-   //          }
-   //      }
-   //  }
-
     public function render()
     {
         $this->get_allList();
         return view('livewire.bayar.steps.step1');
     }
-
-
-
-
+    
     private function groupDonor()
     {
         foreach ($this->donorlist as $donor) {
