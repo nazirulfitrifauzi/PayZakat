@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class TransactionCodes extends Model
 {
     use SoftDeletes;
-    pprotected $guarded = [];ublic $timestamps = true;
+    protected $guarded = [];
+    public $timestamps = true;
 
     protected $table = 'transaction_codes';
     
