@@ -37,9 +37,9 @@
 
         <!-- Activity list (smallest breakopoint only) -->
         <div class="shadow sm:hidden">
-            <ul class="mt-2 divide-y divide-cool-gray-200 overflow-hidden shadow sm:hidden" x-max="1">
+            <ul class="mt-2 divide-y divide-cool-gray-200 overflow-hidden shadow sm:hidden" x-max="1" x-data="{ open: false }">
                 <li>
-                    <a href="#" class="block px-4 py-4 bg-white hover:bg-cool-gray-50">
+                    <div class="block px-4 py-4 bg-white hover:bg-cool-gray-50">
                         <div class="flex items-center space-x-4">
                             <div class="flex-1 flex space-x-2 truncate">
                                 <svg class="flex-shrink-0 h-5 w-5 text-cool-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -51,10 +51,22 @@
                                     <p>02 Ogos 2020</p>
                                 </div>
                             </div>
-                            <div>
-                                <svg class="flex-shrink-0 h-5 w-5 text-cool-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                                </svg>
+                            <div x-on:click="open = !open">
+                                <x-heroicon-o-chevron-right x-show="!open" class="flex-shrink-0 h-4 w-4 text-cool-gray-400" x-cloak/>
+                                <x-heroicon-o-chevron-down x-show="open" class="flex-shrink-0 h-5 w-5 text-cool-gray-400"  x-cloak/>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li x-show.transition="open" x-cloak>
+                    <a href="#" class="block px-4 py-4 bg-white hover:bg-cool-gray-50">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-1 flex space-x-2 truncate">
+                                <div class="text-cool-gray-500 text-sm truncate">
+                                    <p class="truncate">Test</p>
+                                    <p><span class="text-cool-gray-900 font-medium">RM </span>584.00</p>
+                                    <p>02 Ogos 2020</p>
+                                </div>
                             </div>
                         </div>
                     </a>

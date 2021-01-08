@@ -1,7 +1,7 @@
 <div>
     <x-general.card class="pt-4 bg-white rounded-lg">
         <x-general.steps :steps="$steps" :currentstep="$currentstep" />
-        <div class="mt-8">
+        <div class="mt-20 sm:mt-8">
             <div class="flex items-center justify-end gap-5 p-5 ">
                 <div class="flex flex-row-reverse gap-3">
                     @if ($currentstep == 1)
@@ -23,7 +23,7 @@
             </div>
         </div>
     </x-general.card>
-    <div class="p-5 mt-2 bg-white rounded-md">
+    <div class="p-0 sm:p-5 mx-auto mt-2 bg-white rounded-md">
         <div class="{{ ($currentstep == 1) ? 'block' : 'hidden' }}">
             @include('pages.bayar.steps.step1')
         </div>

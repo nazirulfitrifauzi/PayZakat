@@ -7,11 +7,11 @@
                         <p class="text-base font-semibold text-white">Pengesahan Transaksi</p>
                     </div>
                 </div>
-                <div class="flex justify-between p-4 text-base font-semibold text-teal-500 bg-gray-200">
+                <div class="flex justify-between p-4 text-base font-semibold text-teal-500 bg-gray-300">
                     <p class="text-center">Daripada</p>
                     <p class="text-center">Jumlah</p>      
                 </div>
-                <div class="flex justify-between p-4 pt-1 pb-4 pl-4 pr-4 text-base font-semibold bg-gray-200">
+                <div class="flex justify-between p-4 pt-1 pb-4 pl-4 pr-4 text-base font-semibold bg-gray-300">
                     <p class="text-center">VA 1645-3254455-7</p>
                     <p class="text-center">RM 1,460.00</p>
                 </div>

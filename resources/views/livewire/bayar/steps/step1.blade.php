@@ -18,7 +18,7 @@
             <h1 class="font-semibold text-gray-700">2. Papar Zakat Institusi</h1>
         </div>
     </div>
-     
+
     <x-general.grid class="mt-2" mobile="1" gap="5" sm="1" md="1" lg="1" xl="2">
         @foreach ($donorGrouped as $ppz => $donors)
             <x-general.card class="bg-gray-100 shadow ">
@@ -53,5 +53,4 @@
             </x-general.card>
         @endforeach
     </x-general.grid>
-
 </div>
