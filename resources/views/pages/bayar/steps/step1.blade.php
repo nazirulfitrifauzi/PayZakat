@@ -88,9 +88,12 @@
                 <tbody class="bg-white divide-y divide-cool-gray-200" >
                     <tr>
                         <td colspan="4">
-                            <div class="flex flex-col items-center pt-5 pl-5 pr-5 bg-cool-gray-300 border-b border-gray-200 lg:flex-row">
+                            <div class="flex justify-between flex-col items-center pt-5 pl-5 pr-5 bg-cool-gray-300 border-b border-gray-200 lg:flex-row">
                                 <div class="pb-4">
                                     <p class="text-xs font-semibold text-gray-800">{{ $ppzList[$ppzId] }} ({{ count($custs) }})</p>
+                                </div>
+                                <div class="pb-4 ">
+                                    <p class="text-xs font-semibold text-gray-800">JUMLAH : RM {{ number_format(array_sum($customerGroupTotal[$ppzId]),2) }}</p>  
                                 </div>
                             </div>
                         </td>
@@ -115,11 +118,6 @@
                             </td>
                         </tr>
                     @endforeach
-                    <tr>
-                        <td class="text-right max-w-0 px-6 py-4 whitespace-no-wrap text-sm leading-5 text-cool-gray-900 font-semibold" colspan="4">
-                            <p>JUMLAH : RM {{ number_format(array_sum($customerGroupTotal[$ppzId]),2) }}</p>                                       
-                        </td>
-                    </tr>
                 </tbody>
             @empty
                 <p>Tiada data ketika ini.</p>
