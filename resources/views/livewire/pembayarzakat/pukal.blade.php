@@ -1,5 +1,5 @@
 <x-general.card class="bg-white m-5 ">
-    <div class="flex lg:flex-row sm:flex-col px-4 mx-auto mt-5 font-medium leading-6 text-cool-gray-900 sm:px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row sm:flex-col px-4 mx-auto mt-5 font-medium leading-6 text-cool-gray-900 sm:px-6 lg:px-8">
         {{-- <div class=" grid grid-cols-1 gap-5 px-4 mx-auto mt-5 font-medium leading-6 text-cool-gray-900 sm:px-6 lg:px-8"> --}}
         <x-general.card class="bg-white p-5 w-full shadow-2xl">
             <div>
@@ -25,7 +25,7 @@
                 </ol>
             </div>
         </x-general.card>
-        <x-general.card class="shadow-2xl bg-white p-5 w-full lg:mt-0 lg:ml-4 sm:mt-4 ">
+        <x-general.card class="mt-4 lg:mt-0 shadow-2xl bg-white p-5 w-full lg:ml-4">
             <div class="text-lg font-semibold" >
                 <p>Muat naik senarai Pembayar Zakat anda ruangan ini</p>
                 <form wire:submit.prevent="save">

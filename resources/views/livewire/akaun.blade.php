@@ -8,10 +8,10 @@
                         <x-heroicon-o-scale class="h-8 w-8 text-blue-400"/>
                     </div>
                     <div class="ml-5 w-0 flex-1">
-                        <p class="text-cool-gray-700 text-xl font-semibold">Baki Akaun Keseluruhan</p>
+                        <p class="text-base sm:text-xl text-cool-gray-700 font-semibold">Baki Akaun Keseluruhan</p>
                     </div>
                     <div>
-                        <p class="font-bold text-2xl">RM 35,659.45</p>
+                        <p class="text-base sm:text-2xl font-bold">RM 35,659.45</p>
                     </div>
                 </div>
             </x-general.card>

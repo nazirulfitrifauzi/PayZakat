@@ -1,4 +1,4 @@
-<header {{ $attributes->merge(['class' => 'sm:hidden md:block xl:block lg:block']) }}>
+<header {{ $attributes->merge(['class' => 'hidden md:block xl:block lg:block']) }}>
     <div class="w-full bg-cover bg-center rounded-b-3xl" style="height:14rem; background-image: url({{ $bgimg}});">
         <div class="flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
             <div class="text-center mt-5">
