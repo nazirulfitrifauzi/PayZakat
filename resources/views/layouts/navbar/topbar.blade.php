@@ -30,9 +30,9 @@
                     x-transition:leave-end="transform opacity-0 scale-95"
                     class="origin-top-right absolute right-0 mt-1 w-48 rounded-md shadow-lg" style="display: none;">
                     <div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                        <div class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
-                            <a href="{{ route('tetapan') }}" class="block pt-1 text-sm text-cool-gray-700" role="menuitem">Notification 1</a>
-                        </div>
+                        <a href="#" class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
+                            <p  class="block pt-1 text-sm text-cool-gray-700" role="menuitem">Notification 1</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -56,19 +56,19 @@
                     class="origin-top-right absolute right-0 mt-1 w-48 rounded-md shadow-lg" style="display: none;">
                     <div class="py-1 rounded-md bg-white shadow-xs" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
 
-                        <div class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
+                        <a href="{{ route('tetapan') }}" class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
                             <x-heroicon-o-user class="w-4 h-4 mr-1 text-gray-700" />
-                            <a href="{{ route('tetapan') }}" class="block pt-1 text-sm text-cool-gray-700" role="menuitem">Profil Anda</a>
-                        </div>
+                            <p class="block pt-1 text-sm text-cool-gray-700" role="menuitem">Profil Anda</p>
+                        </a>
 
-                        <div class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
+                        <a href="#" class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
                             <x-heroicon-o-cog class="w-4 h-4 mr-1 text-gray-700" />
-                            <a href="#" class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem">Tetapan</a>
-                        </div>
-                        <div class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
+                            <p class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem">Tetapan</p>
+                        </a>
+                        <a href="{{ route('logout') }}" class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
                             <x-heroicon-o-logout class="w-4 h-4 mr-1 text-gray-700" />
-                            <a href="{{ route('logout') }}" class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem" onclick="event.preventDefault();getElementById('logout-form').submit();">Log keluar</a>
-                        </div>
+                            <p class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem" onclick="event.preventDefault();getElementById('logout-form').submit();">Log keluar</p>
+                        </a>
                     </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                         {{ csrf_field() }}
