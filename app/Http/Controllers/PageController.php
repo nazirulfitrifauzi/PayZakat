@@ -13,8 +13,10 @@ class PageController extends Controller
     {
         if (auth()->user()->role == 1) {
             return view('pages.dashboard');
-        } else {
+        } else if (auth()->user()->role == 0) {
             return view('pages.admin.dashboard');
+        } else {
+            return view('pages.ppz.dashboard');
         }
     }
 
@@ -139,5 +141,17 @@ class PageController extends Controller
                 'selected_asnaf'
             ));
         }
+    }
+
+    // PPZ
+
+    public function ppzAgihan()
+    {
+        return view('pages.ppz.agihan');
+    }
+
+    public function ppzNisab()
+    {
+        return view('pages.ppz.nisab');
     }
 }

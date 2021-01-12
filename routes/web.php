@@ -42,6 +42,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/nisab', 'PageController@adminNisab')->name('admin.nisab');
     Route::get('/admin/zakat-refund', 'PageController@adminZakatR')->name('admin.zakatRefunds');
     Route::get('/admin/agihan', 'PageController@adminAgihan')->name('admin.agihan');
+
+    // PPZ
+    Route::get('/ppz/agihan', 'PageController@ppzAgihan')->name('ppz.agihan');
+    Route::get('/ppz/nisab', 'PageController@ppzNisab')->name('ppz.nisab');
 });
 
 
