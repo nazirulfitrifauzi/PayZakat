@@ -1,32 +1,33 @@
 <?php
 
-namespace App\Http\Livewire\Bayar\Steps;
+namespace App\Http\Livewire\Ppz\Refund\Steps;
 
 use Livewire\Component;
 use App\Models\Products;
 use App\Models\PPZ;
 use App\Models\Customers;
 
-class Step1 extends Component
+class Step2 extends Component
 {
     public $ppzid = "", $donorlist = [], $selectedDonor = [];
-    public $products = [], $ppzlist = [], $ppzarray = [], $donorGrouped = [], $donorGroupTotal = [];
-    public $checkAll = "";
+    public $productlist = [], $ppzlist = [], $ppzarray = [], $donorGrouped = [], $donorGroupTotal = [];
+    public $totalAll = [];
+
 
     public function get_allList()
     {
-        $this->products = Products::select('product_code', 'product_name')->get();
+        $this->productlist = Products::select('product_code', 'product_name')->get();
         $this->ppzlist = PPZ::select('id', 'name')->get();
         $this->donorlist = Customers::orderBy('fav_ppz_id')->get();
         $this->groupDonor();
     }
-
+    
     public function render()
     {
         $this->get_allList();
-        return view('livewire.bayar.steps.step1');
+        return view('livewire.ppz.refund.steps.step2');
     }
-    
+
     private function groupDonor()
     {
         foreach ($this->donorlist as $donor) {
@@ -37,10 +38,14 @@ class Step1 extends Component
             ];
 
             $this->donorGroupTotal[$donor->fav_ppz_id][] = $donor->default_amount_zakat;
+            $this->totalAll[] = $donor->default_amount_zakat;
         }
 
         foreach ($this->ppzlist as $ppz) {
             $this->ppzarray[$ppz->id] = $ppz->name;
         }
+    }
+    public function paymentCompleted() {
+        $this->emit('navigation', 'next');
     }
 }
