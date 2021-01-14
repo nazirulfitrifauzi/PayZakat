@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Bayar\Steps;
+namespace App\Http\Livewire\Ppz\Refund\Steps;
 
 use Livewire\Component;
 use App\Models\Products;
@@ -10,12 +10,12 @@ use App\Models\Customers;
 class Step1 extends Component
 {
     public $ppzid = "", $donorlist = [], $selectedDonor = [];
-    public $products = [], $ppzlist = [], $ppzarray = [], $donorGrouped = [], $donorGroupTotal = [];
+    public $productlist = [], $ppzlist = [], $ppzarray = [], $donorGrouped = [], $donorGroupTotal = [];
     public $checkAll = "";
 
     public function get_allList()
     {
-        $this->products = Products::select('product_code', 'product_name')->get();
+        $this->productlist = Products::select('product_code', 'product_name')->get();
         $this->ppzlist = PPZ::select('id', 'name')->get();
         $this->donorlist = Customers::orderBy('fav_ppz_id')->get();
         $this->groupDonor();
@@ -24,9 +24,9 @@ class Step1 extends Component
     public function render()
     {
         $this->get_allList();
-        return view('livewire.bayar.steps.step1');
+        return view('livewire.ppz.refund.steps.step1');
     }
-    
+
     private function groupDonor()
     {
         foreach ($this->donorlist as $donor) {
@@ -43,4 +43,5 @@ class Step1 extends Component
             $this->ppzarray[$ppz->id] = $ppz->name;
         }
     }
+
 }

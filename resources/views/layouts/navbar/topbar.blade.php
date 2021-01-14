@@ -65,9 +65,9 @@
                             <x-heroicon-o-cog class="w-4 h-4 mr-1 text-gray-700" />
                             <p class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem">Tetapan</p>
                         </a>
-                        <a href="{{ route('logout') }}" class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150">
+                        <a href="{{ route('logout') }}" class="flex px-2 py-2  hover:bg-cool-gray-100 transition ease-in-out duration-150"  onclick="event.preventDefault();getElementById('logout-form').submit();">
                             <x-heroicon-o-logout class="w-4 h-4 mr-1 text-gray-700" />
-                            <p class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem" onclick="event.preventDefault();getElementById('logout-form').submit();">Log keluar</p>
+                            <p class="block pt-1 text-sm text-cool-gray-700 hover:bg-cool-gray-100 transition ease-in-out duration-150" role="menuitem">Log keluar</p>
                         </a>
                     </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">

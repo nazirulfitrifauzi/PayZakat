@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Customers;
 use App\User;
 use App\Models\Asnaf;
+use App\Models\PPZ;
+use App\Models\Products;
+use PDF;
 
 class PageController extends Controller
 {
@@ -153,5 +156,10 @@ class PageController extends Controller
     public function ppzNisab()
     {
         return view('pages.ppz.nisab');
+    }
+
+    public function ppzRefund()
+    {
+        return view('pages.ppz.refund.index');
     }
 }
