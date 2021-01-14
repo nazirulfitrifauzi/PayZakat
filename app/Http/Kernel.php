@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
 
         // custom
         'checkMaklumat' => \App\Http\Middleware\CheckMaklumatPengguna::class,
+        'checkMaklumatPPZ' => \App\Http\Middleware\CheckMaklumatPPZ::class,
     ];
 }

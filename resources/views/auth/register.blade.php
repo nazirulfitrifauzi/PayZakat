@@ -51,6 +51,19 @@
                     </div>
 
                     <div class="mt-6">
+                        <label for="jenisP" class="block text-sm font-medium leading-5 text-gray-700">
+                            Jenis Pengguna
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <select id="pengguna_flag" name="pengguna_flag" required class="form-select block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('pengguna_flag')  border-red-500 @enderror">
+                                <option value="" selected disabled>Sila Pilih</option>
+                                <option value="1">Agent</option>
+                                <option value="2">Pusat Pungutan Zakat</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
                         <label for="email" class="block text-sm font-medium leading-5 text-gray-700">
                             Alamat Emel
                         </label>
