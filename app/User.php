@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use Notifiable,SoftDeletes;
+    use Notifiable, SoftDeletes;
     public $timestamps = true;
 
     // protected $fillable = [
@@ -29,6 +29,11 @@ class User extends Authenticatable
     public function agentInfo()
     {
         return $this->hasOne('App\Models\Agents', 'user_id', 'id')->withDefault();
+    }
+
+    public function PPZInfo()
+    {
+        return $this->hasOne('App\Models\PPZ', 'ppz_id', 'id')->withDefault();
     }
 
     public function screening()

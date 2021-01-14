@@ -28,6 +28,11 @@ class PageController extends Controller
         return view('pages.maklumatPengguna');
     }
 
+    public function maklumatPPZ()
+    {
+        return view('pages.maklumatPPZ');
+    }
+
     public function akaun()
     {
         return view('pages.akaun');

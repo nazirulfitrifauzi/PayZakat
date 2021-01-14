@@ -8,8 +8,11 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
 
-    // this page can be access if Maklumat Pengguna is not exist
+    // this page can be access if Maklumat Pengguna does not exist
     Route::get('/maklumat-pengguna', 'PageController@maklumatPengguna')->name('maklumatPengguna');
+
+    // this page can be access if Maklumat Pusat Pungutan Zakat does not exist
+    Route::get('/maklumat-ppz', 'PageController@maklumatPPZ')->name('maklumatPPZ');
 
     // this page can be access ONLY IF agent Maklumat Pengguna exist
     Route::group(['middleware' => ['checkMaklumat']], function () {
@@ -44,9 +47,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/agihan', 'PageController@adminAgihan')->name('admin.agihan');
 
     // PPZ
-    Route::get('/ppz/agihan', 'PageController@ppzAgihan')->name('ppz.agihan');
-    Route::get('/ppz/nisab', 'PageController@ppzNisab')->name('ppz.nisab');
-    Route::get('/ppz/refund', 'PageController@ppzRefund')->name('ppz.refund');
+    Route::group(['middleware' => ['checkMaklumatPPZ']], function () {
+        Route::get('/ppz/agihan', 'PageController@ppzAgihan')->name('ppz.agihan');
+        Route::get('/ppz/nisab', 'PageController@ppzNisab')->name('ppz.nisab');
+    });
 });
 
 

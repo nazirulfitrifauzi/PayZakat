@@ -73,6 +73,7 @@ class RegisterController extends Controller
             'uuid'      => (string) Str::uuid(),
             'name'      => $data['name'],
             'nric'      => $data['nric'],
+            'role'      => $data['pengguna_flag'],
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
         ]);
