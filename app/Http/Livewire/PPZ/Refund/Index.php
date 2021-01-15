@@ -64,6 +64,7 @@ class Index extends Component
     }
     public function render()
     {
+        $this->set_step();
         return view('livewire.ppz.refund.index');
     }
 }

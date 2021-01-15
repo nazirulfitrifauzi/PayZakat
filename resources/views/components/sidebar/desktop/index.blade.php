@@ -96,7 +96,7 @@
                                 <x-heroicon-o-document-search class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                             </x-sidebar.nav-item>
 
-                            <x-sidebar.nav-item route="ppz.refund" label="Refund" uri="ppz/agihan">
+                            <x-sidebar.nav-item route="ppz.refund" label="Refund" uri="ppz/refund">
                                 <x-heroicon-o-switch-horizontal class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                             </x-sidebar.nav-item>
 

@@ -18,8 +18,10 @@ class CheckMaklumatPPZ
     {
         if (auth()->user()->role == 2) // only ppz (2) need to be checked for existence of maklumat ppz, admin (0) doesn't require any check up
         {
-            $check = PPZ::where('id', auth()->user()->id)->exists();
-        } else {
+            $check = PPZ::where('ppz_id', auth()->user()->id)->exists();
+        } 
+        else {
+
             $check = true;
         }
 
