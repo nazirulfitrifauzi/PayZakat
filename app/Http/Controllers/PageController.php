@@ -69,6 +69,11 @@ class PageController extends Controller
         return view('pages.asnaf.pukal');
     }
 
+    public function requestrefund()
+    {
+        return view('pages.refund.requestRefund');
+    }
+
     // ADMIN
     public function adminSenaraiPengguna()
     {

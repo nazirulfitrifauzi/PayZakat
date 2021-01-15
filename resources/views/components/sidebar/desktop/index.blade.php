@@ -45,6 +45,10 @@
                             <x-sidebar.nav-item route="bayar" label="Bayar Zakat" uri="bayar">
                                 <x-heroicon-o-currency-dollar class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                             </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="agent.requestRefund" label="Refund" uri="requestRefund">
+                                <x-heroicon-o-switch-horizontal class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
                         @endif
 
                         @if (auth()->user()->role == 0) <!-- admin -->

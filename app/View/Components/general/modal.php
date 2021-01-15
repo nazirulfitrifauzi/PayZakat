@@ -7,16 +7,16 @@ use Illuminate\View\Component;
 class modal extends Component
 {
     public $title;
-    public $submitLabel;
-    public $submit;
-    public $cancel;
-
-    public function __construct($title, $submit, $cancel, $submitLabel)
+    public $modalActive;
+    public $modalSize;
+    public $closeBtn;
+    
+    public function __construct($title,$modalActive,$modalSize ,$closeBtn ="yes")
     {
         $this->title = $title;
-        $this->submitLabel = $submitLabel;
-        $this->submit = $submit;
-        $this->cancel = $cancel;
+        $this->modalActive = $modalActive;
+        $this->modalSize = $modalSize;
+        $this->closeBtn = $closeBtn;
     }
 
     public function render()
