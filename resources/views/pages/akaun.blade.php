@@ -1,6 +1,6 @@
 @extends('layouts.app.auth')
 @section('content')
- <x-general.header bgimg="https://ineed-allah.com/wp-content/uploads/2020/05/Reflections-on-Zakat-Third-Pillar-of-Islam-.jpg"/>
+ <x-general.header bgimg="{{ asset('img/header.jpg') }}"/>
     <!-- Content -->
        <div class="m-5">
             <div class="flex items-center justify-between p-4 mb-8 text-md font-semibold text-teal-100 bg-teal-600 rounded-lg shadow-md focus:outline-none focus:shadow-outline-teal my-6">

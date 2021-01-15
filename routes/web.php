@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/tetapan', 'ProfilController@index')->name('tetapan');
         Route::get('/bayar', 'BayarController@index')->name('bayar');
         Route::get('/bayar/resit', 'BayarController@resit')->name('bayar.resit');
+        Route::get('/requestRefund', 'PageController@requestrefund')->name('agent.requestRefund');
     });
 
     // ADMIN
