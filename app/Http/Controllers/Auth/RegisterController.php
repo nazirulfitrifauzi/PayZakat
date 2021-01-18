@@ -53,12 +53,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name'      => ['required', 'string', 'max:255'],
-            'nric'      => ['required', 'string', 'min:12', 'max:12', 'unique:users'],
-            'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password'  => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        if ($data['pengguna_flag'] == 2) { //if the registered user is PPZ
+            return Validator::make($data, [
+                'name'      => ['required', 'string', 'max:255'],
+                'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password'  => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+        } else {
+            return Validator::make($data, [
+                'name'      => ['required', 'string', 'max:255'],
+                'nric'      => ['required', 'string', 'min:12', 'max:12', 'unique:users'],
+                'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password'  => ['required', 'string', 'min:8', 'confirmed'],
+            ]);
+        }
     }
 
     /**
@@ -69,14 +77,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'uuid'      => (string) Str::uuid(),
-            'name'      => $data['name'],
-            'nric'      => $data['nric'],
-            'role'      => $data['pengguna_flag'],
-            'email'     => $data['email'],
-            'password'  => Hash::make($data['password']),
-        ]);
+
+        if ($data['pengguna_flag'] == 2) { //if the registered user is PPZ
+
+            return User::create([
+                'uuid'      => (string) Str::uuid(),
+                'name'      => $data['name'],
+                'role'      => $data['pengguna_flag'],
+                'email'     => $data['email'],
+                'password'  => Hash::make($data['password']),
+            ]);
+        } else {
+            return User::create([
+                'uuid'      => (string) Str::uuid(),
+                'name'      => $data['name'],
+                'nric'      => $data['nric'],
+                'role'      => $data['pengguna_flag'],
+                'email'     => $data['email'],
+                'password'  => Hash::make($data['password']),
+            ]);
+        }
     }
 
     public function register(Request $request)
@@ -85,8 +105,13 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
-        return $this->registered($request, $user)
-            ?: redirect()->route('kyc', ['uuid' => $user->uuid]);
+        if ($user->role == '2') { //if the registered user is PPZ
+            return $this->registered($request, $user)
+                ?: redirect()->route('login')->with('message', 'Sila tunggu pengesahan daripada pihak Admin.');
+        } else {
+            return $this->registered($request, $user)
+                ?: redirect()->route('kyc', ['uuid' => $user->uuid]);
+        }
 
         return $request->wantsJson()
             ? new Response('', 201)

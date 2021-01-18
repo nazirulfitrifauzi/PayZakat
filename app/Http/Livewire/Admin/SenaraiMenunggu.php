@@ -45,14 +45,13 @@ class SenaraiMenunggu extends Component
         ]);
     }
 
-    public function finalResult($user_id, $status)
+    public function finalResult($user_id, $role, $status)
     {
         $this->validate([
             'remarks'  => 'required|max:255',
         ]);
 
-        if ($status == 'terima')
-        {
+        if ($status == 'terima') {
             User::whereId($user_id)
                 ->update([
                     'active' => 1,
@@ -61,10 +60,12 @@ class SenaraiMenunggu extends Component
 
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
-            session()->flash('message', 'Permohonan Ejen telah diterima.');
-        }
-        elseif ($status == 'tolak')
-        {
+            if ($role == 1) {
+                session()->flash('message', 'Permohonan Ejen telah diterima.');
+            } else {
+                session()->flash('message', 'Permohonan PPZ telah diterima.');
+            }
+        } elseif ($status == 'tolak') {
             User::whereId($user_id)
                 ->update([
                     'active' => 2,
@@ -73,7 +74,11 @@ class SenaraiMenunggu extends Component
 
             session()->flash('type', 'success');
             session()->flash('title', 'Berjaya!');
-            session()->flash('message', 'Permohonan ejen telah ditolak.');
+            if ($role == 1) {
+                session()->flash('message', 'Permohonan Ejen telah diterima.');
+            } else {
+                session()->flash('message', 'Permohonan PPZ telah diterima.');
+            }
         }
 
         return redirect()->to('/admin/pengguna/senarai-menunggu');
@@ -81,12 +86,12 @@ class SenaraiMenunggu extends Component
 
     public function render()
     {
-        return view('livewire.admin.senarai-menunggu',[
+        return view('livewire.admin.senarai-menunggu', [
             'list' => User::where('name', 'like', '%' . $this->search . '%')
-                            ->whereRole(1)
-                            ->whereActive(0)
-                            ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
-                            ->paginate(10),
+                ->whereIn('role', [1, 2])
+                ->whereActive(0)
+                ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
+                ->paginate(10),
             'sanctionList' => SanctionListWebsite::all(),
         ]);
     }
