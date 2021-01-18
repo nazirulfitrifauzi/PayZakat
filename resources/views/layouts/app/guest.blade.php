@@ -13,6 +13,19 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript">
+    function PPZHide(value){
+        if(value=="2"){
+            document.getElementById('nric').style.display='none';
+            document.getElementById('nricL').style.display='none';
+            document.getElementById('nric').required=false;
+        }else if(value=="1"){
+            document.getElementById('nric').style.display='block';
+            document.getElementById('nricL').style.display='block';
+            document.getElementById('nric').required=true;
+        }
+      }
+    </script>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="mt-6">
-                        <label for="name" class="block text-sm font-medium leading-5 text-gray-700">
+                        <label for="nric" id="nricL" class="block text-sm font-medium leading-5 text-gray-700">
                             Nombor IC
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
@@ -55,7 +55,7 @@
                             Jenis Pengguna
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
-                            <select id="pengguna_flag" name="pengguna_flag" required class="form-select block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('pengguna_flag')  border-red-500 @enderror">
+                            <select id="pengguna_flag" name="pengguna_flag" required class="form-select block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('pengguna_flag')  border-red-500 @enderror" onchange="PPZHide(this.value);">
                                 <option value="" selected disabled>Sila Pilih</option>
                                 <option value="1">Agent</option>
                                 <option value="2">Pusat Pungutan Zakat</option>

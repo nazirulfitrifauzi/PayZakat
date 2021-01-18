@@ -66,13 +66,13 @@
                         </div>
                         <div class="mt-6">
                             <x-general.button.icon-button href="" target="" label="Terima" color="indigo"
-                                livewire="wire:click=finalResult({{ $lists->id }},'terima')"
+                                livewire="wire:click=finalResult({{ $lists->id }},{{ $lists->role }},'terima')"
                             >
                                 <x-heroicon-s-check class="-ml-0.5 mr-2 h-4 w-4"/>
                             </x-general.button.icon-button>
 
                             <x-general.button.icon-button href="" target="" label="Tolak" color="red"
-                                livewire="wire:click=finalResult({{ $lists->id }},'tolak')"
+                                livewire="wire:click=finalResult({{ $lists->id }},{{ $lists->role }},'tolak')"
                             >
                                 <x-heroicon-s-trash class="-ml-0.5 mr-2 h-4 w-4"/>
                             </x-general.button.icon-button>
