@@ -73,7 +73,7 @@
                                     </button>
                                     
                                     {{-- modal update nisab --}}
-                                    <x-general.modal title="Kemas kini Nisab" submit="kemaskini" submitLabel="Kemas kini" cancel="Batal">
+                                    <x-general.modal title="Kemas kini Nisab" submit="kemaskini" submitLabel="Kemas kini" cancel="Batal"  modalActive="open" modalSize="xl">
                                         <div class="pl-4 pr-4">
                                             <div class="mt-3 text-justify grid grid-cols-3">
                                                 <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>

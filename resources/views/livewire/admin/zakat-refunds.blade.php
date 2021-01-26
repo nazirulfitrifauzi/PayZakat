@@ -28,7 +28,7 @@
                 </x-general.button.icon-button>
 
                 {{-- modal add zakat refund --}}
-                <x-general.modal title="Tambah Zakat Refund" submit="submit" submitLabel="Tambah" cancel="Batal">
+                <x-general.modal title="Tambah Zakat Refund" submit="submit" submitLabel="Tambah" cancel="Batal" modalActive="open" modalSize="xl">
                     <div class="mt-3 text-justify grid grid-cols-3" >
                         <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
                         <div class="text-sm leading-5 font-medium text-gray-700 col-span-2">{{ $this->year }}</div>
