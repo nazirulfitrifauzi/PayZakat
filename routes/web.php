@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/ppz/agihan', 'PageController@ppzAgihan')->name('ppz.agihan');
         Route::get('/ppz/nisab', 'PageController@ppzNisab')->name('ppz.nisab');
         Route::get('/ppz/refund', 'PageController@ppzRefund')->name('ppz.refund');
+        Route::get('/ppz/refundApplication', 'PageController@ppzRefundApplication')->name('ppz.refundAplication');
     });
 });
 

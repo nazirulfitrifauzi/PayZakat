@@ -170,6 +170,11 @@ class PageController extends Controller
 
     public function ppzRefund()
     {
-        return view('pages.ppz.refund.index');
+        return view('pages.ppz.refund.refund');
+    }
+
+    public function ppzRefundApplication()
+    {
+        return view('pages.ppz.refund.refund-application');
     }
 }

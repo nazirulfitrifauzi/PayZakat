@@ -71,10 +71,6 @@
                                 <x-heroicon-o-currency-dollar class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                             </x-sidebar.nav-item>
 
-                            <x-sidebar.nav-item route="admin.agihan" label="Agihan" uri="admin/agihan">
-                                <x-heroicon-o-document-search class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
-                            </x-sidebar.nav-item>
-
                             <x-sidebar.nav-item route="admin.zakatRefunds" label="Refund" uri="admin/zakat-refund">
                                 <x-heroicon-o-switch-horizontal class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
                             </x-sidebar.nav-item>

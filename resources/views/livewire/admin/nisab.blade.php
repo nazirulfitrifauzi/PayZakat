@@ -29,7 +29,7 @@
                 </x-general.button.icon-button>
 
                 {{-- modal add nisab --}}
-                <x-general.modal title="Tambah Nisab" submit="submit" submitLabel="Tambah" cancel="Batal">
+                <x-general.modal title="Tambah Nisab" submit="submit" submitLabel="Tambah" cancel="Batal" modalSize="xl" modalActive="open"> 
                     <div class="pl-4 pr-4">
                         <div class="mt-3 text-justify grid grid-cols-3">
                             <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
@@ -74,7 +74,7 @@
                                     </button>
                                     
                                     {{-- modal update nisab --}}
-                                    <x-general.modal title="Kemas kini Nisab" submit="" submitLabel="Kemas kini" cancel="Batal">
+                                    <x-general.modal title="Kemas kini Nisab" submit="" submitLabel="Kemas kini" cancel="Batal" modalSize="xl" modalActive="open">
                                         <div class="pl-4 pr-4">
                                             <div class="mt-3 text-justify grid grid-cols-3">
                                                 <label for="location" class="text-sm leading-5 font-medium text-gray-700">Tahun</label>
