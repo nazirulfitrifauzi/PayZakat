@@ -1,6 +1,6 @@
 <x-general.card class="bg-white mx-auto">
     <div class="flex flex-col lg:flex-row sm:flex-col px-4 mx-auto mt-5 font-medium leading-6 text-cool-gray-900 sm:px-6 lg:px-8">
-        <x-general.card class="mt-4 mb-4 shadow-lg bg-white p-5 w-full ">
+        <div class="mt-4 mb-4 p-5 w-full ">
             <div class="text-lg font-semibold" >
                 <p>Muat naik senarai Pembayar Zakat anda ruangan ini</p>
                 <div class="relative">
@@ -66,6 +66,6 @@
                     </div>
                 </div>
             </div>
-        </x-general.card>
+        </div>
     </div>
 </x-general.card>
