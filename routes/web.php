@@ -61,3 +61,4 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/kalkulator', 'KalkulatorController@index')->name('kalkulator');
 
 Route::get('/kyc', 'PageController@kyc')->name('kyc');
+Route::get('/kycA', 'PageController@kycA')->name('kycA');

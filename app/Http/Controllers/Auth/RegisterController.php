@@ -92,7 +92,7 @@ class RegisterController extends Controller
                 'uuid'      => (string) Str::uuid(),
                 'name'      => $data['name'],
                 'nric'      => $data['nric'],
-                'role'      => $data['pengguna_flag'],
+                'role'      => $data['agent_flag'],
                 'email'     => $data['email'],
                 'password'  => Hash::make($data['password']),
             ]);
@@ -108,6 +108,9 @@ class RegisterController extends Controller
         if ($user->role == '2') { //if the registered user is PPZ
             return $this->registered($request, $user)
                 ?: redirect()->route('login')->with('message', 'Sila tunggu pengesahan daripada pihak Admin.');
+        } else if ($user->role == '3') { //if the registered user is Agent Amil
+            return $this->registered($request, $user)
+                ?: redirect()->route('kycA', ['uuid' => $user->uuid]);
         } else {
             return $this->registered($request, $user)
                 ?: redirect()->route('kyc', ['uuid' => $user->uuid]);

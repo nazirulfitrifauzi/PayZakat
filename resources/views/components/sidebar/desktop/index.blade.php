@@ -51,6 +51,50 @@
                             </x-sidebar.nav-item>
                         @endif
 
+                        @if (auth()->user()->role == 3) <!-- agent amil-->
+                            <x-sidebar.nav-item route="maklumatPengguna" label="Maklumat Pengguna" uri="maklumat-pengguna">
+                                <x-heroicon-o-user class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="akaun" label="Akaun" uri="akaun">
+                                <x-heroicon-o-credit-card class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="pembayar.senarai" label="Pembayar Zakat" uri="pembayar">
+                                <x-heroicon-o-user-group class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="pembayar.senarai" label="Pembayar Zakat (Syarikat)" uri="pembayar">
+                                <x-heroicon-o-user-group class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="asnaf.senarai" label="Asnaf" uri="asnaf">
+                                <x-heroicon-o-users class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.parent-nav-item label="Kalkulator Zakat" uri="">
+                                <x-slot name="svg">
+                                    <x-heroicon-o-calculator class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                                </x-slot>
+
+                                <div x-show="isOpen" x-cloak>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:1} @click=$dispatch('open-calculator',{id})" label="Pendapatan"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:2} @click=$dispatch('open-calculator',{id})" label="Perniagaan"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:3} @click=$dispatch('open-calculator',{id})" label="Harta"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:4} @click=$dispatch('open-calculator',{id})" label="KWSP"/>
+                                    <x-sidebar.calc-child-nav-item alpine="x-data={id:5} @click=$dispatch('open-calculator',{id})" label="ASB"/>
+                                </div>
+                            </x-sidebar.parent-nav-item>
+
+                            <x-sidebar.nav-item route="bayar" label="Bayar Zakat" uri="bayar">
+                                <x-heroicon-o-currency-dollar class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+
+                            <x-sidebar.nav-item route="agent.requestRefund" label="Refund" uri="requestRefund">
+                                <x-heroicon-o-switch-horizontal class="w-6 h-6 mr-4 text-teal-200 transition duration-150 ease-in-out group-hover:text-teal-200 group-focus:text-teal-200"/>
+                            </x-sidebar.nav-item>
+                        @endif
+
                         @if (auth()->user()->role == 0) <!-- admin -->
                             <x-sidebar.parent-nav-item label="Pengguna" uri="admin/pengguna/*">
                                 <x-slot name="svg">

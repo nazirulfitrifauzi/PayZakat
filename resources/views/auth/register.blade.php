@@ -36,11 +36,11 @@
                     </div>
 
                     <div class="mt-6">
-                        <label for="nric" id="nricL" class="block text-sm font-medium leading-5 text-gray-700">
+                        <label for="nric" id="nricL" class="block text-sm font-medium leading-5 text-gray-700" style="display:none;">
                             Nombor IC
                         </label>
                         <div class="mt-1 rounded-md shadow-sm">
-                            <input id="nric" name="nric" type="text" required value="{{ old('nric') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('nric')  border-red-500 @enderror">
+                            <input id="nric" name="nric" type="text" required value="{{ old('nric') }}" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('nric')  border-red-500 @enderror" style="display:none;">
 
                             @error('nric')
                                 <p class="mt-4 text-xs italic text-red-500">
@@ -59,6 +59,18 @@
                                 <option value="" selected disabled>Sila Pilih</option>
                                 <option value="1">Agent</option>
                                 <option value="2">Pusat Pungutan Zakat</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <label for="jenisA" id="jenisAL" class="block text-sm font-medium leading-5 text-gray-700" style="display:none;">
+                            Jenis Agent
+                        </label>
+                        <div class="mt-1 rounded-md shadow-sm">
+                            <select id="agent_flag" name="agent_flag" required class="form-select block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5 @error('agent_flag')  border-red-500 @enderror" style="display:none;">
+                                <option value="1" selected>Agent Biasa</option>
+                                <option value="3">Agent Amil</option>
                             </select>
                         </div>
                     </div>
