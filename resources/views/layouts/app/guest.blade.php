@@ -18,11 +18,17 @@
         if(value=="2"){
             document.getElementById('nric').style.display='none';
             document.getElementById('nricL').style.display='none';
+            document.getElementById('jenisAL').style.display='none';
+            document.getElementById('agent_flag').style.display='none';
             document.getElementById('nric').required=false;
+            document.getElementById('agent_flag').required=false;
         }else if(value=="1"){
             document.getElementById('nric').style.display='block';
             document.getElementById('nricL').style.display='block';
+            document.getElementById('jenisAL').style.display='block';
+            document.getElementById('agent_flag').style.display='block';
             document.getElementById('nric').required=true;
+            document.getElementById('agent_flag').required=true;
         }
       }
     </script>

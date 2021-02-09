@@ -135,6 +135,11 @@ class PageController extends Controller
         return view('pages.kyc');
     }
 
+    public function kycA()
+    {
+        return view('pages.kycAmil');
+    }
+
 
     public function asnafMaklumat($uuid)
     {

@@ -88,7 +88,7 @@ class SenaraiMenunggu extends Component
     {
         return view('livewire.admin.senarai-menunggu', [
             'list' => User::where('name', 'like', '%' . $this->search . '%')
-                ->whereIn('role', [1, 2])
+                ->whereIn('role', [1, 2, 3])
                 ->whereActive(0)
                 ->orderBy($this->sortField, ($this->sortAsc == true) ? 'asc' : 'desc')
                 ->paginate(10),
