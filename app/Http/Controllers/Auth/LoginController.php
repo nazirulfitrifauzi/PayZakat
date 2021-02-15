@@ -7,6 +7,8 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\KYCAmil;
+use App\Models\KYC;
 
 class LoginController extends Controller
 {
@@ -51,17 +53,24 @@ class LoginController extends Controller
     {
         // Load user from database
         $user = User::where($this->username(), $request->{$this->username()})->first();
-
+        if ($user) { //checking if the user exist and check if it has submitted KYC documents/pictures
+            $kycA = KYCAmil::where('uuid', $user->uuid)->first();
+            $kyc = KYC::where('uuid', $user->uuid)->first();
+        }
         // Check if user was successfully loaded, that the password matches
         // and active is not 1. If so, override the default error message.
         if (!$user) {
-            return back()->with('error', "Akaun ini tidak wujud di dalam pangkalan data kami.");
+            return back()->with('message', "Akaun ini tidak wujud di dalam pangkalan data kami.");
+        } elseif ($user && \Hash::check($request->password, $user->password) && $user->active == 0 && !$kyc && $user->role == 1) {
+            return redirect()->route('kyc', ['uuid' => $user->uuid]);
+        } elseif ($user && \Hash::check($request->password, $user->password) && $user->active == 0 && !$kycA && $user->role == 3) {
+            return redirect()->route('kycA', ['uuid' => $user->uuid]);
         } elseif ($user && \Hash::check($request->password, $user->password) && $user->active == 0) {
-            return back()->with('error', "Akaun ini masih belum diaktifkan.");
+            return back()->with('message', "Akaun ini masih belum diaktifkan.");
         } elseif ($user && \Hash::check($request->password, $user->password) && $user->active == 2) {
-            return back()->with('error', "Pendaftaran akaun ini telah ditolak.");
+            return back()->with('message', "Pendaftaran akaun ini telah ditolak.");
         } elseif ($user && ($request->password != $user->password)) {
-            return back()->with('error', "Kelayakan ini tidak sepadan dengan rekod kami.");
+            return back()->with('message', "Kelayakan ini tidak sepadan dengan rekod kami.");
         }
     }
 }

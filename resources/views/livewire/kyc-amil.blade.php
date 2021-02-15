@@ -1,36 +1,36 @@
 <div>
-    <label for="kycf" class="block text-sm mb-3 font-medium leading-5 text-gray-700">
-        Kad Pengenalan (Hadapan)
+    <label for="kycd" class="block text-sm mb-3 font-medium leading-5 text-gray-700">
+        Dokumen Pengesahan Syarikat
     </label>
 
     <div class="flex mt-1 mb-3 rounded-md shadow-sm">
-        <label for="kycf" class="w-full p-10 text-center transition duration-300 ease-in-out bg-gray-100 rounded-lg shadow cursor-pointer hover:bg-white group truncate">
+        <label for="kycd" class="w-full p-10 text-center transition duration-300 ease-in-out bg-gray-100 rounded-lg shadow cursor-pointer hover:bg-white group truncate">
 
         
             <span class="inline-flex items-center font-medium text-gray-600 group-hover:text-gray-700">
-                @if (!is_null($kycf))
+                @if (!is_null($kycd))
                     <div class="flex items-center">
-                        @if ($errors->get('kycf'))
+                        @if ($errors->get('kycd'))
                             <x-heroicon-o-exclamation class="w-6 h-6 mr-2 text-red-400"/>
                         @else
                             <x-heroicon-o-shield-check class="w-6 h-6 mr-2 text-green-400"/>
                         @endif
-                        {{ $kycf->getClientOriginalName() }}
+                        {{ $kycd->getClientOriginalName() }}
                     </div>
                 @else
                     <x-heroicon-o-cloud-upload class="w-6 h-6 mr-2 text-teal-600 animate-bounce"/>
-                    Sila Pilih Gambar Hadapan IC
+                    Sila Pilih Dokumen Pengesahan 
                 @endif
             </span>
         </label>
-        <input type="file" class="absolute invisible pointer-events-none" id="kycf" name="kycf" wire:model="kycf">
+        <input type="file" class="absolute invisible pointer-events-none" id="kycd" name="kycd" wire:model="kycd">
     </div>
-    @error('kycf')
+    @error('kycd')
         <span class="flex mt-2 mb-2 text-red-500">{{ $message }}</span>
     @enderror
 
-    {{-- loading kycf  --}}
-    <div wire:loading wire:target="kycf"  class="absolute z-10 inset-0" style="top:43px;">
+    {{-- loading kycd  --}}
+    <div wire:loading wire:target="kycd"  class="absolute z-10 inset-0" style="top:43px;">
         <div class="h-full flex items-center justify-center rounded-lg">
             <div class="p-2 bg-black bg-opacity-50 rounded-full">
                 <img class="h-8 w-8" src="{{ asset('img/spin_loading.gif') }}">
@@ -38,43 +38,7 @@
         </div>
     </div>
 
-    <label for="kycb" class="block text-sm mb-3 font-medium leading-5 text-gray-700">
-        Kad Pengenalan (Belakang)
-    </label>
-    <div class="flex mt-1 mb-3 rounded-md shadow-sm">
-        <label for="kycb" class="w-full p-10 text-center transition duration-300 ease-in-out bg-gray-100 rounded-lg shadow cursor-pointer hover:bg-white group truncate">
-
-            
-            <span class="inline-flex items-center font-medium text-gray-600 group-hover:text-gray-700">
-                @if (!is_null($kycb))
-                    <div class="flex items-center">
-                        @if ($errors->get('kycb'))
-                            <x-heroicon-o-exclamation class="w-6 h-6 mr-2 text-red-400"/>
-                        @else
-                            <x-heroicon-o-shield-check class="w-6 h-6 mr-2 text-green-400"/>
-                        @endif
-                        {{ $kycb->getClientOriginalName() }}
-                    </div>
-                @else
-                    <x-heroicon-o-cloud-upload class="w-6 h-6 mr-2 text-teal-600 animate-bounce"/>
-                    Sila Pilih Gambar Belakang IC
-                @endif
-            </span>
-        </label>
-        <input type="file" class="absolute invisible pointer-events-none" id="kycb" name="kycb" wire:model="kycb">
-    </div>
-    @error('kycb')
-        <span class="flex mt-2 mb-2 text-red-500">{{ $message }}</span>
-    @enderror
-
-    {{-- loading kycb  --}}
-    <div wire:loading wire:target="kycb" class="absolute z-10 inset-0" style="top:339px;">
-        <div class="h-full flex items-center justify-center rounded-lg">
-            <div class="p-2 bg-black bg-opacity-50 rounded-full">
-                <img class="h-8 w-8" src="{{ asset('img/spin_loading.gif') }}">
-            </div>
-        </div>
-    </div>
+   
 
     <div class="mt-6">
         <span class="block w-full rounded-md shadow-sm">
